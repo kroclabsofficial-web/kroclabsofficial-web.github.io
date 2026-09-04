@@ -1,0 +1,622 @@
+<!DOCTYPE html>  
+</script>
+
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KROC LABS | Smart Digital Tools</title>
+
+    <meta name="description"
+        content="KROC LABS builds simple, fast and useful digital tools for people worldwide.">
+
+    <meta name="keywords"
+        content="KROC LABS, online tools, calculators, finance tools, AI tools, digital tools">
+
+    <meta name="author" content="KROC LABS">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #08090b;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
+
+        header {
+            width: 100%;
+            border-bottom: 1px solid #202226;
+            background: rgba(8, 9, 11, 0.95);
+        }
+
+        .navbar {
+            max-width: 1150px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00ff88;
+        }
+
+        .nav-button {
+            padding: 10px 16px;
+            border: 1px solid #33363b;
+            border-radius: 10px;
+            color: #b8bdc5;
+            font-size: 14px;
+        }
+
+        /* HERO */
+
+        .hero {
+            max-width: 1000px;
+            margin: auto;
+            padding: 90px 20px 70px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 7px 14px;
+            border-radius: 30px;
+            background: #10291e;
+            border: 1px solid #174f35;
+            color: #00ff88;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 72px);
+            line-height: 1.05;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #00ff88;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: auto;
+            color: #9ca3ad;
+            font-size: 18px;
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .primary-button {
+            display: inline-block;
+            background: #00ff88;
+            color: #000000;
+            padding: 14px 22px;
+            border-radius: 12px;
+            font-weight: 800;
+        }
+
+        .secondary-button {
+            display: inline-block;
+            border: 1px solid #363a40;
+            color: #ffffff;
+            padding: 14px 22px;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        /* SECTION */
+
+        .section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 40px 20px 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #8e949d;
+        }
+
+        /* TOOLS */
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #121418;
+            border: 1px solid #24272c;
+            border-radius: 20px;
+            padding: 26px;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: #00ff88;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #00ff88;
+            color: #000000;
+            font-size: 11px;
+            font-weight: 900;
+            padding: 5px 10px;
+            border-radius: 30px;
+            margin-bottom: 15px;
+        }
+
+        .badge.soon {
+            background: #292c31;
+            color: #ffffff;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .card-description {
+            color: #9298a1;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        /* CALCULATOR */
+
+        .input-label {
+            display: block;
+            color: #c7cbd1;
+            font-size: 13px;
+            margin-top: 12px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 11px;
+            border: 1px solid #34383e;
+            background: #090a0c;
+            color: #ffffff;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #00ff88;
+        }
+
+        .calculate-button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 11px;
+            background: #00ff88;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        .result {
+            min-height: 32px;
+            margin-top: 18px;
+            text-align: center;
+            color: #00ff88;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .disabled-button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+            border: 1px solid #33373d;
+            border-radius: 11px;
+            background: #1b1d21;
+            color: #777d86;
+            font-weight: 700;
+        }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #999fa8;
+            font-size: 17px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #202226;
+            padding: 40px 20px;
+            text-align: center;
+            color: #676d75;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #ffffff;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 17px 15px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .nav-button {
+                font-size: 12px;
+                padding: 8px 11px;
+            }
+
+            .hero {
+                padding: 65px 18px 50px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .card {
+                padding: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="navbar">
+
+            <div class="logo">
+                KROC <span>LABS</span>
+            </div>
+
+            <a href="#tools" class="nav-button">
+                Explore Tools
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-badge">
+            GLOBAL DIGITAL PRODUCTS
+        </div>
+
+        <h1>
+            Useful Tools.<br>
+            <span>Built for Everyone.</span>
+        </h1>
+
+        <p>
+            KROC LABS creates simple, fast and useful digital
+            products designed for people around the world.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#tools" class="primary-button">
+                Explore Tools
+            </a>
+
+            <a href="#about" class="secondary-button">
+                About KROC LABS
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- TOOLS -->
+
+    <section class="section" id="tools">
+
+        <div class="section-title">
+
+            <h2>Our Tools</h2>
+
+            <p>
+                Simple tools designed to solve everyday problems.
+            </p>
+
+        </div>
+
+
+        <div class="tools-grid">
+
+            <!-- TOOL 1 -->
+
+            <div class="card">
+
+                <div class="badge">
+                    LIVE • MVP 1
+                </div>
+
+                <h3>
+                    Percentage Calculator
+                </h3>
+
+                <p class="card-description">
+                    Quickly calculate percentages for school,
+                    business, finance and everyday use.
+                </p>
+
+                <label class="input-label">
+                    Percentage
+                </label>
+
+                <input
+                    type="number"
+                    id="percentage"
+                    placeholder="Example: 20"
+                >
+
+                <label class="input-label">
+                    Number
+                </label>
+
+                <input
+                    type="number"
+                    id="number"
+                    placeholder="Example: 500"
+                >
+
+                <button
+                    class="calculate-button"
+                    onclick="calculatePercentage()"
+                >
+                    Calculate
+                </button>
+
+                <div
+                    class="result"
+                    id="result"
+                ></div>
+
+            </div>
+
+
+            <!-- TOOL 2 -->
+
+            <div class="card">
+
+                <div class="badge soon">
+                    COMING SOON
+                </div>
+
+                <h3>
+                    Finance Tools
+                </h3>
+
+                <p class="card-description">
+                    Useful calculators and financial tools
+                    designed for users worldwide.
+                </p>
+
+                <button class="disabled-button" disabled>
+                    Coming Soon
+                </button>
+
+            </div>
+
+
+            <!-- TOOL 3 -->
+
+            <div class="card">
+
+                <div class="badge soon">
+                    COMING SOON
+                </div>
+
+                <h3>
+                    AI Tools
+                </h3>
+
+                <p class="card-description">
+                    Smart AI-powered tools designed to help
+                    people work faster and smarter.
+                </p>
+
+                <button class="disabled-button" disabled>
+                    Coming Soon
+                </button>
+
+            </div>
+
+
+            <!-- TOOL 4 -->
+
+            <div class="card">
+
+                <div class="badge soon">
+                    COMING SOON
+                </div>
+
+                <h3>
+                    Productivity Tools
+                </h3>
+
+                <p class="card-description">
+                    Simple tools that can help people save
+                    time and get more done.
+                </p>
+
+                <button class="disabled-button" disabled>
+                    Coming Soon
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="section" id="about">
+
+        <div class="about">
+
+            <div class="section-title">
+
+                <h2>
+                    About KROC LABS
+                </h2>
+
+            </div>
+
+            <p>
+                KROC LABS is an independent technology brand
+                focused on building useful digital products,
+                online tools and innovative web experiences
+                for a global audience.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 <strong>KROC LABS</strong>.
+            All rights reserved.
+        </p>
+
+        <p>
+            Built for people worldwide.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function calculatePercentage() {
+
+            const percentage =
+                parseFloat(
+                    document.getElementById("percentage").value
+                );
+
+            const number =
+                parseFloat(
+                    document.getElementById("number").value
+                );
+
+            const result =
+                document.getElementById("result");
+
+
+            if (isNaN(percentage) || isNaN(number)) {
+
+                result.textContent =
+                    "Please enter both numbers.";
+
+                return;
+            }
+
+
+            const answer =
+                (percentage * number) / 100;
+
+
+            result.textContent =
+                percentage +
+                "% of " +
+                number +
+                " = " +
+                answer;
+        }
+
+    </script>
+
+</body>
+</html>
