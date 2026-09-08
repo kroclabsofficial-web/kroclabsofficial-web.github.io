@@ -1,622 +1,1066 @@
-<!DOCTYPE html>  
-</script>
-
-</body>
-</html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>KROC LABS | Smart Digital Tools</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="KROC LABS builds simple, fast and useful digital tools for people worldwide.">
+<title>KROC LABS — Digital Products for Everyone</title>
 
-    <meta name="keywords"
-        content="KROC LABS, online tools, calculators, finance tools, AI tools, digital tools">
+<meta name="description"
+content="KROC LABS builds fast, useful and intelligent digital tools and products for people worldwide.">
 
-    <meta name="author" content="KROC LABS">
+<meta name="robots" content="index, follow">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta name="theme-color" content="#050505">
 
-        html {
-            scroll-behavior: smooth;
-        }
+<style>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #08090b;
-            color: #ffffff;
-            line-height: 1.6;
-        }
+/* =========================
+   GLOBAL
+========================= */
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-        /* HEADER */
+html{
+    scroll-behavior:smooth;
+}
 
-        header {
-            width: 100%;
-            border-bottom: 1px solid #202226;
-            background: rgba(8, 9, 11, 0.95);
-        }
+body{
+    background:#050505;
+    color:#ffffff;
+    font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+    overflow-x:hidden;
+}
 
-        .navbar {
-            max-width: 1150px;
-            margin: auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+a{
+    color:inherit;
+    text-decoration:none;
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
+.container{
+    width:min(1120px,92%);
+    margin:auto;
+}
 
-        .logo span {
-            color: #00ff88;
-        }
+/* =========================
+   BACKGROUND EFFECT
+========================= */
 
-        .nav-button {
-            padding: 10px 16px;
-            border: 1px solid #33363b;
-            border-radius: 10px;
-            color: #b8bdc5;
-            font-size: 14px;
-        }
+body::before{
+    content:"";
+    position:fixed;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:#00ff8820;
+    filter:blur(100px);
+    top:-160px;
+    left:-140px;
+    pointer-events:none;
+    z-index:-1;
+}
 
-        /* HERO */
+body::after{
+    content:"";
+    position:fixed;
+    width:380px;
+    height:380px;
+    border-radius:50%;
+    background:#00ff8815;
+    filter:blur(100px);
+    right:-180px;
+    top:420px;
+    pointer-events:none;
+    z-index:-1;
+}
 
-        .hero {
-            max-width: 1000px;
-            margin: auto;
-            padding: 90px 20px 70px;
-            text-align: center;
-        }
+/* =========================
+   HEADER
+========================= */
 
-        .hero-badge {
-            display: inline-block;
-            padding: 7px 14px;
-            border-radius: 30px;
-            background: #10291e;
-            border: 1px solid #174f35;
-            color: #00ff88;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 22px;
-        }
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:#050505d9;
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid #ffffff0d;
+}
 
-        .hero h1 {
-            font-size: clamp(42px, 8vw, 72px);
-            line-height: 1.05;
-            margin-bottom: 22px;
-        }
+.nav{
+    height:74px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
 
-        .hero h1 span {
-            color: #00ff88;
-        }
+.logo{
+    font-size:23px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
 
-        .hero p {
-            max-width: 680px;
-            margin: auto;
-            color: #9ca3ad;
-            font-size: 18px;
-        }
+.logo span{
+    color:#00ff88;
+}
 
-        .hero-buttons {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
+.nav-links{
+    display:flex;
+    gap:28px;
+    color:#888;
+    font-size:14px;
+}
 
-        .primary-button {
-            display: inline-block;
-            background: #00ff88;
-            color: #000000;
-            padding: 14px 22px;
-            border-radius: 12px;
-            font-weight: 800;
-        }
+.nav-links a:hover{
+    color:#00ff88;
+}
 
-        .secondary-button {
-            display: inline-block;
-            border: 1px solid #363a40;
-            color: #ffffff;
-            padding: 14px 22px;
-            border-radius: 12px;
-            font-weight: 700;
-        }
+.nav-btn{
+    border:1px solid #ffffff20;
+    padding:10px 17px;
+    border-radius:12px;
+    font-size:14px;
+}
 
-        /* SECTION */
+.nav-btn:hover{
+    border-color:#00ff88;
+    color:#00ff88;
+}
 
-        .section {
-            max-width: 1150px;
-            margin: auto;
-            padding: 40px 20px 80px;
-        }
+/* =========================
+   HERO
+========================= */
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 35px;
-        }
+.hero{
+    min-height:720px;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
 
-        .section-title h2 {
-            font-size: 34px;
-            margin-bottom: 8px;
-        }
+.hero-content{
+    width:100%;
+    padding:80px 0;
+}
 
-        .section-title p {
-            color: #8e949d;
-        }
+.eyebrow{
+    display:inline-block;
+    padding:9px 15px;
+    border:1px solid #00ff8840;
+    background:#00ff8810;
+    color:#00ff88;
+    border-radius:100px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1px;
+    margin-bottom:25px;
+}
 
-        /* TOOLS */
+.hero h1{
+    max-width:850px;
+    margin:auto;
+    font-size:clamp(48px,8vw,88px);
+    line-height:.98;
+    letter-spacing:-5px;
+}
 
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
+.hero h1 span{
+    color:#00ff88;
+}
 
-        .card {
-            background: #121418;
-            border: 1px solid #24272c;
-            border-radius: 20px;
-            padding: 26px;
-            transition: 0.2s;
-        }
+.hero-text{
+    max-width:650px;
+    margin:30px auto;
+    color:#8d8d8d;
+    font-size:18px;
+    line-height:1.7;
+}
 
-        .card:hover {
-            transform: translateY(-3px);
-            border-color: #00ff88;
-        }
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:35px;
+}
 
-        .badge {
-            display: inline-block;
-            background: #00ff88;
-            color: #000000;
-            font-size: 11px;
-            font-weight: 900;
-            padding: 5px 10px;
-            border-radius: 30px;
-            margin-bottom: 15px;
-        }
+.primary{
+    background:#00ff88;
+    color:#000;
+    padding:16px 25px;
+    border-radius:13px;
+    font-weight:900;
+    border:1px solid #00ff88;
+}
 
-        .badge.soon {
-            background: #292c31;
-            color: #ffffff;
-        }
+.primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 35px #00ff8830;
+}
 
-        .card h3 {
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
+.secondary{
+    border:1px solid #ffffff22;
+    padding:16px 25px;
+    border-radius:13px;
+    font-weight:700;
+}
 
-        .card-description {
-            color: #9298a1;
-            font-size: 14px;
-            margin-bottom: 18px;
-        }
+.secondary:hover{
+    border-color:#00ff88;
+    color:#00ff88;
+}
 
-        /* CALCULATOR */
+/* =========================
+   TRUST BAR
+========================= */
 
-        .input-label {
-            display: block;
-            color: #c7cbd1;
-            font-size: 13px;
-            margin-top: 12px;
-            margin-bottom: 5px;
-        }
+.trust{
+    border-top:1px solid #ffffff0d;
+    border-bottom:1px solid #ffffff0d;
+    padding:25px 0;
+}
 
-        input {
-            width: 100%;
-            padding: 14px;
-            border-radius: 11px;
-            border: 1px solid #34383e;
-            background: #090a0c;
-            color: #ffffff;
-            font-size: 16px;
-            outline: none;
-        }
+.trust-inner{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+    color:#666;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
 
-        input:focus {
-            border-color: #00ff88;
-        }
+/* =========================
+   SECTION
+========================= */
 
-        .calculate-button {
-            width: 100%;
-            padding: 14px;
-            margin-top: 15px;
-            border: none;
-            border-radius: 11px;
-            background: #00ff88;
-            color: #000000;
-            font-size: 16px;
-            font-weight: 900;
-            cursor: pointer;
-        }
+section{
+    padding:110px 0;
+}
 
-        .result {
-            min-height: 32px;
-            margin-top: 18px;
-            text-align: center;
-            color: #00ff88;
-            font-size: 20px;
-            font-weight: 800;
-        }
+.section-head{
+    max-width:650px;
+    margin-bottom:45px;
+}
 
-        .disabled-button {
-            width: 100%;
-            padding: 14px;
-            margin-top: 15px;
-            border: 1px solid #33373d;
-            border-radius: 11px;
-            background: #1b1d21;
-            color: #777d86;
-            font-weight: 700;
-        }
+.section-label{
+    color:#00ff88;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+}
 
-        /* ABOUT */
+.section-head h2{
+    font-size:clamp(34px,5vw,54px);
+    letter-spacing:-2px;
+}
 
-        .about {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-        }
+.section-head p{
+    color:#777;
+    margin-top:18px;
+    line-height:1.7;
+}
 
-        .about p {
-            color: #999fa8;
-            font-size: 17px;
-        }
+/* =========================
+   TOOLS GRID
+========================= */
 
-        /* FOOTER */
+.tools-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
 
-        footer {
-            border-top: 1px solid #202226;
-            padding: 40px 20px;
-            text-align: center;
-            color: #676d75;
-            font-size: 14px;
-        }
+.tool-card{
+    background:#0d0d0f;
+    border:1px solid #ffffff10;
+    border-radius:22px;
+    padding:28px;
+    min-height:230px;
+    transition:.25s ease;
+}
 
-        footer strong {
-            color: #ffffff;
-        }
+.tool-card:hover{
+    transform:translateY(-5px);
+    border-color:#00ff8860;
+    box-shadow:0 20px 60px #000;
+}
 
-        /* MOBILE */
+.tool-icon{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:13px;
+    background:#00ff8812;
+    color:#00ff88;
+    font-size:21px;
+    margin-bottom:25px;
+}
 
-        @media (max-width: 600px) {
+.tool-card h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
 
-            .navbar {
-                padding: 17px 15px;
-            }
+.tool-card p{
+    color:#777;
+    line-height:1.6;
+    font-size:14px;
+}
 
-            .logo {
-                font-size: 20px;
-            }
+.status{
+    display:inline-block;
+    margin-top:20px;
+    font-size:10px;
+    font-weight:900;
+    padding:6px 9px;
+    border-radius:50px;
+    background:#00ff88;
+    color:#000;
+}
 
-            .nav-button {
-                font-size: 12px;
-                padding: 8px 11px;
-            }
+/* =========================
+   CALCULATOR
+========================= */
 
-            .hero {
-                padding: 65px 18px 50px;
-            }
+.calculator-wrap{
+    max-width:650px;
+    margin:auto;
+}
 
-            .hero p {
-                font-size: 16px;
-            }
+.calculator{
+    background:linear-gradient(145deg,#111113,#090909);
+    border:1px solid #00ff8850;
+    border-radius:28px;
+    padding:32px;
+    box-shadow:0 30px 100px #00ff8808;
+}
 
-            .section {
-                padding-left: 15px;
-                padding-right: 15px;
-            }
+.calculator h3{
+    font-size:28px;
+    margin-bottom:10px;
+}
 
-            .section-title h2 {
-                font-size: 28px;
-            }
+.calculator-desc{
+    color:#777;
+    line-height:1.6;
+    margin-bottom:25px;
+}
 
-            .card {
-                padding: 21px;
-            }
-        }
-    </style>
+label{
+    display:block;
+    color:#aaa;
+    font-size:13px;
+    margin:17px 0 7px;
+}
+
+input{
+    width:100%;
+    padding:16px;
+    background:#050505;
+    border:1px solid #ffffff15;
+    color:#fff;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+}
+
+input:focus{
+    border-color:#00ff88;
+}
+
+.calculate{
+    width:100%;
+    margin-top:20px;
+    padding:16px;
+    background:#00ff88;
+    color:#000;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:900;
+    cursor:pointer;
+}
+
+.reset{
+    width:100%;
+    margin-top:10px;
+    padding:13px;
+    background:transparent;
+    color:#777;
+    border:1px solid #ffffff15;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.reset:hover{
+    color:#fff;
+    border-color:#ffffff30;
+}
+
+#error{
+    color:#ff5555;
+    text-align:center;
+    min-height:20px;
+    margin-top:12px;
+    font-size:13px;
+}
+
+#result{
+    color:#00ff88;
+    text-align:center;
+    font-size:22px;
+    font-weight:900;
+    min-height:30px;
+    margin-top:15px;
+}
+
+/* =========================
+   VISION
+========================= */
+
+.vision{
+    border:1px solid #ffffff10;
+    background:#0b0b0d;
+    border-radius:30px;
+    padding:60px;
+    text-align:center;
+}
+
+.vision h2{
+    font-size:clamp(34px,5vw,55px);
+    letter-spacing:-2px;
+}
+
+.vision h2 span{
+    color:#00ff88;
+}
+
+.vision p{
+    max-width:650px;
+    margin:20px auto 0;
+    color:#777;
+    line-height:1.8;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    text-align:center;
+}
+
+.cta h2{
+    font-size:clamp(35px,6vw,65px);
+    letter-spacing:-3px;
+}
+
+.cta p{
+    color:#777;
+    margin:20px auto 30px;
+    max-width:600px;
+    line-height:1.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid #ffffff0d;
+    padding:40px 0;
+    color:#555;
+    font-size:13px;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.footer-brand{
+    color:#fff;
+    font-weight:900;
+}
+
+.footer-brand span{
+    color:#00ff88;
+}
+
+.footer-links{
+    display:flex;
+    gap:20px;
+}
+
+.footer-links a:hover{
+    color:#00ff88;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        min-height:650px;
+    }
+
+    .hero h1{
+        letter-spacing:-3px;
+    }
+
+    .hero-text{
+        font-size:16px;
+    }
+
+    section{
+        padding:80px 0;
+    }
+
+    .tools-grid{
+        grid-template-columns:1fr;
+    }
+
+    .vision{
+        padding:35px 22px;
+    }
+
+    .calculator{
+        padding:23px;
+    }
+
+    .trust-inner{
+        gap:20px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
-    <header>
-        <div class="navbar">
+<header>
 
-            <div class="logo">
-                KROC <span>LABS</span>
-            </div>
+<div class="container nav">
 
-            <a href="#tools" class="nav-button">
-                Explore Tools
-            </a>
+<a href="#" class="logo">
+KROC <span>LABS</span>
+</a>
 
-        </div>
-    </header>
+<nav class="nav-links">
+<a href="#tools">Products</a>
+<a href="#calculator">Calculator</a>
+<a href="#vision">Vision</a>
+</nav>
 
+<a href="#calculator" class="nav-btn">
+Try a Tool
+</a>
 
-    <!-- HERO -->
+</div>
 
-    <section class="hero">
+</header>
 
-        <div class="hero-badge">
-            GLOBAL DIGITAL PRODUCTS
-        </div>
 
-        <h1>
-            Useful Tools.<br>
-            <span>Built for Everyone.</span>
-        </h1>
+<!-- =========================
+     HERO
+========================= -->
 
-        <p>
-            KROC LABS creates simple, fast and useful digital
-            products designed for people around the world.
-        </p>
+<main>
 
-        <div class="hero-buttons">
+<section class="hero">
 
-            <a href="#tools" class="primary-button">
-                Explore Tools
-            </a>
+<div class="container hero-content">
 
-            <a href="#about" class="secondary-button">
-                About KROC LABS
-            </a>
+<div class="eyebrow">
+GLOBAL DIGITAL PRODUCT LAB
+</div>
 
-        </div>
+<h1>
+Useful technology.<br>
+<span>Built differently.</span>
+</h1>
 
-    </section>
+<p class="hero-text">
+KROC LABS creates simple, fast and intelligent digital
+products designed to make everyday work easier for people
+around the world.
+</p>
 
+<div class="hero-buttons">
 
-    <!-- TOOLS -->
+<a href="#tools" class="primary">
+Explore Products →
+</a>
 
-    <section class="section" id="tools">
+<a href="#vision" class="secondary">
+Our Vision
+</a>
 
-        <div class="section-title">
+</div>
 
-            <h2>Our Tools</h2>
+</div>
 
-            <p>
-                Simple tools designed to solve everyday problems.
-            </p>
+</section>
 
-        </div>
 
+<!-- =========================
+     TRUST
+========================= -->
 
-        <div class="tools-grid">
+<div class="trust">
 
-            <!-- TOOL 1 -->
+<div class="container trust-inner">
 
-            <div class="card">
+<span>Fast</span>
+<span>Simple</span>
+<span>Useful</span>
+<span>Global</span>
+<span>Built to Scale</span>
 
-                <div class="badge">
-                    LIVE • MVP 1
-                </div>
+</div>
 
-                <h3>
-                    Percentage Calculator
-                </h3>
+</div>
 
-                <p class="card-description">
-                    Quickly calculate percentages for school,
-                    business, finance and everyday use.
-                </p>
 
-                <label class="input-label">
-                    Percentage
-                </label>
+<!-- =========================
+     PRODUCTS
+========================= -->
 
-                <input
-                    type="number"
-                    id="percentage"
-                    placeholder="Example: 20"
-                >
+<section id="tools">
 
-                <label class="input-label">
-                    Number
-                </label>
+<div class="container">
 
-                <input
-                    type="number"
-                    id="number"
-                    placeholder="Example: 500"
-                >
+<div class="section-head">
 
-                <button
-                    class="calculate-button"
-                    onclick="calculatePercentage()"
-                >
-                    Calculate
-                </button>
+<div class="section-label">
+01 — Products
+</div>
 
-                <div
-                    class="result"
-                    id="result"
-                ></div>
+<h2>
+Small tools.<br>
+Big possibilities.
+</h2>
 
-            </div>
+<p>
+We start with simple products that solve real problems.
+Over time, KROC LABS will expand into a global ecosystem
+of digital tools and technology products.
+</p>
 
+</div>
 
-            <!-- TOOL 2 -->
 
-            <div class="card">
+<div class="tools-grid">
 
-                <div class="badge soon">
-                    COMING SOON
-                </div>
 
-                <h3>
-                    Finance Tools
-                </h3>
+<div class="tool-card">
 
-                <p class="card-description">
-                    Useful calculators and financial tools
-                    designed for users worldwide.
-                </p>
+<div class="tool-icon">%</div>
 
-                <button class="disabled-button" disabled>
-                    Coming Soon
-                </button>
+<h3>
+Percentage Calculator
+</h3>
 
-            </div>
+<p>
+Quickly calculate percentages for school,
+business, finance and everyday life.
+</p>
 
+<span class="status">
+LIVE
+</span>
 
-            <!-- TOOL 3 -->
+</div>
 
-            <div class="card">
 
-                <div class="badge soon">
-                    COMING SOON
-                </div>
+<div class="tool-card">
 
-                <h3>
-                    AI Tools
-                </h3>
+<div class="tool-icon">₹</div>
 
-                <p class="card-description">
-                    Smart AI-powered tools designed to help
-                    people work faster and smarter.
-                </p>
+<h3>
+Finance Tools
+</h3>
 
-                <button class="disabled-button" disabled>
-                    Coming Soon
-                </button>
+<p>
+Useful calculators for loans, interest,
+savings and everyday financial decisions.
+</p>
 
-            </div>
+<span class="status" style="background:#222;color:#aaa">
+COMING SOON
+</span>
 
+</div>
 
-            <!-- TOOL 4 -->
 
-            <div class="card">
+<div class="tool-card">
 
-                <div class="badge soon">
-                    COMING SOON
-                </div>
+<div class="tool-icon">✦</div>
 
-                <h3>
-                    Productivity Tools
-                </h3>
+<h3>
+AI Tools
+</h3>
 
-                <p class="card-description">
-                    Simple tools that can help people save
-                    time and get more done.
-                </p>
+<p>
+Smart productivity experiences designed
+to help people work faster.
+</p>
 
-                <button class="disabled-button" disabled>
-                    Coming Soon
-                </button>
+<span class="status" style="background:#222;color:#aaa">
+COMING SOON
+</span>
 
-            </div>
+</div>
 
-        </div>
 
-    </section>
+<div class="tool-card">
 
+<div class="tool-icon">⚡</div>
 
-    <!-- ABOUT -->
+<h3>
+Productivity
+</h3>
 
-    <section class="section" id="about">
+<p>
+Simple digital utilities designed to
+save time and reduce repetitive work.
+</p>
 
-        <div class="about">
+<span class="status" style="background:#222;color:#aaa">
+COMING SOON
+</span>
 
-            <div class="section-title">
+</div>
 
-                <h2>
-                    About KROC LABS
-                </h2>
 
-            </div>
+<div class="tool-card">
 
-            <p>
-                KROC LABS is an independent technology brand
-                focused on building useful digital products,
-                online tools and innovative web experiences
-                for a global audience.
-            </p>
+<div class="tool-icon">◈</div>
 
-        </div>
+<h3>
+Business Tools
+</h3>
 
-    </section>
+<p>
+Practical tools for creators, freelancers,
+small businesses and teams.
+</p>
 
+<span class="status" style="background:#222;color:#aaa">
+COMING SOON
+</span>
 
-    <!-- FOOTER -->
+</div>
 
-    <footer>
 
-        <p>
-            © 2026 <strong>KROC LABS</strong>.
-            All rights reserved.
-        </p>
+<div class="tool-card">
 
-        <p>
-            Built for people worldwide.
-        </p>
+<div class="tool-icon">∞</div>
 
-    </footer>
+<h3>
+More Products
+</h3>
 
+<p>
+A growing ecosystem of useful digital
+products built for a worldwide audience.
+</p>
 
-    <!-- JAVASCRIPT -->
+<span class="status" style="background:#222;color:#aaa">
+IN DEVELOPMENT
+</span>
 
-    <script>
+</div>
 
-        function calculatePercentage() {
+</div>
 
-            const percentage =
-                parseFloat(
-                    document.getElementById("percentage").value
-                );
+</div>
 
-            const number =
-                parseFloat(
-                    document.getElementById("number").value
-                );
+</section>
 
-            const result =
-                document.getElementById("result");
 
+<!-- =========================
+     CALCULATOR
+========================= -->
 
-            if (isNaN(percentage) || isNaN(number)) {
+<section id="calculator">
 
-                result.textContent =
-                    "Please enter both numbers.";
+<div class="container">
 
-                return;
-            }
+<div class="section-head">
 
+<div class="section-label">
+02 — Live Product
+</div>
 
-            const answer =
-                (percentage * number) / 100;
+<h2>
+Try it now.
+</h2>
 
+<p>
+No signup. No unnecessary complexity.
+Just a useful tool that works.
+</p>
 
-            result.textContent =
-                percentage +
-                "% of " +
-                number +
-                " = " +
-                answer;
+</div>
+
+
+<div class="calculator-wrap">
+
+<div class="calculator">
+
+<div class="eyebrow">
+LIVE • MVP 1
+</div>
+
+<h3>
+Percentage Calculator
+</h3>
+
+<p class="calculator-desc">
+Calculate what percentage of a number instantly.
+</p>
+
+
+<label for="p1">
+Percentage
+</label>
+
+<input
+id="p1"
+type="number"
+placeholder="Example: 20"
+inputmode="decimal"
+/>
+
+
+<label for="p2">
+Number
+</label>
+
+<input
+id="p2"
+type="number"
+placeholder="Example: 500"
+inputmode="decimal"
+/>
+
+
+<div id="error"></div>
+
+<button class="calculate" onclick="calculatePercentage()">
+Calculate →
+</button>
+
+<button class="reset" onclick="resetCalculator()">
+Reset
+</button>
+
+<div id="result"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     VISION
+========================= -->
+
+<section id="vision">
+
+<div class="container">
+
+<div class="vision">
+
+<div class="section-label">
+03 — Vision
+</div>
+
+<h2>
+Build useful things.<br>
+<span>For everyone.</span>
+</h2>
+
+<p>
+KROC LABS is being built with a long-term vision:
+create a trusted global technology brand around useful
+digital products, intelligent tools and simple experiences.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+The beginning is small.
+</h2>
+
+<p>
+One useful product can become an ecosystem.
+KROC LABS starts with tools and grows with its users.
+</p>
+
+<a href="#tools" class="primary">
+Explore KROC LABS →
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container footer-inner">
+
+<div>
+<div class="footer-brand">
+KROC <span>LABS</span>
+</div>
+
+<div style="margin-top:8px">
+Digital products for a changing world.
+</div>
+</div>
+
+<div class="footer-links">
+<a href="#tools">Products</a>
+<a href="#calculator">Tools</a>
+<a href="#vision">Vision</a>
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function calculatePercentage(){
+
+    const percentage =
+    parseFloat(document.getElementById("p1").value);
+
+    const number =
+    parseFloat(document.getElementById("p2").value);
+
+    const error =
+    document.getElementById("error");
+
+    const result =
+    document.getElementById("result");
+
+
+    if(
+        Number.isNaN(percentage) ||
+        Number.isNaN(number)
+    ){
+
+        error.textContent =
+        "Please enter valid numbers.";
+
+        result.textContent = "";
+
+        return;
+    }
+
+
+    error.textContent = "";
+
+
+    const answer =
+    (percentage * number) / 100;
+
+
+    result.textContent =
+    percentage + "% of " +
+    number + " = " +
+    answer;
+}
+
+
+function resetCalculator(){
+
+    document.getElementById("p1").value = "";
+
+    document.getElementById("p2").value = "";
+
+    document.getElementById("error").textContent = "";
+
+    document.getElementById("result").textContent = "";
+}
+
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+            calculatePercentage();
         }
 
-    </script>
+    }
+);
+
+</script>
 
 </body>
 </html>
