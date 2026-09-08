@@ -55,6 +55,7 @@ a{
     margin:auto;
 }
 
+
 /* =========================
    BACKGROUND EFFECT
 ========================= */
@@ -86,6 +87,7 @@ body::after{
     pointer-events:none;
     z-index:-1;
 }
+
 
 /* =========================
    HEADER
@@ -139,6 +141,7 @@ header{
     border-color:#00ff88;
     color:#00ff88;
 }
+
 
 /* =========================
    HERO
@@ -224,6 +227,7 @@ header{
     color:#00ff88;
 }
 
+
 /* =========================
    TRUST BAR
 ========================= */
@@ -244,6 +248,7 @@ header{
     text-transform:uppercase;
     letter-spacing:2px;
 }
+
 
 /* =========================
    SECTION
@@ -277,6 +282,7 @@ section{
     margin-top:18px;
     line-height:1.7;
 }
+
 
 /* =========================
    TOOLS GRID
@@ -337,6 +343,7 @@ section{
     background:#00ff88;
     color:#000;
 }
+
 
 /* =========================
    CALCULATOR
@@ -401,6 +408,10 @@ input:focus{
     cursor:pointer;
 }
 
+.calculate:hover{
+    box-shadow:0 10px 35px #00ff8830;
+}
+
 .reset{
     width:100%;
     margin-top:10px;
@@ -416,6 +427,11 @@ input:focus{
     color:#00ff88;
     border-color:#00ff88;
 }
+
+
+/* =========================
+   PERCENTAGE ERROR / RESULT
+========================= */
 
 #error{
     color:#ff5555;
@@ -433,6 +449,30 @@ input:focus{
     min-height:30px;
     margin-top:15px;
 }
+
+
+/* =========================
+   EMI ERROR / RESULT
+========================= */
+
+#emiError{
+    color:#ff5555;
+    text-align:center;
+    min-height:20px;
+    margin-top:12px;
+    font-size:13px;
+}
+
+#emiResult{
+    color:#00ff88;
+    text-align:center;
+    font-size:16px;
+    font-weight:700;
+    min-height:30px;
+    margin-top:15px;
+    line-height:1.5;
+}
+
 
 /* =========================
    VISION
@@ -462,6 +502,7 @@ input:focus{
     line-height:1.8;
 }
 
+
 /* =========================
    CTA
 ========================= */
@@ -481,6 +522,7 @@ input:focus{
     max-width:600px;
     line-height:1.7;
 }
+
 
 /* =========================
    FOOTER
@@ -517,6 +559,7 @@ footer{
 .footer-links a:hover{
     color:#00ff88;
 }
+
 
 /* =========================
    MOBILE
@@ -558,29 +601,15 @@ footer{
 
     .trust-inner{
         gap:20px;
-    }#emiError{
-    color:#ff5555;
-    text-align:center;
-    min-height:20px;
-    margin-top:12px;
-    font-size:13px;
-}
-
-#emiResult{
-    color:#00ff88;
-    text-align:center;
-    font-size:16px;
-    font-weight:700;
-    min-height:30px;
-    margin-top:15px;
-    line-height:1.5;
-}
+    }
 }
 
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      HEADER
@@ -595,9 +624,23 @@ KROC <span>LABS</span>
 </a>
 
 <nav class="nav-links">
-<a href="#tools">Products</a>
-<a href="#calculator">Calculator</a>
-<a href="#vision">Vision</a>
+
+<a href="#tools">
+Products
+</a>
+
+<a href="#calculator">
+Calculator
+</a>
+
+<a href="#emi">
+EMI
+</a>
+
+<a href="#vision">
+Vision
+</a>
+
 </nav>
 
 <a href="#calculator" class="nav-btn">
@@ -701,9 +744,13 @@ of digital tools and technology products.
 <div class="tools-grid">
 
 
+<!-- PERCENTAGE -->
+
 <div class="tool-card">
 
-<div class="tool-icon">%</div>
+<div class="tool-icon">
+%
+</div>
 
 <h3>
 Percentage Calculator
@@ -721,9 +768,37 @@ LIVE
 </div>
 
 
+<!-- EMI -->
+
 <div class="tool-card">
 
-<div class="tool-icon">₹</div>
+<div class="tool-icon">
+$
+</div>
+
+<h3>
+Loan EMI Calculator
+</h3>
+
+<p>
+Estimate monthly payments, total interest
+and total payment for a loan.
+</p>
+
+<span class="status">
+LIVE
+</span>
+
+</div>
+
+
+<!-- FINANCE -->
+
+<div class="tool-card">
+
+<div class="tool-icon">
+₹
+</div>
 
 <h3>
 Finance Tools
@@ -734,16 +809,21 @@ Useful calculators for loans, interest,
 savings and everyday financial decisions.
 </p>
 
-<span class="status" style="background:#222;color:#aaa">
+<span class="status"
+style="background:#222;color:#aaa">
 COMING SOON
 </span>
 
 </div>
 
 
+<!-- AI -->
+
 <div class="tool-card">
 
-<div class="tool-icon">✦</div>
+<div class="tool-icon">
+✦
+</div>
 
 <h3>
 AI Tools
@@ -754,16 +834,21 @@ Smart productivity experiences designed
 to help people work faster.
 </p>
 
-<span class="status" style="background:#222;color:#aaa">
+<span class="status"
+style="background:#222;color:#aaa">
 COMING SOON
 </span>
 
 </div>
 
 
+<!-- PRODUCTIVITY -->
+
 <div class="tool-card">
 
-<div class="tool-icon">⚡</div>
+<div class="tool-icon">
+⚡
+</div>
 
 <h3>
 Productivity
@@ -774,16 +859,21 @@ Simple digital utilities designed to
 save time and reduce repetitive work.
 </p>
 
-<span class="status" style="background:#222;color:#aaa">
+<span class="status"
+style="background:#222;color:#aaa">
 COMING SOON
 </span>
 
 </div>
 
 
+<!-- BUSINESS -->
+
 <div class="tool-card">
 
-<div class="tool-icon">◈</div>
+<div class="tool-icon">
+◈
+</div>
 
 <h3>
 Business Tools
@@ -794,16 +884,21 @@ Practical tools for creators, freelancers,
 small businesses and teams.
 </p>
 
-<span class="status" style="background:#222;color:#aaa">
+<span class="status"
+style="background:#222;color:#aaa">
 COMING SOON
 </span>
 
 </div>
 
 
+<!-- MORE -->
+
 <div class="tool-card">
 
-<div class="tool-icon">∞</div>
+<div class="tool-icon">
+∞
+</div>
 
 <h3>
 More Products
@@ -814,11 +909,13 @@ A growing ecosystem of useful digital
 products built for a worldwide audience.
 </p>
 
-<span class="status" style="background:#222;color:#aaa">
+<span class="status"
+style="background:#222;color:#aaa">
 IN DEVELOPMENT
 </span>
 
 </div>
+
 
 </div>
 
@@ -828,7 +925,7 @@ IN DEVELOPMENT
 
 
 <!-- =========================
-     CALCULATOR
+     PERCENTAGE CALCULATOR
 ========================= -->
 
 <section id="calculator">
@@ -924,6 +1021,8 @@ Reset (C)
 </div>
 
 </section>
+
+
 <!-- =========================
      EMI CALCULATOR
 ========================= -->
@@ -1040,6 +1139,7 @@ Reset (C)
 
 </section>
 
+
 <!-- =========================
      VISION
 ========================= -->
@@ -1051,7 +1151,7 @@ Reset (C)
 <div class="vision">
 
 <div class="section-label">
-03 — Vision
+04 — Vision
 </div>
 
 <h2>
@@ -1122,9 +1222,21 @@ Digital products for a changing world.
 
 <div class="footer-links">
 
-<a href="#tools">Products</a>
-<a href="#calculator">Tools</a>
-<a href="#vision">Vision</a>
+<a href="#tools">
+Products
+</a>
+
+<a href="#calculator">
+Tools
+</a>
+
+<a href="#emi">
+EMI
+</a>
+
+<a href="#vision">
+Vision
+</a>
 
 </div>
 
@@ -1138,6 +1250,11 @@ Digital products for a changing world.
 ========================= -->
 
 <script>
+
+
+/* =========================
+   PERCENTAGE CALCULATOR
+========================= */
 
 function calculatePercentage(){
 
@@ -1153,6 +1270,7 @@ function calculatePercentage(){
     const result =
     document.getElementById("result");
 
+
     const percentage =
     parseFloat(percentInput.value);
 
@@ -1160,7 +1278,7 @@ function calculatePercentage(){
     parseFloat(numberInput.value);
 
 
-    /* Clear old messages */
+    /* Clear previous messages */
 
     error.textContent = "";
     result.textContent = "";
@@ -1171,8 +1289,8 @@ function calculatePercentage(){
     if(
         percentInput.value.trim() === "" ||
         numberInput.value.trim() === "" ||
-        Number.isNaN(percentage) ||
-        Number.isNaN(number)
+        !Number.isFinite(percentage) ||
+        !Number.isFinite(number)
     ){
 
         error.textContent =
@@ -1182,11 +1300,24 @@ function calculatePercentage(){
     }
 
 
-    /* Calculate */
+    /* Calculation */
 
     const answer =
     (percentage * number) / 100;
 
+
+    /* Safety check */
+
+    if(!Number.isFinite(answer)){
+
+        error.textContent =
+        "⚠️ Please enter valid numbers";
+
+        return;
+    }
+
+
+    /* Result */
 
     result.textContent =
     percentage + "% of " +
@@ -1196,7 +1327,7 @@ function calculatePercentage(){
 
 
 /* =========================
-   RESET
+   RESET PERCENTAGE
 ========================= */
 
 function resetCalculator(){
@@ -1214,35 +1345,31 @@ function resetCalculator(){
 
 
 /* =========================
-   ENTER KEY = CALCULATE
+   PERCENTAGE ENTER KEY
 ========================= */
 
-document
-.getElementById("percent")
-.addEventListener("keydown", function(event){
+[
+    "percent",
+    "number"
+].forEach(function(id){
 
-    if(event.key === "Enter"){
+    document
+    .getElementById(id)
+    .addEventListener("keydown", function(event){
 
-        event.preventDefault();
+        if(event.key === "Enter"){
 
-        calculatePercentage();
-    }
+            event.preventDefault();
+
+            calculatePercentage();
+        }
+
+    });
 
 });
 
 
-document
-.getElementById("number")
-.addEventListener("keydown", function(event){
-
-    if(event.key === "Enter"){
-
-        event.preventDefault();
-
-        calculatePercentage();
-    }
-
-});/* =========================
+/* =========================
    EMI CALCULATOR
 ========================= */
 
@@ -1274,7 +1401,7 @@ function calculateEMI(){
     parseFloat(loanTermInput.value);
 
 
-    /* Clear old messages */
+    /* Clear previous messages */
 
     error.textContent = "";
     result.textContent = "";
@@ -1286,9 +1413,9 @@ function calculateEMI(){
         loanAmountInput.value.trim() === "" ||
         interestRateInput.value.trim() === "" ||
         loanTermInput.value.trim() === "" ||
-        Number.isNaN(loanAmount) ||
-        Number.isNaN(annualRate) ||
-        Number.isNaN(years) ||
+        !Number.isFinite(loanAmount) ||
+        !Number.isFinite(annualRate) ||
+        !Number.isFinite(years) ||
         loanAmount <= 0 ||
         annualRate < 0 ||
         years <= 0
@@ -1301,10 +1428,13 @@ function calculateEMI(){
     }
 
 
-    /* Monthly calculations */
+    /* Monthly interest rate */
 
     const monthlyRate =
     annualRate / 100 / 12;
+
+
+    /* Number of monthly payments */
 
     const numberOfPayments =
     years * 12;
@@ -1313,108 +1443,23 @@ function calculateEMI(){
     let monthlyPayment;
 
 
-    /* Zero-interest loan */
+    /* 0% interest */
 
     if(monthlyRate === 0){
 
         monthlyPayment =
         loanAmount / numberOfPayments;
 
-    }else{
+    }
 
-        monthlyPayment =
-        loanAmount *
-        monthlyRate *
+    /* Normal interest calculation */
+
+    else{
+
+        const power =
         Math.pow(
             1 + monthlyRate,
             numberOfPayments
-        ) /
-        (
-            Math.pow(
-                1 + monthlyRate,
-                numberOfPayments
-            ) - 1
         );
 
-    }
-
-
-    const totalPayment =
-    monthlyPayment * numberOfPayments;
-
-    const totalInterest =
-    totalPayment - loanAmount;
-
-
-    /* Display result */
-
-    result.innerHTML = `
-        <div style="margin-top:20px;">
-            <div>Monthly EMI</div>
-            <div style="font-size:30px;margin:8px 0;">
-                $${monthlyPayment.toFixed(2)}
-            </div>
-
-            <div style="margin-top:15px;">
-                Total Interest:
-                $${totalInterest.toFixed(2)}
-            </div>
-
-            <div style="margin-top:8px;">
-                Total Payment:
-                $${totalPayment.toFixed(2)}
-            </div>
-        </div>
-    `;
-}
-
-
-/* =========================
-   RESET EMI
-========================= */
-
-function resetEMI(){
-
-    document.getElementById("loanAmount").value = "";
-
-    document.getElementById("interestRate").value = "";
-
-    document.getElementById("loanTerm").value = "";
-
-    document.getElementById("emiError").textContent = "";
-
-    document.getElementById("emiResult").textContent = "";
-
-    document.getElementById("loanAmount").focus();
-}
-
-
-/* =========================
-   ENTER KEY = CALCULATE EMI
-========================= */
-
-[
-    "loanAmount",
-    "interestRate",
-    "loanTerm"
-].forEach(function(id){
-
-    document
-    .getElementById(id)
-    .addEventListener("keydown", function(event){
-
-        if(event.key === "Enter"){
-
-            event.preventDefault();
-
-            calculateEMI();
-        }
-
-    });
-
-});
-
-</script>
-
-</body>
-</html>
+   
