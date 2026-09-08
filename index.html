@@ -1368,98 +1368,43 @@ function resetCalculator(){
 
 });
 
-
 /* =========================
    EMI CALCULATOR
 ========================= */
-
 function calculateEMI(){
-
-    const loanAmountInput =
-    document.getElementById("loanAmount");
-
-    const interestRateInput =
-    document.getElementById("interestRate");
-
-    const loanTermInput =
-    document.getElementById("loanTerm");
-
-    const error =
-    document.getElementById("emiError");
-
-    const result =
-    document.getElementById("emiResult");
-
-
-    const loanAmount =
-    parseFloat(loanAmountInput.value);
-
-    const annualRate =
-    parseFloat(interestRateInput.value);
-
-    const years =
-    parseFloat(loanTermInput.value);
-
-
-    /* Clear previous messages */
-
-    error.textContent = "";
-    result.textContent = "";
-
-
-    /* Validation */
-
-    if(
-        loanAmountInput.value.trim() === "" ||
-        interestRateInput.value.trim() === "" ||
-        loanTermInput.value.trim() === "" ||
-        !Number.isFinite(loanAmount) ||
-        !Number.isFinite(annualRate) ||
-        !Number.isFinite(years) ||
-        loanAmount <= 0 ||
-        annualRate < 0 ||
-        years <= 0
-    ){
-
-        error.textContent =
-        "⚠️ Please enter valid loan details";
-
-        return;
+    const loanAmountInput=document.getElementById("loanAmount");
+    const interestRateInput=document.getElementById("interestRate");
+    const loanTermInput=document.getElementById("loanTerm");
+    const error=document.getElementById("emiError");
+    const result=document.getElementById("emiResult");
+    const loanAmount=parseFloat(loanAmountInput.value);
+    const annualRate=parseFloat(interestRateInput.value);
+    const years=parseFloat(loanTermInput.value);
+    error.textContent=""; result.innerHTML="";
+    if(loanAmountInput.value.trim()===""||interestRateInput.value.trim()===""||loanTermInput.value.trim()===""||!Number.isFinite(loanAmount)||!Number.isFinite(annualRate)||!Number.isFinite(years)||loanAmount<=0||annualRate<0||years<=0){
+        error.textContent="⚠️ Please enter valid loan details"; return;
     }
-
-
-    /* Monthly interest rate */
-
-    const monthlyRate =
-    annualRate / 100 / 12;
-
-
-    /* Number of monthly payments */
-
-    const numberOfPayments =
-    years * 12;
-
-
+    const monthlyRate=annualRate/100/12;
+    const numberOfPayments=years*12;
     let monthlyPayment;
-
-
-    /* 0% interest */
-
-    if(monthlyRate === 0){
-
-        monthlyPayment =
-        loanAmount / numberOfPayments;
-
-    }
-
-    /* Normal interest calculation */
-
+    if(monthlyRate===0){monthlyPayment=loanAmount/numberOfPayments;}
     else{
-
-        const power =
-        Math.pow(
-            1 + monthlyRate,
-            numberOfPayments
-        );
-
-   
+        const power=Math.pow(1+monthlyRate,numberOfPayments);
+        monthlyPayment=loanAmount*monthlyRate*power/(power-1);
+    }
+    const totalPayment=monthlyPayment*numberOfPayments;
+    const totalInterest=totalPayment-loanAmount;
+    result.innerHTML=`<div style="margin-top:20px;text-align:left;background:#050505;border:1px solid #ffffff10;padding:20px;border-radius:16px;"><div style="color:#888;font-size:12px;">Monthly EMI</div><div style="font-size:28px;margin:8px 0;font-weight:800;color:#00ff88;">₹${monthlyPayment.toFixed(2)}</div><div style="margin-top:15px;color:#aaa;">Total Interest: <span style="color:#fff;">₹${totalInterest.toFixed(2)}</span></div><div style="margin-top:8px;color:#aaa;">Total Payment: <span style="color:#fff;">₹${totalPayment.toFixed(2)}</span></div></div>`;
+}
+function resetEMI(){
+    document.getElementById("loanAmount").value="";
+    document.getElementById("interestRate").value="";
+    document.getElementById("loanTerm").value="";
+    document.getElementById("emiError").textContent="";
+    document.getElementById("emiResult").innerHTML="";
+    document.getElementById("loanAmount").focus();
+}
+["loanAmount","interestRate","loanTerm"].forEach(function(id){
+    const el=document.getElementById(id);
+    if(el){el.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();calculateEMI();}});}
+});
