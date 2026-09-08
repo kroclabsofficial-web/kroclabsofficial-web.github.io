@@ -558,7 +558,23 @@ footer{
 
     .trust-inner{
         gap:20px;
-    }
+    }#emiError{
+    color:#ff5555;
+    text-align:center;
+    min-height:20px;
+    margin-top:12px;
+    font-size:13px;
+}
+
+#emiResult{
+    color:#00ff88;
+    text-align:center;
+    font-size:16px;
+    font-weight:700;
+    min-height:30px;
+    margin-top:15px;
+    line-height:1.5;
+}
 }
 
 </style>
@@ -908,7 +924,121 @@ Reset (C)
 </div>
 
 </section>
+<!-- =========================
+     EMI CALCULATOR
+========================= -->
 
+<section id="emi">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="section-label">
+03 — Finance Tool
+</div>
+
+<h2>
+Loan EMI Calculator.
+</h2>
+
+<p>
+Estimate your monthly loan payment, total interest
+and total payment instantly.
+</p>
+
+</div>
+
+
+<div class="calculator-wrap">
+
+<div class="calculator">
+
+<div class="eyebrow">
+FINANCE • MVP 1
+</div>
+
+<h3>
+Loan EMI Calculator
+</h3>
+
+<p class="calculator-desc">
+Enter your loan details to calculate your estimated
+monthly EMI.
+</p>
+
+
+<label for="loanAmount">
+Loan Amount
+</label>
+
+<input
+id="loanAmount"
+type="number"
+placeholder="Example: 10000"
+inputmode="decimal"
+min="0"
+/>
+
+
+<label for="interestRate">
+Annual Interest Rate (%)
+</label>
+
+<input
+id="interestRate"
+type="number"
+placeholder="Example: 8.5"
+inputmode="decimal"
+min="0"
+step="0.01"
+/>
+
+
+<label for="loanTerm">
+Loan Term (Years)
+</label>
+
+<input
+id="loanTerm"
+type="number"
+placeholder="Example: 5"
+inputmode="decimal"
+min="0"
+step="0.1"
+/>
+
+
+<div id="emiError"></div>
+
+
+<button
+type="button"
+class="calculate"
+onclick="calculateEMI()"
+>
+Calculate EMI →
+</button>
+
+
+<button
+type="button"
+class="reset"
+onclick="resetEMI()"
+>
+Reset (C)
+</button>
+
+
+<div id="emiResult"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <!-- =========================
      VISION
@@ -1111,6 +1241,176 @@ document
 
         calculatePercentage();
     }
+
+});/* =========================
+   EMI CALCULATOR
+========================= */
+
+function calculateEMI(){
+
+    const loanAmountInput =
+    document.getElementById("loanAmount");
+
+    const interestRateInput =
+    document.getElementById("interestRate");
+
+    const loanTermInput =
+    document.getElementById("loanTerm");
+
+    const error =
+    document.getElementById("emiError");
+
+    const result =
+    document.getElementById("emiResult");
+
+
+    const loanAmount =
+    parseFloat(loanAmountInput.value);
+
+    const annualRate =
+    parseFloat(interestRateInput.value);
+
+    const years =
+    parseFloat(loanTermInput.value);
+
+
+    /* Clear old messages */
+
+    error.textContent = "";
+    result.textContent = "";
+
+
+    /* Validation */
+
+    if(
+        loanAmountInput.value.trim() === "" ||
+        interestRateInput.value.trim() === "" ||
+        loanTermInput.value.trim() === "" ||
+        Number.isNaN(loanAmount) ||
+        Number.isNaN(annualRate) ||
+        Number.isNaN(years) ||
+        loanAmount <= 0 ||
+        annualRate < 0 ||
+        years <= 0
+    ){
+
+        error.textContent =
+        "⚠️ Please enter valid loan details";
+
+        return;
+    }
+
+
+    /* Monthly calculations */
+
+    const monthlyRate =
+    annualRate / 100 / 12;
+
+    const numberOfPayments =
+    years * 12;
+
+
+    let monthlyPayment;
+
+
+    /* Zero-interest loan */
+
+    if(monthlyRate === 0){
+
+        monthlyPayment =
+        loanAmount / numberOfPayments;
+
+    }else{
+
+        monthlyPayment =
+        loanAmount *
+        monthlyRate *
+        Math.pow(
+            1 + monthlyRate,
+            numberOfPayments
+        ) /
+        (
+            Math.pow(
+                1 + monthlyRate,
+                numberOfPayments
+            ) - 1
+        );
+
+    }
+
+
+    const totalPayment =
+    monthlyPayment * numberOfPayments;
+
+    const totalInterest =
+    totalPayment - loanAmount;
+
+
+    /* Display result */
+
+    result.innerHTML = `
+        <div style="margin-top:20px;">
+            <div>Monthly EMI</div>
+            <div style="font-size:30px;margin:8px 0;">
+                $${monthlyPayment.toFixed(2)}
+            </div>
+
+            <div style="margin-top:15px;">
+                Total Interest:
+                $${totalInterest.toFixed(2)}
+            </div>
+
+            <div style="margin-top:8px;">
+                Total Payment:
+                $${totalPayment.toFixed(2)}
+            </div>
+        </div>
+    `;
+}
+
+
+/* =========================
+   RESET EMI
+========================= */
+
+function resetEMI(){
+
+    document.getElementById("loanAmount").value = "";
+
+    document.getElementById("interestRate").value = "";
+
+    document.getElementById("loanTerm").value = "";
+
+    document.getElementById("emiError").textContent = "";
+
+    document.getElementById("emiResult").textContent = "";
+
+    document.getElementById("loanAmount").focus();
+}
+
+
+/* =========================
+   ENTER KEY = CALCULATE EMI
+========================= */
+
+[
+    "loanAmount",
+    "interestRate",
+    "loanTerm"
+].forEach(function(id){
+
+    document
+    .getElementById(id)
+    .addEventListener("keydown", function(event){
+
+        if(event.key === "Enter"){
+
+            event.preventDefault();
+
+            calculateEMI();
+        }
+
+    });
 
 });
 
