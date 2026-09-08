@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -413,8 +413,8 @@ input:focus{
 }
 
 .reset:hover{
-    color:#fff;
-    border-color:#ffffff30;
+    color:#00ff88;
+    border-color:#00ff88;
 }
 
 #error{
@@ -854,24 +854,24 @@ Calculate what percentage of a number instantly.
 </p>
 
 
-<label for="p1">
+<label for="percent">
 Percentage
 </label>
 
 <input
-id="p1"
+id="percent"
 type="number"
 placeholder="Example: 20"
 inputmode="decimal"
 />
 
 
-<label for="p2">
+<label for="number">
 Number
 </label>
 
 <input
-id="p2"
+id="number"
 type="number"
 placeholder="Example: 500"
 inputmode="decimal"
@@ -880,13 +880,24 @@ inputmode="decimal"
 
 <div id="error"></div>
 
-<button class="calculate" onclick="calculatePercentage()">
+
+<button
+type="button"
+class="calculate"
+onclick="calculatePercentage()"
+>
 Calculate →
 </button>
 
-<button class="reset" onclick="resetCalculator()">
-Reset
+
+<button
+type="button"
+class="reset"
+onclick="resetCalculator()"
+>
+Reset (C)
 </button>
+
 
 <div id="result"></div>
 
@@ -968,6 +979,7 @@ Explore KROC LABS →
 <div class="container footer-inner">
 
 <div>
+
 <div class="footer-brand">
 KROC <span>LABS</span>
 </div>
@@ -975,12 +987,15 @@ KROC <span>LABS</span>
 <div style="margin-top:8px">
 Digital products for a changing world.
 </div>
+
 </div>
 
 <div class="footer-links">
+
 <a href="#tools">Products</a>
 <a href="#calculator">Tools</a>
 <a href="#vision">Vision</a>
+
 </div>
 
 </div>
@@ -996,11 +1011,11 @@ Digital products for a changing world.
 
 function calculatePercentage(){
 
-    const percentage =
-    parseFloat(document.getElementById("p1").value);
+    const percentInput =
+    document.getElementById("percent");
 
-    const number =
-    parseFloat(document.getElementById("p2").value);
+    const numberInput =
+    document.getElementById("number");
 
     const error =
     document.getElementById("error");
@@ -1008,23 +1023,36 @@ function calculatePercentage(){
     const result =
     document.getElementById("result");
 
+    const percentage =
+    parseFloat(percentInput.value);
+
+    const number =
+    parseFloat(numberInput.value);
+
+
+    /* Clear old messages */
+
+    error.textContent = "";
+    result.textContent = "";
+
+
+    /* Validation */
 
     if(
+        percentInput.value.trim() === "" ||
+        numberInput.value.trim() === "" ||
         Number.isNaN(percentage) ||
         Number.isNaN(number)
     ){
 
         error.textContent =
-        "Please enter valid numbers.";
-
-        result.textContent = "";
+        "⚠️ Please enter valid numbers";
 
         return;
     }
 
 
-    error.textContent = "";
-
+    /* Calculate */
 
     const answer =
     (percentage * number) / 100;
@@ -1037,28 +1065,54 @@ function calculatePercentage(){
 }
 
 
+/* =========================
+   RESET
+========================= */
+
 function resetCalculator(){
 
-    document.getElementById("p1").value = "";
+    document.getElementById("percent").value = "";
 
-    document.getElementById("p2").value = "";
+    document.getElementById("number").value = "";
 
     document.getElementById("error").textContent = "";
 
     document.getElementById("result").textContent = "";
+
+    document.getElementById("percent").focus();
 }
 
 
-document.addEventListener(
-    "keydown",
-    function(event){
+/* =========================
+   ENTER KEY = CALCULATE
+========================= */
 
-        if(event.key === "Enter"){
-            calculatePercentage();
-        }
+document
+.getElementById("percent")
+.addEventListener("keydown", function(event){
 
+    if(event.key === "Enter"){
+
+        event.preventDefault();
+
+        calculatePercentage();
     }
-);
+
+});
+
+
+document
+.getElementById("number")
+.addEventListener("keydown", function(event){
+
+    if(event.key === "Enter"){
+
+        event.preventDefault();
+
+        calculatePercentage();
+    }
+
+});
 
 </script>
 
