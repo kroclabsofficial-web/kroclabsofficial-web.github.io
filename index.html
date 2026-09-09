@@ -1,7 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"> 
+
+<meta charset="UTF-8">
 
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
@@ -48,6 +50,11 @@ body{
 a{
     color:inherit;
     text-decoration:none;
+}
+
+button,
+input{
+    font-family:inherit;
 }
 
 .container{
@@ -202,12 +209,14 @@ header{
 }
 
 .primary{
+    display:inline-block;
     background:#00ff88;
     color:#000;
     padding:16px 25px;
     border-radius:13px;
     font-weight:900;
     border:1px solid #00ff88;
+    cursor:pointer;
 }
 
 .primary:hover{
@@ -216,6 +225,7 @@ header{
 }
 
 .secondary{
+    display:inline-block;
     border:1px solid #ffffff22;
     padding:16px 25px;
     border-radius:13px;
@@ -412,6 +422,10 @@ input:focus{
     box-shadow:0 10px 35px #00ff8830;
 }
 
+.calculate:active{
+    transform:scale(.99);
+}
+
 .reset{
     width:100%;
     margin-top:10px;
@@ -602,9 +616,11 @@ footer{
     .trust-inner{
         gap:20px;
     }
+
 }
 
 </style>
+
 </head>
 
 
@@ -625,21 +641,13 @@ KROC <span>LABS</span>
 
 <nav class="nav-links">
 
-<a href="#tools">
-Products
-</a>
+<a href="#tools">Products</a>
 
-<a href="#calculator">
-Calculator
-</a>
+<a href="#calculator">Calculator</a>
 
-<a href="#emi">
-EMI
-</a>
+<a href="#emi">EMI</a>
 
-<a href="#vision">
-Vision
-</a>
+<a href="#vision">Vision</a>
 
 </nav>
 
@@ -976,7 +984,7 @@ id="percent"
 type="number"
 placeholder="Example: 20"
 inputmode="decimal"
-/>
+>
 
 
 <label for="number">
@@ -988,10 +996,12 @@ id="number"
 type="number"
 placeholder="Example: 500"
 inputmode="decimal"
-/>
+>
 
 
-<div id="error"></div>
+<div id="error"
+aria-live="polite">
+</div>
 
 
 <button
@@ -1012,7 +1022,9 @@ Reset (C)
 </button>
 
 
-<div id="result"></div>
+<div id="result"
+aria-live="polite">
+</div>
 
 </div>
 
@@ -1077,7 +1089,7 @@ type="number"
 placeholder="Example: 10000"
 inputmode="decimal"
 min="0"
-/>
+>
 
 
 <label for="interestRate">
@@ -1091,7 +1103,7 @@ placeholder="Example: 8.5"
 inputmode="decimal"
 min="0"
 step="0.01"
-/>
+>
 
 
 <label for="loanTerm">
@@ -1105,10 +1117,12 @@ placeholder="Example: 5"
 inputmode="decimal"
 min="0"
 step="0.1"
-/>
+>
 
 
-<div id="emiError"></div>
+<div id="emiError"
+aria-live="polite">
+</div>
 
 
 <button
@@ -1129,7 +1143,9 @@ Reset (C)
 </button>
 
 
-<div id="emiResult"></div>
+<div id="emiResult"
+aria-live="polite">
+</div>
 
 </div>
 
@@ -1251,7 +1267,6 @@ Vision
 
 <script>
 
-
 /* =========================
    PERCENTAGE CALCULATOR
 ========================= */
@@ -1270,21 +1285,14 @@ function calculatePercentage(){
     const result =
     document.getElementById("result");
 
-
     const percentage =
     parseFloat(percentInput.value);
 
     const number =
     parseFloat(numberInput.value);
 
-
-    /* Clear previous messages */
-
     error.textContent = "";
     result.textContent = "";
-
-
-    /* Validation */
 
     if(
         percentInput.value.trim() === "" ||
@@ -1299,14 +1307,8 @@ function calculatePercentage(){
         return;
     }
 
-
-    /* Calculation */
-
     const answer =
     (percentage * number) / 100;
-
-
-    /* Safety check */
 
     if(!Number.isFinite(answer)){
 
@@ -1315,9 +1317,6 @@ function calculatePercentage(){
 
         return;
     }
-
-
-    /* Result */
 
     result.textContent =
     percentage + "% of " +
@@ -1345,66 +1344,113 @@ function resetCalculator(){
 
 
 /* =========================
-   PERCENTAGE ENTER KEY
-========================= */
-
-[
-    "percent",
-    "number"
-].forEach(function(id){
-
-    document
-    .getElementById(id)
-    .addEventListener("keydown", function(event){
-
-        if(event.key === "Enter"){
-
-            event.preventDefault();
-
-            calculatePercentage();
-        }
-
-    });
-
-});
-
-/* =========================
    EMI CALCULATOR
 ========================= */
+
 function calculateEMI(){
-    const loanAmountInput=document.getElementById("loanAmount");
-    const interestRateInput=document.getElementById("interestRate");
-    const loanTermInput=document.getElementById("loanTerm");
-    const error=document.getElementById("emiError");
-    const result=document.getElementById("emiResult");
-    const loanAmount=parseFloat(loanAmountInput.value);
-    const annualRate=parseFloat(interestRateInput.value);
-    const years=parseFloat(loanTermInput.value);
-    error.textContent=""; result.innerHTML="";
-    if(loanAmountInput.value.trim()===""||interestRateInput.value.trim()===""||loanTermInput.value.trim()===""||!Number.isFinite(loanAmount)||!Number.isFinite(annualRate)||!Number.isFinite(years)||loanAmount<=0||annualRate<0||years<=0){
-        error.textContent="⚠️ Please enter valid loan details"; return;
+
+    const loanAmountInput =
+    document.getElementById("loanAmount");
+
+    const interestRateInput =
+    document.getElementById("interestRate");
+
+    const loanTermInput =
+    document.getElementById("loanTerm");
+
+    const error =
+    document.getElementById("emiError");
+
+    const result =
+    document.getElementById("emiResult");
+
+
+    const loanAmount =
+    parseFloat(loanAmountInput.value);
+
+    const annualRate =
+    parseFloat(interestRateInput.value);
+
+    const years =
+    parseFloat(loanTermInput.value);
+
+
+    /* Clear previous messages */
+
+    error.textContent = "";
+    result.innerHTML = "";
+
+
+    /* Validation */
+
+    if(
+        loanAmountInput.value.trim() === "" ||
+        interestRateInput.value.trim() === "" ||
+        loanTermInput.value.trim() === "" ||
+        !Number.isFinite(loanAmount) ||
+        !Number.isFinite(annualRate) ||
+        !Number.isFinite(years) ||
+        loanAmount <= 0 ||
+        annualRate < 0 ||
+        years <= 0
+    ){
+
+        error.textContent =
+        "⚠️ Please enter valid loan details";
+
+        return;
     }
-    const monthlyRate=annualRate/100/12;
-    const numberOfPayments=years*12;
+
+
+    /* Monthly interest rate */
+
+    const monthlyRate =
+    annualRate / 100 / 12;
+
+
+    /* Number of payments */
+
+    const numberOfPayments =
+    years * 12;
+
+
     let monthlyPayment;
-    if(monthlyRate===0){monthlyPayment=loanAmount/numberOfPayments;}
-    else{
-        const power=Math.pow(1+monthlyRate,numberOfPayments);
-        monthlyPayment=loanAmount*monthlyRate*power/(power-1);
+
+
+    /* =========================
+       ZERO INTEREST
+    ========================= */
+
+    if(monthlyRate === 0){
+
+        monthlyPayment =
+        loanAmount / numberOfPayments;
+
     }
-    const totalPayment=monthlyPayment*numberOfPayments;
-    const totalInterest=totalPayment-loanAmount;
-    result.innerHTML=`<div style="margin-top:20px;text-align:left;background:#050505;border:1px solid #ffffff10;padding:20px;border-radius:16px;"><div style="color:#888;font-size:12px;">Monthly EMI</div><div style="font-size:28px;margin:8px 0;font-weight:800;color:#00ff88;">₹${monthlyPayment.toFixed(2)}</div><div style="margin-top:15px;color:#aaa;">Total Interest: <span style="color:#fff;">₹${totalInterest.toFixed(2)}</span></div><div style="margin-top:8px;color:#aaa;">Total Payment: <span style="color:#fff;">₹${totalPayment.toFixed(2)}</span></div></div>`;
-}
-function resetEMI(){
-    document.getElementById("loanAmount").value="";
-    document.getElementById("interestRate").value="";
-    document.getElementById("loanTerm").value="";
-    document.getElementById("emiError").textContent="";
-    document.getElementById("emiResult").innerHTML="";
-    document.getElementById("loanAmount").focus();
-}
-["loanAmount","interestRate","loanTerm"].forEach(function(id){
-    const el=document.getElementById(id);
-    if(el){el.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();calculateEMI();}});}
-});
+
+
+    /* =========================
+       NORMAL EMI FORMULA
+    ========================= */
+
+    else{
+
+        const power =
+        Math.pow(
+            1 + monthlyRate,
+            numberOfPayments
+        );
+
+
+        monthlyPayment =
+        loanAmount *
+        monthlyRate *
+        power /
+        (power - 1);
+
+    }
+
+
+    /* Safety check */
+
+    if
