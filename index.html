@@ -1,1269 +1,1197 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>KROC LABS — Digital Products for Everyone</title>
+<title>KROC LABS — Useful Digital Tools</title>
 
-<meta name="description"
-content="KROC LABS builds fast, useful and intelligent digital tools and products for people worldwide.">
+<meta name="description" content="KROC LABS builds simple, fast and useful digital tools for people worldwide. Try our free finance calculators.">
 
-<meta name="robots" content="index, follow">
+<meta name="keywords" content="KROC LABS, percentage calculator, EMI calculator, compound interest calculator, finance tools">
 
-<meta name="theme-color" content="#050505">
+<meta name="author" content="KROC LABS">
 
 <style>
-
-/* =========================
-   GLOBAL
-========================= */
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:#050505;
-    color:#ffffff;
-    font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-    overflow-x:hidden;
+html {
+    scroll-behavior: smooth;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050505;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
-button,
-input{
-    font-family:inherit;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-.container{
-    width:min(1120px,92%);
-    margin:auto;
+.container {
+    width: 92%;
+    max-width: 1150px;
+    margin: auto;
 }
-
 
-/* =========================
-   BACKGROUND EFFECT
-========================= */
+/* HEADER */
 
-body::before{
-    content:"";
-    position:fixed;
-    width:420px;
-    height:420px;
-    border-radius:50%;
-    background:#00ff8820;
-    filter:blur(100px);
-    top:-160px;
-    left:-140px;
-    pointer-events:none;
-    z-index:-1;
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(5, 5, 5, 0.95);
+    border-bottom: 1px solid #1d1d1d;
+    backdrop-filter: blur(10px);
 }
 
-body::after{
-    content:"";
-    position:fixed;
-    width:380px;
-    height:380px;
-    border-radius:50%;
-    background:#00ff8815;
-    filter:blur(100px);
-    right:-180px;
-    top:420px;
-    pointer-events:none;
-    z-index:-1;
+.navbar {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 }
-
-
-/* =========================
-   HEADER
-========================= */
 
-header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:#050505d9;
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid #ffffff0d;
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #00ff88;
 }
 
-.nav{
-    height:74px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.nav-links {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.logo{
-    font-size:23px;
-    font-weight:900;
-    letter-spacing:-1px;
+.nav-links a {
+    color: #cccccc;
+    font-size: 14px;
+    transition: 0.2s;
 }
 
-.logo span{
-    color:#00ff88;
+.nav-links a:hover {
+    color: #00ff88;
 }
 
-.nav-links{
-    display:flex;
-    gap:28px;
-    color:#888;
-    font-size:14px;
-}
+/* HERO */
 
-.nav-links a:hover{
-    color:#00ff88;
+.hero {
+    padding: 95px 0 80px;
+    text-align: center;
 }
 
-.nav-btn{
-    border:1px solid #ffffff20;
-    padding:10px 17px;
-    border-radius:12px;
-    font-size:14px;
+.eyebrow {
+    color: #00ff88;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
 }
 
-.nav-btn:hover{
-    border-color:#00ff88;
-    color:#00ff88;
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.05;
+    margin-bottom: 22px;
 }
-
-
-/* =========================
-   HERO
-========================= */
 
-.hero{
-    min-height:720px;
-    display:flex;
-    align-items:center;
-    text-align:center;
-    position:relative;
+.hero h1 span {
+    color: #00ff88;
 }
 
-.hero-content{
-    width:100%;
-    padding:80px 0;
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #aaaaaa;
+    font-size: 18px;
 }
 
-.eyebrow{
-    display:inline-block;
-    padding:9px 15px;
-    border:1px solid #00ff8840;
-    background:#00ff8810;
-    color:#00ff88;
-    border-radius:100px;
-    font-size:12px;
-    font-weight:800;
-    letter-spacing:1px;
-    margin-bottom:25px;
+.hero-buttons {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
 }
 
-.hero h1{
-    max-width:850px;
-    margin:auto;
-    font-size:clamp(48px,8vw,88px);
-    line-height:.98;
-    letter-spacing:-5px;
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 8px;
+    border: 1px solid #00ff88;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.hero h1 span{
-    color:#00ff88;
+.btn-primary {
+    background: #00ff88;
+    color: #000000;
 }
 
-.hero-text{
-    max-width:650px;
-    margin:30px auto;
-    color:#8d8d8d;
-    font-size:18px;
-    line-height:1.7;
+.btn-primary:hover {
+    background: #00d975;
 }
 
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:14px;
-    flex-wrap:wrap;
-    margin-top:35px;
+.btn-secondary {
+    color: #00ff88;
+    background: transparent;
 }
 
-.primary{
-    display:inline-block;
-    background:#00ff88;
-    color:#000;
-    padding:16px 25px;
-    border-radius:13px;
-    font-weight:900;
-    border:1px solid #00ff88;
-    cursor:pointer;
+.btn-secondary:hover {
+    background: #00ff88;
+    color: #000000;
 }
 
-.primary:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 35px #00ff8830;
-}
+/* TRUST BAR */
 
-.secondary{
-    display:inline-block;
-    border:1px solid #ffffff22;
-    padding:16px 25px;
-    border-radius:13px;
-    font-weight:700;
+.trust {
+    border-top: 1px solid #1b1b1b;
+    border-bottom: 1px solid #1b1b1b;
+    padding: 20px 0;
 }
 
-.secondary:hover{
-    border-color:#00ff88;
-    color:#00ff88;
+.trust-items {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    gap: 10px;
 }
 
+.trust-item {
+    color: #888888;
+    font-size: 13px;
+    font-weight: 700;
+}
 
-/* =========================
-   TRUST BAR
-========================= */
+/* SECTIONS */
 
-.trust{
-    border-top:1px solid #ffffff0d;
-    border-bottom:1px solid #ffffff0d;
-    padding:25px 0;
+section {
+    padding: 80px 0;
 }
 
-.trust-inner{
-    display:flex;
-    justify-content:center;
-    gap:50px;
-    flex-wrap:wrap;
-    color:#666;
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:2px;
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
 }
-
-
-/* =========================
-   SECTION
-========================= */
 
-section{
-    padding:110px 0;
+.section-title h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
 }
 
-.section-head{
-    max-width:650px;
-    margin-bottom:45px;
+.section-title p {
+    color: #888888;
 }
 
-.section-label{
-    color:#00ff88;
-    font-size:12px;
-    font-weight:900;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    margin-bottom:14px;
-}
+/* PRODUCTS */
 
-.section-head h2{
-    font-size:clamp(34px,5vw,54px);
-    letter-spacing:-2px;
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-.section-head p{
-    color:#777;
-    margin-top:18px;
-    line-height:1.7;
+.product-card {
+    background: #0b0b0b;
+    border: 1px solid #202020;
+    border-radius: 14px;
+    padding: 25px;
+    transition: 0.25s;
 }
-
-
-/* =========================
-   TOOLS GRID
-========================= */
 
-.tools-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+.product-card:hover {
+    border-color: #00ff88;
+    transform: translateY(-3px);
 }
 
-.tool-card{
-    background:#0d0d0f;
-    border:1px solid #ffffff10;
-    border-radius:22px;
-    padding:28px;
-    min-height:230px;
-    transition:.25s ease;
+.product-card h3 {
+    margin-bottom: 10px;
 }
 
-.tool-card:hover{
-    transform:translateY(-5px);
-    border-color:#00ff8860;
-    box-shadow:0 20px 60px #000;
+.product-card p {
+    color: #888888;
+    font-size: 14px;
+    margin-bottom: 18px;
 }
 
-.tool-icon{
-    width:45px;
-    height:45px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:13px;
-    background:#00ff8812;
-    color:#00ff88;
-    font-size:21px;
-    margin-bottom:25px;
+.status {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    border-radius: 30px;
+    padding: 5px 9px;
 }
 
-.tool-card h3{
-    font-size:20px;
-    margin-bottom:10px;
-}
+/* CALCULATORS */
 
-.tool-card p{
-    color:#777;
-    line-height:1.6;
-    font-size:14px;
+.calculator-section {
+    background: #080808;
 }
 
-.status{
-    display:inline-block;
-    margin-top:20px;
-    font-size:10px;
-    font-weight:900;
-    padding:6px 9px;
-    border-radius:50px;
-    background:#00ff88;
-    color:#000;
+.calculator-wrapper {
+    max-width: 620px;
+    margin: auto;
 }
-
 
-/* =========================
-   CALCULATOR
-========================= */
-
-.calculator-wrap{
-    max-width:650px;
-    margin:auto;
+.calculator {
+    background: #0d0d0d;
+    border: 1px solid #242424;
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 35px;
 }
 
-.calculator{
-    background:linear-gradient(145deg,#111113,#090909);
-    border:1px solid #00ff8850;
-    border-radius:28px;
-    padding:32px;
-    box-shadow:0 30px 100px #00ff8808;
+.calculator h3 {
+    font-size: 25px;
+    margin-bottom: 7px;
 }
 
-.calculator h3{
-    font-size:28px;
-    margin-bottom:10px;
+.calculator-description {
+    color: #888888;
+    margin-bottom: 24px;
+    font-size: 14px;
 }
 
-.calculator-desc{
-    color:#777;
-    line-height:1.6;
-    margin-bottom:25px;
+.input-group {
+    margin-bottom: 17px;
 }
 
-label{
-    display:block;
-    color:#aaa;
-    font-size:13px;
-    margin:17px 0 7px;
+.input-group label {
+    display: block;
+    color: #dddddd;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
-input{
-    width:100%;
-    padding:16px;
-    background:#050505;
-    border:1px solid #ffffff15;
-    color:#fff;
-    border-radius:12px;
-    font-size:16px;
-    outline:none;
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 13px 14px;
+    background: #050505;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
 }
 
-input:focus{
-    border-color:#00ff88;
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #00ff88;
 }
 
-.calculate{
-    width:100%;
-    margin-top:20px;
-    padding:16px;
-    background:#00ff88;
-    color:#000;
-    border:none;
-    border-radius:12px;
-    font-size:16px;
-    font-weight:900;
-    cursor:pointer;
+.input-group select option {
+    background: #050505;
+    color: #ffffff;
 }
 
-.calculate:hover{
-    box-shadow:0 10px 35px #00ff8830;
+.calculator-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
 }
 
-.calculate:active{
-    transform:scale(.99);
+.calculate,
+.reset {
+    flex: 1;
+    padding: 13px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
 }
 
-.reset{
-    width:100%;
-    margin-top:10px;
-    padding:13px;
-    background:transparent;
-    color:#777;
-    border:1px solid #ffffff15;
-    border-radius:12px;
-    cursor:pointer;
+.calculate {
+    border: 1px solid #00ff88;
+    background: #00ff88;
+    color: #000000;
 }
 
-.reset:hover{
-    color:#00ff88;
-    border-color:#00ff88;
+.calculate:hover {
+    background: #00d975;
 }
-
 
-/* =========================
-   PERCENTAGE ERROR / RESULT
-========================= */
-
-#error{
-    color:#ff5555;
-    text-align:center;
-    min-height:20px;
-    margin-top:12px;
-    font-size:13px;
+.reset {
+    border: 1px solid #444444;
+    background: transparent;
+    color: #ffffff;
 }
 
-#result{
-    color:#00ff88;
-    text-align:center;
-    font-size:22px;
-    font-weight:900;
-    min-height:30px;
-    margin-top:15px;
+.reset:hover {
+    border-color: #00ff88;
+    color: #00ff88;
 }
-
 
-/* =========================
-   EMI ERROR / RESULT
-========================= */
-
-#emiError{
-    color:#ff5555;
-    text-align:center;
-    min-height:20px;
-    margin-top:12px;
-    font-size:13px;
+.error {
+    color: #ff5c5c;
+    margin-top: 14px;
+    font-size: 14px;
+    min-height: 21px;
 }
 
-#emiResult{
-    color:#00ff88;
-    text-align:center;
-    font-size:16px;
-    font-weight:700;
-    min-height:30px;
-    margin-top:15px;
-    line-height:1.5;
+.result {
+    margin-top: 20px;
+    padding: 18px;
+    background: #050505;
+    border: 1px solid #1e1e1e;
+    border-radius: 10px;
 }
-
 
-/* =========================
-   VISION
-========================= */
-
-.vision{
-    border:1px solid #ffffff10;
-    background:#0b0b0d;
-    border-radius:30px;
-    padding:60px;
-    text-align:center;
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 9px 0;
+    border-bottom: 1px solid #191919;
 }
 
-.vision h2{
-    font-size:clamp(34px,5vw,55px);
-    letter-spacing:-2px;
+.result-row:last-child {
+    border-bottom: none;
 }
 
-.vision h2 span{
-    color:#00ff88;
+.result-label {
+    color: #999999;
 }
 
-.vision p{
-    max-width:650px;
-    margin:20px auto 0;
-    color:#777;
-    line-height:1.8;
+.result-value {
+    color: #00ff88;
+    font-weight: 800;
+    text-align: right;
 }
-
 
-/* =========================
-   CTA
-========================= */
+/* VISION */
 
-.cta{
-    text-align:center;
+.vision {
+    text-align: center;
 }
 
-.cta h2{
-    font-size:clamp(35px,6vw,65px);
-    letter-spacing:-3px;
+.vision-content {
+    max-width: 750px;
+    margin: auto;
 }
 
-.cta p{
-    color:#777;
-    margin:20px auto 30px;
-    max-width:600px;
-    line-height:1.7;
+.vision h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
 }
 
+.vision p {
+    color: #999999;
+    font-size: 18px;
+}
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
-footer{
-    border-top:1px solid #ffffff0d;
-    padding:40px 0;
-    color:#555;
-    font-size:13px;
+footer {
+    border-top: 1px solid #1d1d1d;
+    padding: 40px 0;
 }
 
-.footer-inner{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    flex-wrap:wrap;
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-.footer-brand{
-    color:#fff;
-    font-weight:900;
+.footer-brand p {
+    color: #777777;
+    margin-top: 8px;
+    font-size: 14px;
 }
 
-.footer-brand span{
-    color:#00ff88;
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.footer-links{
-    display:flex;
-    gap:20px;
+.footer-links a {
+    color: #888888;
+    font-size: 14px;
 }
 
-.footer-links a:hover{
-    color:#00ff88;
+.footer-links a:hover {
+    color: #00ff88;
 }
 
+.copyright {
+    color: #555555;
+    font-size: 13px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #151515;
+}
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
-@media(max-width:800px){
+@media (max-width: 800px) {
 
-    .nav-links{
-        display:none;
+    .navbar {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
     }
 
-    .hero{
-        min-height:650px;
+    .nav-links {
+        gap: 13px;
     }
 
-    .hero h1{
-        letter-spacing:-3px;
+    .trust-items {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .hero-text{
-        font-size:16px;
+    .products-grid {
+        grid-template-columns: 1fr;
     }
 
-    section{
-        padding:80px 0;
+    section {
+        padding: 60px 0;
     }
 
-    .tools-grid{
-        grid-template-columns:1fr;
+    .hero {
+        padding: 70px 0 60px;
     }
 
-    .vision{
-        padding:35px 22px;
+    .hero p {
+        font-size: 16px;
     }
 
-    .calculator{
-        padding:23px;
+    .calculator {
+        padding: 21px;
     }
 
-    .trust-inner{
-        gap:20px;
+    .calculator-buttons {
+        flex-direction: column;
     }
 
+    .footer-content {
+        flex-direction: column;
+    }
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
+    <div class="container navbar">
 
-<div class="container nav">
+        <a href="#" class="logo">KROC LABS</a>
 
-<a href="#" class="logo">
-KROC <span>LABS</span>
-</a>
+        <nav class="nav-links">
+            <a href="#products">Products</a>
+            <a href="#percentage">Calculator</a>
+            <a href="#emi">EMI</a>
+            <a href="#compound">Compound</a>
+            <a href="#vision">Vision</a>
+        </nav>
 
-<nav class="nav-links">
-
-<a href="#tools">Products</a>
-
-<a href="#calculator">Calculator</a>
-
-<a href="#emi">EMI</a>
-
-<a href="#vision">Vision</a>
-
-</nav>
-
-<a href="#calculator" class="nav-btn">
-Try a Tool
-</a>
-
-</div>
-
+    </div>
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <main>
 
 <section class="hero">
 
-<div class="container hero-content">
+    <div class="container">
 
-<div class="eyebrow">
-GLOBAL DIGITAL PRODUCT LAB
-</div>
+        <div class="eyebrow">GLOBAL DIGITAL PRODUCT LAB</div>
 
-<h1>
-Useful technology.<br>
-<span>Built differently.</span>
-</h1>
+        <h1>
+            Useful technology.<br>
+            <span>Built differently.</span>
+        </h1>
 
-<p class="hero-text">
-KROC LABS creates simple, fast and intelligent digital
-products designed to make everyday work easier for people
-around the world.
-</p>
+        <p>
+            KROC LABS builds simple, fast and useful digital tools
+            for people worldwide.
+        </p>
 
-<div class="hero-buttons">
+        <div class="hero-buttons">
 
-<a href="#tools" class="primary">
-Explore Products →
-</a>
+            <a href="#products" class="btn btn-primary">
+                Explore Products
+            </a>
 
-<a href="#vision" class="secondary">
-Our Vision
-</a>
+            <a href="#vision" class="btn btn-secondary">
+                Our Vision
+            </a>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- =========================
-     TRUST
-========================= -->
+<!-- TRUST -->
 
 <div class="trust">
 
-<div class="container trust-inner">
+    <div class="container trust-items">
 
-<span>Fast</span>
-<span>Simple</span>
-<span>Useful</span>
-<span>Global</span>
-<span>Built to Scale</span>
+        <div class="trust-item">⚡ FAST</div>
+        <div class="trust-item">✓ SIMPLE</div>
+        <div class="trust-item">◆ USEFUL</div>
+        <div class="trust-item">🌎 GLOBAL</div>
+        <div class="trust-item">↗ BUILT TO SCALE</div>
 
-</div>
-
-</div>
-
-
-<!-- =========================
-     PRODUCTS
-========================= -->
-
-<section id="tools">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="section-label">
-01 — Products
-</div>
-
-<h2>
-Small tools.<br>
-Big possibilities.
-</h2>
-
-<p>
-We start with simple products that solve real problems.
-Over time, KROC LABS will expand into a global ecosystem
-of digital tools and technology products.
-</p>
+    </div>
 
 </div>
 
 
-<div class="tools-grid">
+<!-- PRODUCTS -->
+
+<section id="products">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Our Products</h2>
+
+            <p>
+                Useful tools designed to solve everyday problems.
+            </p>
+
+        </div>
 
 
-<!-- PERCENTAGE -->
+        <div class="products-grid">
 
-<div class="tool-card">
+            <div class="product-card">
 
-<div class="tool-icon">
-%
-</div>
+                <h3>Percentage Calculator</h3>
 
-<h3>
-Percentage Calculator
-</h3>
+                <p>
+                    Quickly calculate percentages in seconds.
+                </p>
 
-<p>
-Quickly calculate percentages for school,
-business, finance and everyday life.
-</p>
+                <span class="status">LIVE</span>
 
-<span class="status">
-LIVE
-</span>
-
-</div>
+            </div>
 
 
-<!-- EMI -->
+            <div class="product-card">
 
-<div class="tool-card">
+                <h3>Loan EMI Calculator</h3>
 
-<div class="tool-icon">
-$
-</div>
+                <p>
+                    Estimate monthly loan payments,
+                    total interest and total payment.
+                </p>
 
-<h3>
-Loan EMI Calculator
-</h3>
+                <span class="status">LIVE</span>
 
-<p>
-Estimate monthly payments, total interest
-and total payment for a loan.
-</p>
-
-<span class="status">
-LIVE
-</span>
-
-</div>
+            </div>
 
 
-<!-- FINANCE -->
+            <div class="product-card">
 
-<div class="tool-card">
+                <h3>Compound Interest</h3>
 
-<div class="tool-icon">
-₹
-</div>
+                <p>
+                    Calculate how your money can grow
+                    through compound interest.
+                </p>
 
-<h3>
-Finance Tools
-</h3>
+                <span class="status">LIVE</span>
 
-<p>
-Useful calculators for loans, interest,
-savings and everyday financial decisions.
-</p>
-
-<span class="status"
-style="background:#222;color:#aaa">
-COMING SOON
-</span>
-
-</div>
+            </div>
 
 
-<!-- AI -->
+            <div class="product-card">
 
-<div class="tool-card">
+                <h3>Finance Tools</h3>
 
-<div class="tool-icon">
-✦
-</div>
+                <p>
+                    More useful financial tools are being built.
+                </p>
 
-<h3>
-AI Tools
-</h3>
+                <span class="status">COMING SOON</span>
 
-<p>
-Smart productivity experiences designed
-to help people work faster.
-</p>
-
-<span class="status"
-style="background:#222;color:#aaa">
-COMING SOON
-</span>
-
-</div>
+            </div>
 
 
-<!-- PRODUCTIVITY -->
+            <div class="product-card">
 
-<div class="tool-card">
+                <h3>AI Tools</h3>
 
-<div class="tool-icon">
-⚡
-</div>
+                <p>
+                    Smart and simple AI-powered products.
+                </p>
 
-<h3>
-Productivity
-</h3>
+                <span class="status">COMING SOON</span>
 
-<p>
-Simple digital utilities designed to
-save time and reduce repetitive work.
-</p>
-
-<span class="status"
-style="background:#222;color:#aaa">
-COMING SOON
-</span>
-
-</div>
+            </div>
 
 
-<!-- BUSINESS -->
+            <div class="product-card">
 
-<div class="tool-card">
+                <h3>Productivity</h3>
 
-<div class="tool-icon">
-◈
-</div>
+                <p>
+                    Tools designed to help people work smarter.
+                </p>
 
-<h3>
-Business Tools
-</h3>
+                <span class="status">COMING SOON</span>
 
-<p>
-Practical tools for creators, freelancers,
-small businesses and teams.
-</p>
-
-<span class="status"
-style="background:#222;color:#aaa">
-COMING SOON
-</span>
-
-</div>
+            </div>
 
 
-<!-- MORE -->
+            <div class="product-card">
 
-<div class="tool-card">
+                <h3>Business Tools</h3>
 
-<div class="tool-icon">
-∞
-</div>
+                <p>
+                    Practical tools for creators and businesses.
+                </p>
 
-<h3>
-More Products
-</h3>
+                <span class="status">COMING SOON</span>
 
-<p>
-A growing ecosystem of useful digital
-products built for a worldwide audience.
-</p>
-
-<span class="status"
-style="background:#222;color:#aaa">
-IN DEVELOPMENT
-</span>
-
-</div>
+            </div>
 
 
-</div>
+            <div class="product-card">
 
-</div>
+                <h3>More Products</h3>
+
+                <p>
+                    New digital products are in development.
+                </p>
+
+                <span class="status">IN DEVELOPMENT</span>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =========================
-     PERCENTAGE CALCULATOR
-========================= -->
+<!-- CALCULATORS -->
 
-<section id="calculator">
+<section class="calculator-section">
 
-<div class="container">
+    <div class="container">
 
-<div class="section-head">
+        <div class="section-title">
 
-<div class="section-label">
-02 — Live Product
-</div>
+            <h2>Free Calculators</h2>
 
-<h2>
-Try it now.
-</h2>
+            <p>
+                Simple tools. Fast results. No complicated setup.
+            </p>
 
-<p>
-No signup. No unnecessary complexity.
-Just a useful tool that works.
-</p>
-
-</div>
+        </div>
 
 
-<div class="calculator-wrap">
-
-<div class="calculator">
-
-<div class="eyebrow">
-LIVE • MVP 1
-</div>
-
-<h3>
-Percentage Calculator
-</h3>
-
-<p class="calculator-desc">
-Calculate what percentage of a number instantly.
-</p>
+        <div class="calculator-wrapper">
 
 
-<label for="percent">
-Percentage
-</label>
+            <!-- PERCENTAGE CALCULATOR -->
 
-<input
-id="percent"
-type="number"
-placeholder="Example: 20"
-inputmode="decimal"
->
+            <div class="calculator" id="percentage">
 
+                <h3>Percentage Calculator</h3>
 
-<label for="number">
-Number
-</label>
-
-<input
-id="number"
-type="number"
-placeholder="Example: 500"
-inputmode="decimal"
->
+                <p class="calculator-description">
+                    Find a percentage of any number.
+                </p>
 
 
-<div id="error"
-aria-live="polite">
-</div>
+                <div class="input-group">
+
+                    <label for="percent">
+                        Percentage (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="percent"
+                        placeholder="Example: 20"
+                        step="any"
+                    >
+
+                </div>
 
 
-<button
-type="button"
-class="calculate"
-onclick="calculatePercentage()"
->
-Calculate →
-</button>
+                <div class="input-group">
+
+                    <label for="number">
+                        Number
+                    </label>
+
+                    <input
+                        type="number"
+                        id="number"
+                        placeholder="Example: 500"
+                        step="any"
+                    >
+
+                </div>
 
 
-<button
-type="button"
-class="reset"
-onclick="resetCalculator()"
->
-Reset (C)
-</button>
+                <div class="calculator-buttons">
+
+                    <button
+                        type="button"
+                        class="calculate"
+                        onclick="calculatePercentage()"
+                    >
+                        Calculate
+                    </button>
+
+                    <button
+                        type="button"
+                        class="reset"
+                        onclick="resetCalculator()"
+                    >
+                        Reset
+                    </button>
+
+                </div>
 
 
-<div id="result"
-aria-live="polite">
-</div>
+                <div id="error" class="error"></div>
 
-</div>
 
-</div>
+                <div id="result" class="result" style="display:none;">
 
-</div>
+                    <div class="result-row">
+
+                        <span class="result-label">
+                            Result
+                        </span>
+
+                        <span
+                            class="result-value"
+                            id="percentageResult"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EMI CALCULATOR -->
+
+            <div class="calculator" id="emi">
+
+                <h3>Loan EMI Calculator</h3>
+
+                <p class="calculator-description">
+                    Estimate your monthly loan payment,
+                    total interest and total payment.
+                </p>
+
+
+                <div class="input-group">
+
+                    <label for="loanAmount">
+                        Loan Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="loanAmount"
+                        placeholder="Example: 100000"
+                        step="any"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="interestRate">
+                        Annual Interest Rate (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="interestRate"
+                        placeholder="Example: 8.5"
+                        step="any"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="loanTerm">
+                        Loan Term (Years)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="loanTerm"
+                        placeholder="Example: 5"
+                        step="any"
+                    >
+
+                </div>
+
+
+                <div class="calculator-buttons">
+
+                    <button
+                        type="button"
+                        class="calculate"
+                        onclick="calculateEMI()"
+                    >
+                        Calculate
+                    </button>
+
+                    <button
+                        type="button"
+                        class="reset"
+                        onclick="resetEMI()"
+                    >
+                        Reset
+                    </button>
+
+                </div>
+
+
+                <div id="emiError" class="error"></div>
+
+
+                <div id="emiResult" class="result" style="display:none;">
+
+                    <div class="result-row">
+
+                        <span class="result-label">
+                            Monthly EMI
+                        </span>
+
+                        <span
+                            class="result-value"
+                            id="monthlyEMI"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="result-row">
+
+                        <span class="result-label">
+                            Total Interest
+                        </span>
+
+                        <span
+                            class="result-value"
+                            id="totalInterest"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="result-row">
+
+                        <span class="result-label">
+                            Total Payment
+                        </span>
+
+                        <span
+                            class="result-value"
+                            id="totalPayment"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- COMPOUND INTEREST CALCULATOR -->
+
+            <div class="calculator" id="compound">
+
+                <h3>Compound Interest Calculator</h3>
+
+                <p class="calculator-description">
+                    Calculate the growth of an investment
+                    with compound interest.
+                </p>
+
+
+                <div class="input-group">
+
+                    <label for="principal">
+                        Principal Amount
+                    </label>
+
+                    <input
+                        type="number"
+                        id="principal"
+                        placeholder="Example: 10000"
+                        step="any"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="compoundRate">
+                        Annual Interest Rate (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="compoundRate"
+                        placeholder="Example: 8"
+                        step="any"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="compoundTime">
+                        Time (Years)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="compoundTime"
+                        placeholder="Example: 10"
+                        step="any"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="frequency">
+                        Compounding Frequency
+                    </label>
+
+                    <select id="frequency">
+
+                        <option value="1">
+                            Annually
+                        </option>
+
+                        <option value="2">
+                            Half-Yearly
+                        </option>
+
+                        <option value="4">
+                            Quarterly
+                        </option>
+
+                        <option value="12" selected>
+                            Monthly
+                        </option>
+
+                        <option value="365">
+                            Daily
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="calculator-buttons">
+
+                    <button
+                        type="button"
+                        class="calculate"
+                        onclick="calculateCompound()"
+                    >
+                        Calculate
+                    </button>
+
+                    <button
+                        type="button"
+                        class="reset"
+                        onclick="resetCompound()"
+                    >
+                        Reset
+                    </button>
+
+                </div>
+
+
+                <div id="compoundError" class="error"></div>
+
+
+                <div
+                    id="compoundResult"
+                    class="result"
+                    style="display:none;"
+                >
+
+                    <div class="result-row">
+
+                        <span class="result-label">
+                            Final Amount
+                        </span>
+
+                        <span
+                            class="result-value"
+                            id="finalAmount"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+
+                    <div class="result-row">
+
+                        <span class="result-label">
+                            Total Interest
+                        </span>
+
+                        <span
+                            class="result-value"
+                            id="compoundInterest"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =========================
-     EMI CALCULATOR
-========================= -->
+<!-- VISION -->
 
-<section id="emi">
+<section class="vision" id="vision">
 
-<div class="container">
+    <div class="container vision-content">
 
-<div class="section-head">
+        <div class="eyebrow">
+            OUR VISION
+        </div>
 
-<div class="section-label">
-03 — Finance Tool
-</div>
+        <h2>
+            Build useful things.<br>
+            For everyone.
+        </h2>
 
-<h2>
-Loan EMI Calculator.
-</h2>
+        <p>
+            KROC LABS is focused on creating simple,
+            useful and accessible digital products for
+            people around the world.
+        </p>
 
-<p>
-Estimate your monthly loan payment, total interest
-and total payment instantly.
-</p>
-
-</div>
-
-
-<div class="calculator-wrap">
-
-<div class="calculator">
-
-<div class="eyebrow">
-FINANCE • MVP 1
-</div>
-
-<h3>
-Loan EMI Calculator
-</h3>
-
-<p class="calculator-desc">
-Enter your loan details to calculate your estimated
-monthly EMI.
-</p>
-
-
-<label for="loanAmount">
-Loan Amount
-</label>
-
-<input
-id="loanAmount"
-type="number"
-placeholder="Example: 10000"
-inputmode="decimal"
-min="0"
->
-
-
-<label for="interestRate">
-Annual Interest Rate (%)
-</label>
-
-<input
-id="interestRate"
-type="number"
-placeholder="Example: 8.5"
-inputmode="decimal"
-min="0"
-step="0.01"
->
-
-
-<label for="loanTerm">
-Loan Term (Years)
-</label>
-
-<input
-id="loanTerm"
-type="number"
-placeholder="Example: 5"
-inputmode="decimal"
-min="0"
-step="0.1"
->
-
-
-<div id="emiError"
-aria-live="polite">
-</div>
-
-
-<button
-type="button"
-class="calculate"
-onclick="calculateEMI()"
->
-Calculate EMI →
-</button>
-
-
-<button
-type="button"
-class="reset"
-onclick="resetEMI()"
->
-Reset (C)
-</button>
-
-
-<div id="emiResult"
-aria-live="polite">
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     VISION
-========================= -->
-
-<section id="vision">
-
-<div class="container">
-
-<div class="vision">
-
-<div class="section-label">
-04 — Vision
-</div>
-
-<h2>
-Build useful things.<br>
-<span>For everyone.</span>
-</h2>
-
-<p>
-KROC LABS is being built with a long-term vision:
-create a trusted global technology brand around useful
-digital products, intelligent tools and simple experiences.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     CTA
-========================= -->
-
-<section class="cta">
-
-<div class="container">
-
-<h2>
-The beginning is small.
-</h2>
-
-<p>
-One useful product can become an ecosystem.
-KROC LABS starts with tools and grows with its users.
-</p>
-
-<a href="#tools" class="primary">
-Explore KROC LABS →
-</a>
-
-</div>
+    </div>
 
 </section>
 
 </main>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
-<div class="container footer-inner">
+    <div class="container">
 
-<div>
+        <div class="footer-content">
 
-<div class="footer-brand">
-KROC <span>LABS</span>
-</div>
+            <div class="footer-brand">
 
-<div style="margin-top:8px">
-Digital products for a changing world.
-</div>
+                <div class="logo">
+                    KROC LABS
+                </div>
 
-</div>
+                <p>
+                    Useful technology for people worldwide.
+                </p>
 
-<div class="footer-links">
+            </div>
 
-<a href="#tools">
-Products
-</a>
 
-<a href="#calculator">
-Tools
-</a>
+            <div class="footer-links">
 
-<a href="#emi">
-EMI
-</a>
+                <a href="#products">
+                    Products
+                </a>
 
-<a href="#vision">
-Vision
-</a>
+                <a href="#percentage">
+                    Calculator
+                </a>
 
-</div>
+                <a href="#emi">
+                    EMI
+                </a>
 
-</div>
+                <a href="#compound">
+                    Compound
+                </a>
+
+                <a href="#vision">
+                    Vision
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+            © 2026 KROC LABS. All rights reserved.
+        </div>
+
+    </div>
 
 </footer>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+<!-- JAVASCRIPT -->
 
 <script>
 
@@ -1271,65 +1199,59 @@ Vision
    PERCENTAGE CALCULATOR
 ========================= */
 
-function calculatePercentage(){
-
-    const percentInput =
-    document.getElementById("percent");
-
-    const numberInput =
-    document.getElementById("number");
-
-    const error =
-    document.getElementById("error");
-
-    const result =
-    document.getElementById("result");
+function calculatePercentage() {
 
     const percentage =
-    parseFloat(percentInput.value);
+        Number(document.getElementById("percent").value);
 
     const number =
-    parseFloat(numberInput.value);
+        Number(document.getElementById("number").value);
+
+    const error =
+        document.getElementById("error");
+
+    const result =
+        document.getElementById("result");
+
+    const resultValue =
+        document.getElementById("percentageResult");
+
 
     error.textContent = "";
-    result.textContent = "";
 
-    if(
-        percentInput.value.trim() === "" ||
-        numberInput.value.trim() === "" ||
+    result.style.display = "none";
+
+
+    if (
         !Number.isFinite(percentage) ||
         !Number.isFinite(number)
-    ){
+    ) {
 
         error.textContent =
-        "⚠️ Please enter valid numbers";
+            "⚠️ Please enter valid numbers";
 
         return;
     }
+
 
     const answer =
-    (percentage * number) / 100;
+        (percentage * number) / 100;
 
-    if(!Number.isFinite(answer)){
 
-        error.textContent =
-        "⚠️ Please enter valid numbers";
+    resultValue.textContent =
+        answer.toLocaleString(
+            undefined,
+            {
+                maximumFractionDigits: 2
+            }
+        );
 
-        return;
-    }
 
-    result.textContent =
-    percentage + "% of " +
-    number + " = " +
-    answer;
+    result.style.display = "block";
 }
 
 
-/* =========================
-   RESET PERCENTAGE
-========================= */
-
-function resetCalculator(){
+function resetCalculator() {
 
     document.getElementById("percent").value = "";
 
@@ -1337,9 +1259,8 @@ function resetCalculator(){
 
     document.getElementById("error").textContent = "";
 
-    document.getElementById("result").textContent = "";
+    document.getElementById("result").style.display = "none";
 
-    document.getElementById("percent").focus();
 }
 
 
@@ -1347,110 +1268,350 @@ function resetCalculator(){
    EMI CALCULATOR
 ========================= */
 
-function calculateEMI(){
+function calculateEMI() {
 
-    const loanAmountInput =
-    document.getElementById("loanAmount");
-
-    const interestRateInput =
-    document.getElementById("interestRate");
-
-    const loanTermInput =
-    document.getElementById("loanTerm");
-
-    const error =
-    document.getElementById("emiError");
-
-    const result =
-    document.getElementById("emiResult");
-
-
-    const loanAmount =
-    parseFloat(loanAmountInput.value);
+    const loan =
+        Number(document.getElementById("loanAmount").value);
 
     const annualRate =
-    parseFloat(interestRateInput.value);
+        Number(document.getElementById("interestRate").value);
 
     const years =
-    parseFloat(loanTermInput.value);
+        Number(document.getElementById("loanTerm").value);
 
+    const error =
+        document.getElementById("emiError");
 
-    /* Clear previous messages */
+    const result =
+        document.getElementById("emiResult");
+
 
     error.textContent = "";
-    result.innerHTML = "";
+
+    result.style.display = "none";
 
 
-    /* Validation */
-
-    if(
-        loanAmountInput.value.trim() === "" ||
-        interestRateInput.value.trim() === "" ||
-        loanTermInput.value.trim() === "" ||
-        !Number.isFinite(loanAmount) ||
+    if (
+        !Number.isFinite(loan) ||
         !Number.isFinite(annualRate) ||
         !Number.isFinite(years) ||
-        loanAmount <= 0 ||
+        loan <= 0 ||
         annualRate < 0 ||
         years <= 0
-    ){
+    ) {
 
         error.textContent =
-        "⚠️ Please enter valid loan details";
+            "⚠️ Please enter valid loan details";
 
         return;
     }
 
 
-    /* Monthly interest rate */
-
     const monthlyRate =
-    annualRate / 100 / 12;
-
-
-    /* Number of payments */
+        annualRate / 100 / 12;
 
     const numberOfPayments =
-    years * 12;
+        years * 12;
+
+    let emi;
 
 
-    let monthlyPayment;
+    if (monthlyRate === 0) {
 
+        emi =
+            loan / numberOfPayments;
 
-    /* =========================
-       ZERO INTEREST
-    ========================= */
+    } else {
 
-    if(monthlyRate === 0){
+        const power =
+            Math.pow(
+                1 + monthlyRate,
+                numberOfPayments
+            );
 
-        monthlyPayment =
-        loanAmount / numberOfPayments;
-
+        emi =
+            loan *
+            monthlyRate *
+            power /
+            (power - 1);
     }
 
 
-    /* =========================
-       NORMAL EMI FORMULA
-    ========================= */
+    const totalPayment =
+        emi * numberOfPayments;
 
-    else{
+    const totalInterest =
+        totalPayment - loan;
 
-        const power =
-        Math.pow(
-            1 + monthlyRate,
-            numberOfPayments
+
+    document.getElementById("monthlyEMI").textContent =
+        emi.toLocaleString(
+            undefined,
+            {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }
         );
 
 
-        monthlyPayment =
-        loanAmount *
-        monthlyRate *
-        power /
-        (power - 1);
+    document.getElementById("totalInterest").textContent =
+        totalInterest.toLocaleString(
+            undefined,
+            {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }
+        );
 
+
+    document.getElementById("totalPayment").textContent =
+        totalPayment.toLocaleString(
+            undefined,
+            {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }
+        );
+
+
+    result.style.display = "block";
+}
+
+
+function resetEMI() {
+
+    document.getElementById("loanAmount").value = "";
+
+    document.getElementById("interestRate").value = "";
+
+    document.getElementById("loanTerm").value = "";
+
+    document.getElementById("emiError").textContent = "";
+
+    document.getElementById("emiResult").style.display = "none";
+
+}
+
+
+/* =========================
+   COMPOUND INTEREST
+========================= */
+
+function calculateCompound() {
+
+    const principal =
+        Number(
+            document.getElementById("principal").value
+        );
+
+    const annualRate =
+        Number(
+            document.getElementById("compoundRate").value
+        );
+
+    const time =
+        Number(
+            document.getElementById("compoundTime").value
+        );
+
+    const frequency =
+        Number(
+            document.getElementById("frequency").value
+        );
+
+
+    const error =
+        document.getElementById("compoundError");
+
+    const result =
+        document.getElementById("compoundResult");
+
+
+    error.textContent = "";
+
+    result.style.display = "none";
+
+
+    if (
+        !Number.isFinite(principal) ||
+        !Number.isFinite(annualRate) ||
+        !Number.isFinite(time) ||
+        !Number.isFinite(frequency) ||
+        principal <= 0 ||
+        annualRate < 0 ||
+        time <= 0 ||
+        frequency <= 0
+    ) {
+
+        error.textContent =
+            "⚠️ Please enter valid investment details";
+
+        return;
     }
 
 
-    /* Safety check */
+    /*
+       Compound Interest Formula:
 
-    if
+       A = P(1 + r/n)^(nt)
+
+       P = Principal
+       r = Annual interest rate
+       n = Compounding frequency
+       t = Time
+    */
+
+
+    const rate =
+        annualRate / 100;
+
+
+    const finalAmount =
+        principal *
+        Math.pow(
+            1 + rate / frequency,
+            frequency * time
+        );
+
+
+    const totalInterest =
+        finalAmount - principal;
+
+
+    document.getElementById("finalAmount").textContent =
+        finalAmount.toLocaleString(
+            undefined,
+            {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }
+        );
+
+
+    document.getElementById("compoundInterest").textContent =
+        totalInterest.toLocaleString(
+            undefined,
+            {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }
+        );
+
+
+    result.style.display = "block";
+}
+
+
+function resetCompound() {
+
+    document.getElementById("principal").value = "";
+
+    document.getElementById("compoundRate").value = "";
+
+    document.getElementById("compoundTime").value = "";
+
+    document.getElementById("frequency").value = "12";
+
+    document.getElementById("compoundError").textContent = "";
+
+    document.getElementById("compoundResult").style.display =
+        "none";
+
+}
+
+
+/* =========================
+   ENTER KEY SUPPORT
+========================= */
+
+document
+    .getElementById("percent")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            calculatePercentage();
+        }
+
+    });
+
+
+document
+    .getElementById("number")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            calculatePercentage();
+        }
+
+    });
+
+
+document
+    .getElementById("loanAmount")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            calculateEMI();
+        }
+
+    });
+
+
+document
+    .getElementById("interestRate")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            calculateEMI();
+        }
+
+    });
+
+
+document
+    .getElementById("loanTerm")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            calculateEMI();
+        }
+
+    });
+
+
+document
+    .getElementById("principal")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            calculateCompound();
+        }
+
+    });
+
+
+document
+    .getElementById("compoundRate")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            calculateCompound();
+        }
+
+    });
+
+
+document
+    .getElementById("compoundTime")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            calculateCompound();
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
