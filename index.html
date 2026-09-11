@@ -2,16 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>KROC LABS — Useful Digital Tools</title>
 
-<meta name="description" content="KROC LABS builds simple, fast and useful digital tools for people worldwide. Try our free finance calculators.">
-
-<meta name="keywords" content="KROC LABS, percentage calculator, EMI calculator, compound interest calculator, finance tools">
-
-<meta name="author" content="KROC LABS">
+<meta name="description" content="KROC LABS builds simple, fast and useful digital tools for people worldwide.">
 
 <style>
 * {
@@ -27,7 +22,7 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #050505;
-    color: #ffffff;
+    color: #fff;
     line-height: 1.6;
 }
 
@@ -48,7 +43,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(5, 5, 5, 0.95);
+    background: rgba(5,5,5,.96);
     border-bottom: 1px solid #1d1d1d;
     backdrop-filter: blur(10px);
 }
@@ -62,23 +57,21 @@ header {
 }
 
 .logo {
+    color: #00ff88;
     font-size: 22px;
     font-weight: 800;
     letter-spacing: 2px;
-    color: #00ff88;
 }
 
 .nav-links {
     display: flex;
-    gap: 22px;
-    align-items: center;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .nav-links a {
-    color: #cccccc;
+    color: #ccc;
     font-size: 14px;
-    transition: 0.2s;
 }
 
 .nav-links a:hover {
@@ -88,7 +81,7 @@ header {
 /* HERO */
 
 .hero {
-    padding: 95px 0 80px;
+    padding: 90px 0 75px;
     text-align: center;
 }
 
@@ -101,7 +94,7 @@ header {
 }
 
 .hero h1 {
-    font-size: clamp(42px, 7vw, 76px);
+    font-size: clamp(42px,7vw,76px);
     line-height: 1.05;
     margin-bottom: 22px;
 }
@@ -113,12 +106,12 @@ header {
 .hero p {
     max-width: 700px;
     margin: auto;
-    color: #aaaaaa;
+    color: #aaa;
     font-size: 18px;
 }
 
 .hero-buttons {
-    margin-top: 32px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     gap: 14px;
@@ -126,35 +119,22 @@ header {
 }
 
 .btn {
-    display: inline-block;
     padding: 13px 22px;
     border-radius: 8px;
     border: 1px solid #00ff88;
     font-weight: 700;
-    cursor: pointer;
-    transition: 0.2s;
 }
 
 .btn-primary {
     background: #00ff88;
-    color: #000000;
-}
-
-.btn-primary:hover {
-    background: #00d975;
+    color: #000;
 }
 
 .btn-secondary {
     color: #00ff88;
-    background: transparent;
 }
 
-.btn-secondary:hover {
-    background: #00ff88;
-    color: #000000;
-}
-
-/* TRUST BAR */
+/* TRUST */
 
 .trust {
     border-top: 1px solid #1b1b1b;
@@ -164,13 +144,13 @@ header {
 
 .trust-items {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5,1fr);
     text-align: center;
     gap: 10px;
 }
 
 .trust-item {
-    color: #888888;
+    color: #888;
     font-size: 13px;
     font-weight: 700;
 }
@@ -192,14 +172,14 @@ section {
 }
 
 .section-title p {
-    color: #888888;
+    color: #888;
 }
 
 /* PRODUCTS */
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
 
@@ -208,12 +188,10 @@ section {
     border: 1px solid #202020;
     border-radius: 14px;
     padding: 25px;
-    transition: 0.25s;
 }
 
 .product-card:hover {
     border-color: #00ff88;
-    transform: translateY(-3px);
 }
 
 .product-card h3 {
@@ -221,20 +199,19 @@ section {
 }
 
 .product-card p {
-    color: #888888;
+    color: #888;
     font-size: 14px;
     margin-bottom: 18px;
 }
 
 .status {
     display: inline-block;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1px;
     color: #00ff88;
     border: 1px solid #00ff88;
     border-radius: 30px;
     padding: 5px 9px;
+    font-size: 11px;
+    font-weight: 800;
 }
 
 /* CALCULATORS */
@@ -262,7 +239,7 @@ section {
 }
 
 .calculator-description {
-    color: #888888;
+    color: #888;
     margin-bottom: 24px;
     font-size: 14px;
 }
@@ -273,7 +250,7 @@ section {
 
 .input-group label {
     display: block;
-    color: #dddddd;
+    color: #ddd;
     margin-bottom: 7px;
     font-size: 14px;
     font-weight: 600;
@@ -284,9 +261,9 @@ section {
     width: 100%;
     padding: 13px 14px;
     background: #050505;
-    border: 1px solid #333333;
+    border: 1px solid #333;
     border-radius: 8px;
-    color: #ffffff;
+    color: #fff;
     font-size: 16px;
     outline: none;
 }
@@ -298,7 +275,7 @@ section {
 
 .input-group select option {
     background: #050505;
-    color: #ffffff;
+    color: #fff;
 }
 
 .calculator-buttons {
@@ -320,22 +297,13 @@ section {
 .calculate {
     border: 1px solid #00ff88;
     background: #00ff88;
-    color: #000000;
-}
-
-.calculate:hover {
-    background: #00d975;
+    color: #000;
 }
 
 .reset {
-    border: 1px solid #444444;
+    border: 1px solid #444;
     background: transparent;
-    color: #ffffff;
-}
-
-.reset:hover {
-    border-color: #00ff88;
-    color: #00ff88;
+    color: #fff;
 }
 
 .error {
@@ -366,7 +334,7 @@ section {
 }
 
 .result-label {
-    color: #999999;
+    color: #999;
 }
 
 .result-value {
@@ -392,7 +360,7 @@ section {
 }
 
 .vision p {
-    color: #999999;
+    color: #999;
     font-size: 18px;
 }
 
@@ -411,7 +379,7 @@ footer {
 }
 
 .footer-brand p {
-    color: #777777;
+    color: #777;
     margin-top: 8px;
     font-size: 14px;
 }
@@ -423,16 +391,12 @@ footer {
 }
 
 .footer-links a {
-    color: #888888;
+    color: #888;
     font-size: 14px;
 }
 
-.footer-links a:hover {
-    color: #00ff88;
-}
-
 .copyright {
-    color: #555555;
+    color: #555;
     font-size: 13px;
     margin-top: 30px;
     padding-top: 20px;
@@ -441,7 +405,7 @@ footer {
 
 /* MOBILE */
 
-@media (max-width: 800px) {
+@media (max-width:800px) {
 
     .navbar {
         padding: 14px 0;
@@ -454,7 +418,7 @@ footer {
     }
 
     .trust-items {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 
     .products-grid {
@@ -490,58 +454,57 @@ footer {
 
 <body>
 
-<!-- HEADER -->
-
 <header>
-    <div class="container navbar">
+<div class="container navbar">
 
-        <a href="#" class="logo">KROC LABS</a>
+<a href="#" class="logo">KROC LABS</a>
 
-        <nav class="nav-links">
-            <a href="#products">Products</a>
-            <a href="#percentage">Calculator</a>
-            <a href="#emi">EMI</a>
-            <a href="#compound">Compound</a>
-            <a href="#vision">Vision</a>
-        </nav>
+<nav class="nav-links">
+<a href="#products">Products</a>
+<a href="#percentage">Calculator</a>
+<a href="#emi">EMI</a>
+<a href="#compound">Compound</a>
+<a href="#savings">Savings</a>
+<a href="#vision">Vision</a>
+</nav>
 
-    </div>
+</div>
 </header>
 
 
-<!-- HERO -->
-
 <main>
+
+<!-- HERO -->
 
 <section class="hero">
 
-    <div class="container">
+<div class="container">
 
-        <div class="eyebrow">GLOBAL DIGITAL PRODUCT LAB</div>
+<div class="eyebrow">GLOBAL DIGITAL PRODUCT LAB</div>
 
-        <h1>
-            Useful technology.<br>
-            <span>Built differently.</span>
-        </h1>
+<h1>
+Useful technology.<br>
+<span>Built differently.</span>
+</h1>
 
-        <p>
-            KROC LABS builds simple, fast and useful digital tools
-            for people worldwide.
-        </p>
+<p>
+KROC LABS builds simple, fast and useful digital tools
+for people worldwide.
+</p>
 
-        <div class="hero-buttons">
+<div class="hero-buttons">
 
-            <a href="#products" class="btn btn-primary">
-                Explore Products
-            </a>
+<a href="#products" class="btn btn-primary">
+Explore Products
+</a>
 
-            <a href="#vision" class="btn btn-secondary">
-                Our Vision
-            </a>
+<a href="#vision" class="btn btn-secondary">
+Our Vision
+</a>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -550,15 +513,15 @@ footer {
 
 <div class="trust">
 
-    <div class="container trust-items">
+<div class="container trust-items">
 
-        <div class="trust-item">⚡ FAST</div>
-        <div class="trust-item">✓ SIMPLE</div>
-        <div class="trust-item">◆ USEFUL</div>
-        <div class="trust-item">🌎 GLOBAL</div>
-        <div class="trust-item">↗ BUILT TO SCALE</div>
+<div class="trust-item">⚡ FAST</div>
+<div class="trust-item">✓ SIMPLE</div>
+<div class="trust-item">◆ USEFUL</div>
+<div class="trust-item">🌎 GLOBAL</div>
+<div class="trust-item">↗ BUILT TO SCALE</div>
 
-    </div>
+</div>
 
 </div>
 
@@ -567,130 +530,71 @@ footer {
 
 <section id="products">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <h2>Our Products</h2>
+<h2>Our Products</h2>
 
-            <p>
-                Useful tools designed to solve everyday problems.
-            </p>
+<p>
+Useful tools designed to solve everyday problems.
+</p>
 
-        </div>
-
-
-        <div class="products-grid">
-
-            <div class="product-card">
-
-                <h3>Percentage Calculator</h3>
-
-                <p>
-                    Quickly calculate percentages in seconds.
-                </p>
-
-                <span class="status">LIVE</span>
-
-            </div>
+</div>
 
 
-            <div class="product-card">
+<div class="products-grid">
 
-                <h3>Loan EMI Calculator</h3>
+<div class="product-card">
+<h3>Percentage Calculator</h3>
+<p>Quickly calculate percentages in seconds.</p>
+<span class="status">LIVE</span>
+</div>
 
-                <p>
-                    Estimate monthly loan payments,
-                    total interest and total payment.
-                </p>
+<div class="product-card">
+<h3>Loan EMI Calculator</h3>
+<p>Estimate monthly loan payments, total interest and total payment.</p>
+<span class="status">LIVE</span>
+</div>
 
-                <span class="status">LIVE</span>
+<div class="product-card">
+<h3>Compound Interest</h3>
+<p>Calculate investment growth with compound interest.</p>
+<span class="status">LIVE</span>
+</div>
 
-            </div>
+<div class="product-card">
+<h3>Savings Calculator</h3>
+<p>Estimate future savings with regular monthly contributions.</p>
+<span class="status">LIVE</span>
+</div>
 
+<div class="product-card">
+<h3>Finance Tools</h3>
+<p>More useful financial tools are being built.</p>
+<span class="status">COMING SOON</span>
+</div>
 
-            <div class="product-card">
+<div class="product-card">
+<h3>AI Tools</h3>
+<p>Smart and simple AI-powered products.</p>
+<span class="status">COMING SOON</span>
+</div>
 
-                <h3>Compound Interest</h3>
+<div class="product-card">
+<h3>Productivity</h3>
+<p>Tools designed to help people work smarter.</p>
+<span class="status">COMING SOON</span>
+</div>
 
-                <p>
-                    Calculate how your money can grow
-                    through compound interest.
-                </p>
+<div class="product-card">
+<h3>Business Tools</h3>
+<p>Practical tools for creators and businesses.</p>
+<span class="status">COMING SOON</span>
+</div>
 
-                <span class="status">LIVE</span>
-
-            </div>
-
-
-            <div class="product-card">
-
-                <h3>Finance Tools</h3>
-
-                <p>
-                    More useful financial tools are being built.
-                </p>
-
-                <span class="status">COMING SOON</span>
-
-            </div>
-
-
-            <div class="product-card">
-
-                <h3>AI Tools</h3>
-
-                <p>
-                    Smart and simple AI-powered products.
-                </p>
-
-                <span class="status">COMING SOON</span>
-
-            </div>
-
-
-            <div class="product-card">
-
-                <h3>Productivity</h3>
-
-                <p>
-                    Tools designed to help people work smarter.
-                </p>
-
-                <span class="status">COMING SOON</span>
-
-            </div>
-
-
-            <div class="product-card">
-
-                <h3>Business Tools</h3>
-
-                <p>
-                    Practical tools for creators and businesses.
-                </p>
-
-                <span class="status">COMING SOON</span>
-
-            </div>
-
-
-            <div class="product-card">
-
-                <h3>More Products</h3>
-
-                <p>
-                    New digital products are in development.
-                </p>
-
-                <span class="status">IN DEVELOPMENT</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
+</div>
+</div>
 </section>
 
 
@@ -698,410 +602,362 @@ footer {
 
 <section class="calculator-section">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <h2>Free Calculators</h2>
+<h2>Free Calculators</h2>
 
-            <p>
-                Simple tools. Fast results. No complicated setup.
-            </p>
+<p>
+Simple tools. Fast results. No complicated setup.
+</p>
 
-        </div>
+</div>
 
 
-        <div class="calculator-wrapper">
+<div class="calculator-wrapper">
 
 
-            <!-- PERCENTAGE CALCULATOR -->
+<!-- PERCENTAGE -->
 
-            <div class="calculator" id="percentage">
+<div class="calculator" id="percentage">
 
-                <h3>Percentage Calculator</h3>
+<h3>Percentage Calculator</h3>
 
-                <p class="calculator-description">
-                    Find a percentage of any number.
-                </p>
+<p class="calculator-description">
+Find a percentage of any number.
+</p>
 
+<div class="input-group">
+<label for="percent">Percentage (%)</label>
+<input type="number" id="percent" placeholder="Example: 20" step="any">
+</div>
 
-                <div class="input-group">
+<div class="input-group">
+<label for="number">Number</label>
+<input type="number" id="number" placeholder="Example: 500" step="any">
+</div>
 
-                    <label for="percent">
-                        Percentage (%)
-                    </label>
+<div class="calculator-buttons">
 
-                    <input
-                        type="number"
-                        id="percent"
-                        placeholder="Example: 20"
-                        step="any"
-                    >
+<button type="button" class="calculate" onclick="calculatePercentage()">
+Calculate
+</button>
 
-                </div>
+<button type="button" class="reset" onclick="resetPercentage()">
+Reset
+</button>
 
+</div>
 
-                <div class="input-group">
+<div id="error" class="error"></div>
 
-                    <label for="number">
-                        Number
-                    </label>
+<div id="result" class="result" style="display:none;">
 
-                    <input
-                        type="number"
-                        id="number"
-                        placeholder="Example: 500"
-                        step="any"
-                    >
+<div class="result-row">
+<span class="result-label">Result</span>
+<span class="result-value" id="percentageResult">-</span>
+</div>
 
-                </div>
+</div>
 
+</div>
 
-                <div class="calculator-buttons">
 
-                    <button
-                        type="button"
-                        class="calculate"
-                        onclick="calculatePercentage()"
-                    >
-                        Calculate
-                    </button>
+<!-- EMI -->
 
-                    <button
-                        type="button"
-                        class="reset"
-                        onclick="resetCalculator()"
-                    >
-                        Reset
-                    </button>
+<div class="calculator" id="emi">
 
-                </div>
+<h3>Loan EMI Calculator</h3>
 
+<p class="calculator-description">
+Estimate your monthly loan payment, total interest and total payment.
+</p>
 
-                <div id="error" class="error"></div>
+<div class="input-group">
+<label for="loanAmount">Loan Amount</label>
+<input type="number" id="loanAmount" placeholder="Example: 100000" step="any">
+</div>
 
+<div class="input-group">
+<label for="interestRate">Annual Interest Rate (%)</label>
+<input type="number" id="interestRate" placeholder="Example: 8.5" step="any">
+</div>
 
-                <div id="result" class="result" style="display:none;">
+<div class="input-group">
+<label for="loanTerm">Loan Term (Years)</label>
+<input type="number" id="loanTerm" placeholder="Example: 5" step="any">
+</div>
 
-                    <div class="result-row">
+<div class="calculator-buttons">
 
-                        <span class="result-label">
-                            Result
-                        </span>
+<button type="button" class="calculate" onclick="calculateEMI()">
+Calculate
+</button>
 
-                        <span
-                            class="result-value"
-                            id="percentageResult"
-                        >
-                            -
-                        </span>
+<button type="button" class="reset" onclick="resetEMI()">
+Reset
+</button>
 
-                    </div>
+</div>
 
-                </div>
+<div id="emiError" class="error"></div>
 
-            </div>
+<div id="emiResult" class="result" style="display:none;">
 
+<div class="result-row">
+<span class="result-label">Monthly EMI</span>
+<span class="result-value" id="monthlyEMI">-</span>
+</div>
 
-            <!-- EMI CALCULATOR -->
+<div class="result-row">
+<span class="result-label">Total Interest</span>
+<span class="result-value" id="totalInterest">-</span>
+</div>
 
-            <div class="calculator" id="emi">
+<div class="result-row">
+<span class="result-label">Total Payment</span>
+<span class="result-value" id="totalPayment">-</span>
+</div>
 
-                <h3>Loan EMI Calculator</h3>
+</div>
 
-                <p class="calculator-description">
-                    Estimate your monthly loan payment,
-                    total interest and total payment.
-                </p>
+</div>
 
 
-                <div class="input-group">
+<!-- COMPOUND -->
 
-                    <label for="loanAmount">
-                        Loan Amount
-                    </label>
+<div class="calculator" id="compound">
 
-                    <input
-                        type="number"
-                        id="loanAmount"
-                        placeholder="Example: 100000"
-                        step="any"
-                    >
+<h3>Compound Interest Calculator</h3>
 
-                </div>
+<p class="calculator-description">
+Calculate the growth of an investment with compound interest.
+</p>
 
+<div class="input-group">
+<label for="principal">Principal Amount</label>
+<input type="number" id="principal" placeholder="Example: 10000" step="any">
+</div>
 
-                <div class="input-group">
+<div class="input-group">
+<label for="compoundRate">Annual Interest Rate (%)</label>
+<input type="number" id="compoundRate" placeholder="Example: 8" step="any">
+</div>
 
-                    <label for="interestRate">
-                        Annual Interest Rate (%)
-                    </label>
+<div class="input-group">
+<label for="compoundTime">Time (Years)</label>
+<input type="number" id="compoundTime" placeholder="Example: 10" step="any">
+</div>
 
-                    <input
-                        type="number"
-                        id="interestRate"
-                        placeholder="Example: 8.5"
-                        step="any"
-                    >
+<div class="input-group">
 
-                </div>
+<label for="frequency">
+Compounding Frequency
+</label>
 
+<select id="frequency">
 
-                <div class="input-group">
+<option value="1">Annually</option>
+<option value="2">Half-Yearly</option>
+<option value="4">Quarterly</option>
+<option value="12" selected>Monthly</option>
+<option value="365">Daily</option>
 
-                    <label for="loanTerm">
-                        Loan Term (Years)
-                    </label>
+</select>
 
-                    <input
-                        type="number"
-                        id="loanTerm"
-                        placeholder="Example: 5"
-                        step="any"
-                    >
+</div>
 
-                </div>
+<div class="calculator-buttons">
 
+<button type="button" class="calculate" onclick="calculateCompound()">
+Calculate
+</button>
 
-                <div class="calculator-buttons">
+<button type="button" class="reset" onclick="resetCompound()">
+Reset
+</button>
 
-                    <button
-                        type="button"
-                        class="calculate"
-                        onclick="calculateEMI()"
-                    >
-                        Calculate
-                    </button>
+</div>
 
-                    <button
-                        type="button"
-                        class="reset"
-                        onclick="resetEMI()"
-                    >
-                        Reset
-                    </button>
+<div id="compoundError" class="error"></div>
 
-                </div>
+<div id="compoundResult" class="result" style="display:none;">
 
+<div class="result-row">
+<span class="result-label">Final Amount</span>
+<span class="result-value" id="finalAmount">-</span>
+</div>
 
-                <div id="emiError" class="error"></div>
+<div class="result-row">
+<span class="result-label">Total Interest</span>
+<span class="result-value" id="compoundInterest">-</span>
+</div>
 
+</div>
 
-                <div id="emiResult" class="result" style="display:none;">
+</div>
 
-                    <div class="result-row">
 
-                        <span class="result-label">
-                            Monthly EMI
-                        </span>
+<!-- SAVINGS CALCULATOR -->
 
-                        <span
-                            class="result-value"
-                            id="monthlyEMI"
-                        >
-                            -
-                        </span>
+<div class="calculator" id="savings">
 
-                    </div>
+<h3>Savings Calculator</h3>
 
+<p class="calculator-description">
+Estimate your future savings with regular monthly contributions.
+</p>
 
-                    <div class="result-row">
 
-                        <span class="result-label">
-                            Total Interest
-                        </span>
+<div class="input-group">
 
-                        <span
-                            class="result-value"
-                            id="totalInterest"
-                        >
-                            -
-                        </span>
+<label for="startingAmount">
+Starting Amount
+</label>
 
-                    </div>
+<input
+type="number"
+id="startingAmount"
+placeholder="Example: 5000"
+step="any"
+>
 
+</div>
 
-                    <div class="result-row">
 
-                        <span class="result-label">
-                            Total Payment
-                        </span>
+<div class="input-group">
 
-                        <span
-                            class="result-value"
-                            id="totalPayment"
-                        >
-                            -
-                        </span>
+<label for="monthlyContribution">
+Monthly Contribution
+</label>
 
-                    </div>
+<input
+type="number"
+id="monthlyContribution"
+placeholder="Example: 500"
+step="any"
+>
 
-                </div>
+</div>
 
-            </div>
 
+<div class="input-group">
 
-            <!-- COMPOUND INTEREST CALCULATOR -->
+<label for="savingsRate">
+Annual Interest Rate (%)
+</label>
 
-            <div class="calculator" id="compound">
+<input
+type="number"
+id="savingsRate"
+placeholder="Example: 7"
+step="any"
+>
 
-                <h3>Compound Interest Calculator</h3>
+</div>
 
-                <p class="calculator-description">
-                    Calculate the growth of an investment
-                    with compound interest.
-                </p>
 
+<div class="input-group">
 
-                <div class="input-group">
+<label for="savingsTime">
+Time Period (Years)
+</label>
 
-                    <label for="principal">
-                        Principal Amount
-                    </label>
+<input
+type="number"
+id="savingsTime"
+placeholder="Example: 10"
+step="any"
+>
 
-                    <input
-                        type="number"
-                        id="principal"
-                        placeholder="Example: 10000"
-                        step="any"
-                    >
+</div>
 
-                </div>
 
+<div class="calculator-buttons">
 
-                <div class="input-group">
+<button
+type="button"
+class="calculate"
+onclick="calculateSavings()"
+>
+Calculate
+</button>
 
-                    <label for="compoundRate">
-                        Annual Interest Rate (%)
-                    </label>
+<button
+type="button"
+class="reset"
+onclick="resetSavings()"
+>
+Reset
+</button>
 
-                    <input
-                        type="number"
-                        id="compoundRate"
-                        placeholder="Example: 8"
-                        step="any"
-                    >
+</div>
 
-                </div>
 
+<div id="savingsError" class="error"></div>
 
-                <div class="input-group">
 
-                    <label for="compoundTime">
-                        Time (Years)
-                    </label>
+<div
+id="savingsResult"
+class="result"
+style="display:none;"
+>
 
-                    <input
-                        type="number"
-                        id="compoundTime"
-                        placeholder="Example: 10"
-                        step="any"
-                    >
+<div class="result-row">
 
-                </div>
+<span class="result-label">
+Total Contributions
+</span>
 
+<span
+class="result-value"
+id="totalContributions"
+>
+-
+</span>
 
-                <div class="input-group">
+</div>
 
-                    <label for="frequency">
-                        Compounding Frequency
-                    </label>
 
-                    <select id="frequency">
+<div class="result-row">
 
-                        <option value="1">
-                            Annually
-                        </option>
+<span class="result-label">
+Interest Earned
+</span>
 
-                        <option value="2">
-                            Half-Yearly
-                        </option>
+<span
+class="result-value"
+id="interestEarned"
+>
+-
+</span>
 
-                        <option value="4">
-                            Quarterly
-                        </option>
+</div>
 
-                        <option value="12" selected>
-                            Monthly
-                        </option>
 
-                        <option value="365">
-                            Daily
-                        </option>
+<div class="result-row">
 
-                    </select>
+<span class="result-label">
+Final Savings
+</span>
 
-                </div>
+<span
+class="result-value"
+id="finalSavings"
+>
+-
+</span>
 
+</div>
 
-                <div class="calculator-buttons">
+</div>
 
-                    <button
-                        type="button"
-                        class="calculate"
-                        onclick="calculateCompound()"
-                    >
-                        Calculate
-                    </button>
+</div>
 
-                    <button
-                        type="button"
-                        class="reset"
-                        onclick="resetCompound()"
-                    >
-                        Reset
-                    </button>
+</div>
 
-                </div>
-
-
-                <div id="compoundError" class="error"></div>
-
-
-                <div
-                    id="compoundResult"
-                    class="result"
-                    style="display:none;"
-                >
-
-                    <div class="result-row">
-
-                        <span class="result-label">
-                            Final Amount
-                        </span>
-
-                        <span
-                            class="result-value"
-                            id="finalAmount"
-                        >
-                            -
-                        </span>
-
-                    </div>
-
-
-                    <div class="result-row">
-
-                        <span class="result-label">
-                            Total Interest
-                        </span>
-
-                        <span
-                            class="result-value"
-                            id="compoundInterest"
-                        >
-                            -
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -1110,24 +966,24 @@ footer {
 
 <section class="vision" id="vision">
 
-    <div class="container vision-content">
+<div class="container vision-content">
 
-        <div class="eyebrow">
-            OUR VISION
-        </div>
+<div class="eyebrow">
+OUR VISION
+</div>
 
-        <h2>
-            Build useful things.<br>
-            For everyone.
-        </h2>
+<h2>
+Build useful things.<br>
+For everyone.
+</h2>
 
-        <p>
-            KROC LABS is focused on creating simple,
-            useful and accessible digital products for
-            people around the world.
-        </p>
+<p>
+KROC LABS is focused on creating simple,
+useful and accessible digital products for
+people around the world.
+</p>
 
-    </div>
+</div>
 
 </section>
 
@@ -1138,60 +994,45 @@ footer {
 
 <footer>
 
-    <div class="container">
+<div class="container">
 
-        <div class="footer-content">
+<div class="footer-content">
 
-            <div class="footer-brand">
+<div class="footer-brand">
 
-                <div class="logo">
-                    KROC LABS
-                </div>
+<div class="logo">
+KROC LABS
+</div>
 
-                <p>
-                    Useful technology for people worldwide.
-                </p>
+<p>
+Useful technology for people worldwide.
+</p>
 
-            </div>
-
-
-            <div class="footer-links">
-
-                <a href="#products">
-                    Products
-                </a>
-
-                <a href="#percentage">
-                    Calculator
-                </a>
-
-                <a href="#emi">
-                    EMI
-                </a>
-
-                <a href="#compound">
-                    Compound
-                </a>
-
-                <a href="#vision">
-                    Vision
-                </a>
-
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="copyright">
-            © 2026 KROC LABS. All rights reserved.
-        </div>
+<div class="footer-links">
 
-    </div>
+<a href="#products">Products</a>
+<a href="#percentage">Calculator</a>
+<a href="#emi">EMI</a>
+<a href="#compound">Compound</a>
+<a href="#savings">Savings</a>
+<a href="#vision">Vision</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+© 2026 KROC LABS. All rights reserved.
+</div>
+
+</div>
 
 </footer>
 
-
-<!-- JAVASCRIPT -->
 
 <script>
 
@@ -1213,52 +1054,35 @@ function calculatePercentage() {
     const result =
         document.getElementById("result");
 
-    const resultValue =
-        document.getElementById("percentageResult");
-
-
     error.textContent = "";
-
     result.style.display = "none";
-
 
     if (
         !Number.isFinite(percentage) ||
         !Number.isFinite(number)
     ) {
-
         error.textContent =
             "⚠️ Please enter valid numbers";
-
         return;
     }
-
 
     const answer =
         (percentage * number) / 100;
 
-
-    resultValue.textContent =
-        answer.toLocaleString(
-            undefined,
-            {
-                maximumFractionDigits: 2
-            }
-        );
-
+    document.getElementById("percentageResult").textContent =
+        answer.toLocaleString(undefined, {
+            maximumFractionDigits: 2
+        });
 
     result.style.display = "block";
 }
 
 
-function resetCalculator() {
+function resetPercentage() {
 
     document.getElementById("percent").value = "";
-
     document.getElementById("number").value = "";
-
     document.getElementById("error").textContent = "";
-
     document.getElementById("result").style.display = "none";
 
 }
@@ -1285,11 +1109,8 @@ function calculateEMI() {
     const result =
         document.getElementById("emiResult");
 
-
     error.textContent = "";
-
     result.style.display = "none";
-
 
     if (
         !Number.isFinite(loan) ||
@@ -1299,35 +1120,27 @@ function calculateEMI() {
         annualRate < 0 ||
         years <= 0
     ) {
-
         error.textContent =
             "⚠️ Please enter valid loan details";
-
         return;
     }
-
 
     const monthlyRate =
         annualRate / 100 / 12;
 
-    const numberOfPayments =
+    const payments =
         years * 12;
 
     let emi;
 
-
     if (monthlyRate === 0) {
 
-        emi =
-            loan / numberOfPayments;
+        emi = loan / payments;
 
     } else {
 
         const power =
-            Math.pow(
-                1 + monthlyRate,
-                numberOfPayments
-            );
+            Math.pow(1 + monthlyRate, payments);
 
         emi =
             loan *
@@ -1336,43 +1149,29 @@ function calculateEMI() {
             (power - 1);
     }
 
-
     const totalPayment =
-        emi * numberOfPayments;
+        emi * payments;
 
     const totalInterest =
         totalPayment - loan;
 
-
     document.getElementById("monthlyEMI").textContent =
-        emi.toLocaleString(
-            undefined,
-            {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }
-        );
-
+        emi.toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
 
     document.getElementById("totalInterest").textContent =
-        totalInterest.toLocaleString(
-            undefined,
-            {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }
-        );
-
+        totalInterest.toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
 
     document.getElementById("totalPayment").textContent =
-        totalPayment.toLocaleString(
-            undefined,
-            {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }
-        );
-
+        totalPayment.toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
 
     result.style.display = "block";
 }
@@ -1381,13 +1180,9 @@ function calculateEMI() {
 function resetEMI() {
 
     document.getElementById("loanAmount").value = "";
-
     document.getElementById("interestRate").value = "";
-
     document.getElementById("loanTerm").value = "";
-
     document.getElementById("emiError").textContent = "";
-
     document.getElementById("emiResult").style.display = "none";
 
 }
@@ -1400,25 +1195,16 @@ function resetEMI() {
 function calculateCompound() {
 
     const principal =
-        Number(
-            document.getElementById("principal").value
-        );
+        Number(document.getElementById("principal").value);
 
     const annualRate =
-        Number(
-            document.getElementById("compoundRate").value
-        );
+        Number(document.getElementById("compoundRate").value);
 
     const time =
-        Number(
-            document.getElementById("compoundTime").value
-        );
+        Number(document.getElementById("compoundTime").value);
 
     const frequency =
-        Number(
-            document.getElementById("frequency").value
-        );
-
+        Number(document.getElementById("frequency").value);
 
     const error =
         document.getElementById("compoundError");
@@ -1426,192 +1212,10 @@ function calculateCompound() {
     const result =
         document.getElementById("compoundResult");
 
-
     error.textContent = "";
-
     result.style.display = "none";
-
 
     if (
         !Number.isFinite(principal) ||
         !Number.isFinite(annualRate) ||
-        !Number.isFinite(time) ||
-        !Number.isFinite(frequency) ||
-        principal <= 0 ||
-        annualRate < 0 ||
-        time <= 0 ||
-        frequency <= 0
-    ) {
-
-        error.textContent =
-            "⚠️ Please enter valid investment details";
-
-        return;
-    }
-
-
-    /*
-       Compound Interest Formula:
-
-       A = P(1 + r/n)^(nt)
-
-       P = Principal
-       r = Annual interest rate
-       n = Compounding frequency
-       t = Time
-    */
-
-
-    const rate =
-        annualRate / 100;
-
-
-    const finalAmount =
-        principal *
-        Math.pow(
-            1 + rate / frequency,
-            frequency * time
-        );
-
-
-    const totalInterest =
-        finalAmount - principal;
-
-
-    document.getElementById("finalAmount").textContent =
-        finalAmount.toLocaleString(
-            undefined,
-            {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }
-        );
-
-
-    document.getElementById("compoundInterest").textContent =
-        totalInterest.toLocaleString(
-            undefined,
-            {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            }
-        );
-
-
-    result.style.display = "block";
-}
-
-
-function resetCompound() {
-
-    document.getElementById("principal").value = "";
-
-    document.getElementById("compoundRate").value = "";
-
-    document.getElementById("compoundTime").value = "";
-
-    document.getElementById("frequency").value = "12";
-
-    document.getElementById("compoundError").textContent = "";
-
-    document.getElementById("compoundResult").style.display =
-        "none";
-
-}
-
-
-/* =========================
-   ENTER KEY SUPPORT
-========================= */
-
-document
-    .getElementById("percent")
-    .addEventListener("keydown", function(event) {
-
-        if (event.key === "Enter") {
-            calculatePercentage();
-        }
-
-    });
-
-
-document
-    .getElementById("number")
-    .addEventListener("keydown", function(event) {
-
-        if (event.key === "Enter") {
-            calculatePercentage();
-        }
-
-    });
-
-
-document
-    .getElementById("loanAmount")
-    .addEventListener("keydown", function(event) {
-
-        if (event.key === "Enter") {
-            calculateEMI();
-        }
-
-    });
-
-
-document
-    .getElementById("interestRate")
-    .addEventListener("keydown", function(event) {
-
-        if (event.key === "Enter") {
-            calculateEMI();
-        }
-
-    });
-
-
-document
-    .getElementById("loanTerm")
-    .addEventListener("keydown", function(event) {
-
-        if (event.key === "Enter") {
-            calculateEMI();
-        }
-
-    });
-
-
-document
-    .getElementById("principal")
-    .addEventListener("keydown", function(event) {
-
-        if (event.key === "Enter") {
-            calculateCompound();
-        }
-
-    });
-
-
-document
-    .getElementById("compoundRate")
-    .addEventListener("keydown", function(event) {
-
-        if (event.key === "Enter") {
-            calculateCompound();
-        }
-
-    });
-
-
-document
-    .getElementById("compoundTime")
-    .addEventListener("keydown", function(event) {
-
-        if (event.key === "Enter") {
-            calculateCompound();
-        }
-
-    });
-
-</script>
-
-</body>
-</html>
+        !Number
