@@ -455,24 +455,29 @@ footer {
 <body>
 
 <header>
+
 <div class="container navbar">
 
 <a href="#" class="logo">KROC LABS</a>
 
 <nav class="nav-links">
+
 <a href="#products">Products</a>
 <a href="#percentage">Calculator</a>
 <a href="#emi">EMI</a>
 <a href="#compound">Compound</a>
 <a href="#savings">Savings</a>
 <a href="#vision">Vision</a>
+
 </nav>
 
 </div>
+
 </header>
 
 
 <main>
+
 
 <!-- HERO -->
 
@@ -480,7 +485,9 @@ footer {
 
 <div class="container">
 
-<div class="eyebrow">GLOBAL DIGITAL PRODUCT LAB</div>
+<div class="eyebrow">
+GLOBAL DIGITAL PRODUCT LAB
+</div>
 
 <h1>
 Useful technology.<br>
@@ -545,56 +552,115 @@ Useful tools designed to solve everyday problems.
 
 <div class="products-grid">
 
+
 <div class="product-card">
+
 <h3>Percentage Calculator</h3>
-<p>Quickly calculate percentages in seconds.</p>
+
+<p>
+Quickly calculate percentages in seconds.
+</p>
+
 <span class="status">LIVE</span>
+
 </div>
 
+
 <div class="product-card">
+
 <h3>Loan EMI Calculator</h3>
-<p>Estimate monthly loan payments, total interest and total payment.</p>
+
+<p>
+Estimate monthly loan payments, total interest and total payment.
+</p>
+
 <span class="status">LIVE</span>
+
 </div>
 
+
 <div class="product-card">
+
 <h3>Compound Interest</h3>
-<p>Calculate investment growth with compound interest.</p>
+
+<p>
+Calculate investment growth with compound interest.
+</p>
+
 <span class="status">LIVE</span>
+
 </div>
 
+
 <div class="product-card">
+
 <h3>Savings Calculator</h3>
-<p>Estimate future savings with regular monthly contributions.</p>
+
+<p>
+Estimate future savings with regular monthly contributions.
+</p>
+
 <span class="status">LIVE</span>
+
 </div>
 
+
 <div class="product-card">
+
 <h3>Finance Tools</h3>
-<p>More useful financial tools are being built.</p>
+
+<p>
+More useful financial tools are being built.
+</p>
+
 <span class="status">COMING SOON</span>
+
 </div>
 
+
 <div class="product-card">
+
 <h3>AI Tools</h3>
-<p>Smart and simple AI-powered products.</p>
+
+<p>
+Smart and simple AI-powered products.
+</p>
+
 <span class="status">COMING SOON</span>
+
 </div>
 
+
 <div class="product-card">
+
 <h3>Productivity</h3>
-<p>Tools designed to help people work smarter.</p>
+
+<p>
+Tools designed to help people work smarter.
+</p>
+
 <span class="status">COMING SOON</span>
+
 </div>
+
 
 <div class="product-card">
+
 <h3>Business Tools</h3>
-<p>Practical tools for creators and businesses.</p>
+
+<p>
+Practical tools for creators and businesses.
+</p>
+
 <span class="status">COMING SOON</span>
+
+</div>
+
+
 </div>
 
 </div>
-</div>
+
 </section>
 
 
@@ -603,6 +669,7 @@ Useful tools designed to solve everyday problems.
 <section class="calculator-section">
 
 <div class="container">
+
 
 <div class="section-title">
 
@@ -618,7 +685,7 @@ Simple tools. Fast results. No complicated setup.
 <div class="calculator-wrapper">
 
 
-<!-- PERCENTAGE -->
+<!-- PERCENTAGE CALCULATOR -->
 
 <div class="calculator" id="percentage">
 
@@ -628,43 +695,90 @@ Simple tools. Fast results. No complicated setup.
 Find a percentage of any number.
 </p>
 
-<div class="input-group">
-<label for="percent">Percentage (%)</label>
-<input type="number" id="percent" placeholder="Example: 20" step="any">
-</div>
 
 <div class="input-group">
-<label for="number">Number</label>
-<input type="number" id="number" placeholder="Example: 500" step="any">
+
+<label for="percent">
+Percentage (%)
+</label>
+
+<input
+type="number"
+id="percent"
+placeholder="Example: 20"
+step="any"
+>
+
 </div>
+
+
+<div class="input-group">
+
+<label for="number">
+Number
+</label>
+
+<input
+type="number"
+id="number"
+placeholder="Example: 500"
+step="any"
+>
+
+</div>
+
 
 <div class="calculator-buttons">
 
-<button type="button" class="calculate" onclick="calculatePercentage()">
+<button
+type="button"
+class="calculate"
+onclick="calculatePercentage()"
+>
 Calculate
 </button>
 
-<button type="button" class="reset" onclick="resetPercentage()">
+<button
+type="button"
+class="reset"
+onclick="resetPercentage()"
+>
 Reset
 </button>
 
 </div>
 
+
 <div id="error" class="error"></div>
 
-<div id="result" class="result" style="display:none;">
+
+<div
+id="result"
+class="result"
+style="display:none;"
+>
 
 <div class="result-row">
-<span class="result-label">Result</span>
-<span class="result-value" id="percentageResult">-</span>
-</div>
+
+<span class="result-label">
+Result
+</span>
+
+<span
+class="result-value"
+id="percentageResult"
+>
+-
+</span>
 
 </div>
 
 </div>
 
+</div>
 
-<!-- EMI -->
+
+<!-- EMI CALCULATOR -->
 
 <div class="calculator" id="emi">
 
@@ -674,58 +788,138 @@ Reset
 Estimate your monthly loan payment, total interest and total payment.
 </p>
 
-<div class="input-group">
-<label for="loanAmount">Loan Amount</label>
-<input type="number" id="loanAmount" placeholder="Example: 100000" step="any">
-</div>
 
 <div class="input-group">
-<label for="interestRate">Annual Interest Rate (%)</label>
-<input type="number" id="interestRate" placeholder="Example: 8.5" step="any">
+
+<label for="loanAmount">
+Loan Amount
+</label>
+
+<input
+type="number"
+id="loanAmount"
+placeholder="Example: 100000"
+step="any"
+>
+
 </div>
 
+
 <div class="input-group">
-<label for="loanTerm">Loan Term (Years)</label>
-<input type="number" id="loanTerm" placeholder="Example: 5" step="any">
+
+<label for="interestRate">
+Annual Interest Rate (%)
+</label>
+
+<input
+type="number"
+id="interestRate"
+placeholder="Example: 8.5"
+step="any"
+>
+
 </div>
+
+
+<div class="input-group">
+
+<label for="loanTerm">
+Loan Term (Years)
+</label>
+
+<input
+type="number"
+id="loanTerm"
+placeholder="Example: 5"
+step="any"
+>
+
+</div>
+
 
 <div class="calculator-buttons">
 
-<button type="button" class="calculate" onclick="calculateEMI()">
+<button
+type="button"
+class="calculate"
+onclick="calculateEMI()"
+>
 Calculate
 </button>
 
-<button type="button" class="reset" onclick="resetEMI()">
+<button
+type="button"
+class="reset"
+onclick="resetEMI()"
+>
 Reset
 </button>
 
 </div>
 
+
 <div id="emiError" class="error"></div>
 
-<div id="emiResult" class="result" style="display:none;">
+
+<div
+id="emiResult"
+class="result"
+style="display:none;"
+>
 
 <div class="result-row">
-<span class="result-label">Monthly EMI</span>
-<span class="result-value" id="monthlyEMI">-</span>
+
+<span class="result-label">
+Monthly EMI
+</span>
+
+<span
+class="result-value"
+id="monthlyEMI"
+>
+-
+</span>
+
 </div>
+
 
 <div class="result-row">
-<span class="result-label">Total Interest</span>
-<span class="result-value" id="totalInterest">-</span>
+
+<span class="result-label">
+Total Interest
+</span>
+
+<span
+class="result-value"
+id="totalInterest"
+>
+-
+</span>
+
 </div>
+
 
 <div class="result-row">
-<span class="result-label">Total Payment</span>
-<span class="result-value" id="totalPayment">-</span>
-</div>
+
+<span class="result-label">
+Total Payment
+</span>
+
+<span
+class="result-value"
+id="totalPayment"
+>
+-
+</span>
 
 </div>
 
 </div>
 
+</div>
 
-<!-- COMPOUND -->
+
+<!-- COMPOUND INTEREST CALCULATOR -->
 
 <div class="calculator" id="compound">
 
@@ -735,20 +929,54 @@ Reset
 Calculate the growth of an investment with compound interest.
 </p>
 
-<div class="input-group">
-<label for="principal">Principal Amount</label>
-<input type="number" id="principal" placeholder="Example: 10000" step="any">
-</div>
 
 <div class="input-group">
-<label for="compoundRate">Annual Interest Rate (%)</label>
-<input type="number" id="compoundRate" placeholder="Example: 8" step="any">
+
+<label for="principal">
+Principal Amount
+</label>
+
+<input
+type="number"
+id="principal"
+placeholder="Example: 10000"
+step="any"
+>
+
 </div>
 
+
 <div class="input-group">
-<label for="compoundTime">Time (Years)</label>
-<input type="number" id="compoundTime" placeholder="Example: 10" step="any">
+
+<label for="compoundRate">
+Annual Interest Rate (%)
+</label>
+
+<input
+type="number"
+id="compoundRate"
+placeholder="Example: 8"
+step="any"
+>
+
 </div>
+
+
+<div class="input-group">
+
+<label for="compoundTime">
+Time (Years)
+</label>
+
+<input
+type="number"
+id="compoundTime"
+placeholder="Example: 10"
+step="any"
+>
+
+</div>
+
 
 <div class="input-group">
 
@@ -758,40 +986,90 @@ Compounding Frequency
 
 <select id="frequency">
 
-<option value="1">Annually</option>
-<option value="2">Half-Yearly</option>
-<option value="4">Quarterly</option>
-<option value="12" selected>Monthly</option>
-<option value="365">Daily</option>
+<option value="1">
+Annually
+</option>
+
+<option value="2">
+Half-Yearly
+</option>
+
+<option value="4">
+Quarterly
+</option>
+
+<option value="12" selected>
+Monthly
+</option>
+
+<option value="365">
+Daily
+</option>
 
 </select>
 
 </div>
 
+
 <div class="calculator-buttons">
 
-<button type="button" class="calculate" onclick="calculateCompound()">
+<button
+type="button"
+class="calculate"
+onclick="calculateCompound()"
+>
 Calculate
 </button>
 
-<button type="button" class="reset" onclick="resetCompound()">
+<button
+type="button"
+class="reset"
+onclick="resetCompound()"
+>
 Reset
 </button>
 
 </div>
 
+
 <div id="compoundError" class="error"></div>
 
-<div id="compoundResult" class="result" style="display:none;">
+
+<div
+id="compoundResult"
+class="result"
+style="display:none;"
+>
 
 <div class="result-row">
-<span class="result-label">Final Amount</span>
-<span class="result-value" id="finalAmount">-</span>
+
+<span class="result-label">
+Final Amount
+</span>
+
+<span
+class="result-value"
+id="finalAmount"
+>
+-
+</span>
+
 </div>
 
+
 <div class="result-row">
-<span class="result-label">Total Interest</span>
-<span class="result-value" id="compoundInterest">-</span>
+
+<span class="result-label">
+Total Interest
+</span>
+
+<span
+class="result-value"
+id="compoundInterest"
+>
+-
+</span>
+
 </div>
 
 </div>
@@ -955,6 +1233,7 @@ id="finalSavings"
 
 </div>
 
+
 </div>
 
 </div>
@@ -964,7 +1243,10 @@ id="finalSavings"
 
 <!-- VISION -->
 
-<section class="vision" id="vision">
+<section
+class="vision"
+id="vision"
+>
 
 <div class="container vision-content">
 
@@ -998,6 +1280,7 @@ people around the world.
 
 <div class="footer-content">
 
+
 <div class="footer-brand">
 
 <div class="logo">
@@ -1013,12 +1296,29 @@ Useful technology for people worldwide.
 
 <div class="footer-links">
 
-<a href="#products">Products</a>
-<a href="#percentage">Calculator</a>
-<a href="#emi">EMI</a>
-<a href="#compound">Compound</a>
-<a href="#savings">Savings</a>
-<a href="#vision">Vision</a>
+<a href="#products">
+Products
+</a>
+
+<a href="#percentage">
+Calculator
+</a>
+
+<a href="#emi">
+EMI
+</a>
+
+<a href="#compound">
+Compound
+</a>
+
+<a href="#savings">
+Savings
+</a>
+
+<a href="#vision">
+Vision
+</a>
 
 </div>
 
@@ -1055,24 +1355,31 @@ function calculatePercentage() {
         document.getElementById("result");
 
     error.textContent = "";
+
     result.style.display = "none";
+
 
     if (
         !Number.isFinite(percentage) ||
         !Number.isFinite(number)
     ) {
+
         error.textContent =
             "⚠️ Please enter valid numbers";
+
         return;
     }
 
+
     const answer =
         (percentage * number) / 100;
+
 
     document.getElementById("percentageResult").textContent =
         answer.toLocaleString(undefined, {
             maximumFractionDigits: 2
         });
+
 
     result.style.display = "block";
 }
@@ -1081,10 +1388,12 @@ function calculatePercentage() {
 function resetPercentage() {
 
     document.getElementById("percent").value = "";
-    document.getElementById("number").value = "";
-    document.getElementById("error").textContent = "";
-    document.getElementById("result").style.display = "none";
 
+    document.getElementById("number").value = "";
+
+    document.getElementById("error").textContent = "";
+
+    document.getElementById("result").style.display = "none";
 }
 
 
@@ -1109,8 +1418,11 @@ function calculateEMI() {
     const result =
         document.getElementById("emiResult");
 
+
     error.textContent = "";
+
     result.style.display = "none";
+
 
     if (
         !Number.isFinite(loan) ||
@@ -1120,27 +1432,38 @@ function calculateEMI() {
         annualRate < 0 ||
         years <= 0
     ) {
+
         error.textContent =
             "⚠️ Please enter valid loan details";
+
         return;
     }
+
 
     const monthlyRate =
         annualRate / 100 / 12;
 
+
     const payments =
         years * 12;
 
+
     let emi;
+
 
     if (monthlyRate === 0) {
 
-        emi = loan / payments;
+        emi =
+            loan / payments;
 
     } else {
 
         const power =
-            Math.pow(1 + monthlyRate, payments);
+            Math.pow(
+                1 + monthlyRate,
+                payments
+            );
+
 
         emi =
             loan *
@@ -1149,11 +1472,14 @@ function calculateEMI() {
             (power - 1);
     }
 
+
     const totalPayment =
         emi * payments;
 
+
     const totalInterest =
         totalPayment - loan;
+
 
     document.getElementById("monthlyEMI").textContent =
         emi.toLocaleString(undefined, {
@@ -1161,17 +1487,20 @@ function calculateEMI() {
             maximumFractionDigits: 2
         });
 
+
     document.getElementById("totalInterest").textContent =
         totalInterest.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
         });
 
+
     document.getElementById("totalPayment").textContent =
         totalPayment.toLocaleString(undefined, {
             minimumFractionDigits: 2,
             maximumFractionDigits: 2
         });
+
 
     result.style.display = "block";
 }
@@ -1180,11 +1509,14 @@ function calculateEMI() {
 function resetEMI() {
 
     document.getElementById("loanAmount").value = "";
-    document.getElementById("interestRate").value = "";
-    document.getElementById("loanTerm").value = "";
-    document.getElementById("emiError").textContent = "";
-    document.getElementById("emiResult").style.display = "none";
 
+    document.getElementById("interestRate").value = "";
+
+    document.getElementById("loanTerm").value = "";
+
+    document.getElementById("emiError").textContent = "";
+
+    document.getElementById("emiResult").style.display = "none";
 }
 
 
@@ -1212,10 +1544,396 @@ function calculateCompound() {
     const result =
         document.getElementById("compoundResult");
 
+
     error.textContent = "";
+
     result.style.display = "none";
+
 
     if (
         !Number.isFinite(principal) ||
         !Number.isFinite(annualRate) ||
-        !Number
+        !Number.isFinite(time) ||
+        !Number.isFinite(frequency) ||
+        principal <= 0 ||
+        annualRate < 0 ||
+        time <= 0 ||
+        frequency <= 0
+    ) {
+
+        error.textContent =
+            "⚠️ Please enter valid investment details";
+
+        return;
+    }
+
+
+    const finalAmount =
+        principal *
+        Math.pow(
+            1 + (annualRate / 100) / frequency,
+            frequency * time
+        );
+
+
+    const totalInterest =
+        finalAmount - principal;
+
+
+    document.getElementById("finalAmount").textContent =
+        finalAmount.toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+
+    document.getElementById("compoundInterest").textContent =
+        totalInterest.toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+
+    result.style.display = "block";
+}
+
+
+function resetCompound() {
+
+    document.getElementById("principal").value = "";
+
+    document.getElementById("compoundRate").value = "";
+
+    document.getElementById("compoundTime").value = "";
+
+    document.getElementById("frequency").value = "12";
+
+    document.getElementById("compoundError").textContent = "";
+
+    document.getElementById("compoundResult").style.display = "none";
+}
+
+
+/* =========================
+   SAVINGS CALCULATOR
+========================= */
+
+function calculateSavings() {
+
+    const startingAmount =
+        Number(
+            document.getElementById("startingAmount").value
+        );
+
+
+    const monthlyContribution =
+        Number(
+            document.getElementById("monthlyContribution").value
+        );
+
+
+    const annualRate =
+        Number(
+            document.getElementById("savingsRate").value
+        );
+
+
+    const years =
+        Number(
+            document.getElementById("savingsTime").value
+        );
+
+
+    const error =
+        document.getElementById("savingsError");
+
+
+    const result =
+        document.getElementById("savingsResult");
+
+
+    error.textContent = "";
+
+    result.style.display = "none";
+
+
+    /* VALIDATION */
+
+    if (
+        !Number.isFinite(startingAmount) ||
+        !Number.isFinite(monthlyContribution) ||
+        !Number.isFinite(annualRate) ||
+        !Number.isFinite(years) ||
+        startingAmount < 0 ||
+        monthlyContribution < 0 ||
+        annualRate < 0 ||
+        years <= 0
+    ) {
+
+        error.textContent =
+            "⚠️ Please enter valid savings details";
+
+        return;
+    }
+
+
+    /* MONTHS */
+
+    const months =
+        Math.round(years * 12);
+
+
+    /* MONTHLY INTEREST RATE */
+
+    const monthlyRate =
+        annualRate / 100 / 12;
+
+
+    let finalSavings;
+
+
+    /* ZERO INTEREST */
+
+    if (monthlyRate === 0) {
+
+        finalSavings =
+            startingAmount +
+            monthlyContribution * months;
+
+    }
+
+
+    /* WITH INTEREST */
+
+    else {
+
+        const growth =
+            Math.pow(
+                1 + monthlyRate,
+                months
+            );
+
+
+        const startingGrowth =
+            startingAmount * growth;
+
+
+        const contributionGrowth =
+            monthlyContribution *
+            ((growth - 1) / monthlyRate);
+
+
+        finalSavings =
+            startingGrowth +
+            contributionGrowth;
+    }
+
+
+    /* TOTAL CONTRIBUTIONS */
+
+    const totalContributions =
+        startingAmount +
+        monthlyContribution * months;
+
+
+    /* INTEREST */
+
+    const interestEarned =
+        finalSavings -
+        totalContributions;
+
+
+    /* DISPLAY */
+
+    document.getElementById("totalContributions").textContent =
+        totalContributions.toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+
+    document.getElementById("interestEarned").textContent =
+        interestEarned.toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+
+    document.getElementById("finalSavings").textContent =
+        finalSavings.toLocaleString(undefined, {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
+
+    result.style.display = "block";
+}
+
+
+function resetSavings() {
+
+    document.getElementById("startingAmount").value = "";
+
+    document.getElementById("monthlyContribution").value = "";
+
+    document.getElementById("savingsRate").value = "";
+
+    document.getElementById("savingsTime").value = "";
+
+    document.getElementById("savingsError").textContent = "";
+
+    document.getElementById("savingsResult").style.display = "none";
+}
+
+
+/* =========================
+   ENTER KEY SUPPORT
+========================= */
+
+document.getElementById("percent").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            calculatePercentage();
+        }
+
+    }
+);
+
+
+document.getElementById("number").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            calculatePercentage();
+        }
+
+    }
+);
+
+
+document.getElementById("loanAmount").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            calculateEMI();
+        }
+
+    }
+);
+
+
+document.getElementById("interestRate").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            calculateEMI();
+        }
+
+    }
+);
+
+
+document.getElementById("loanTerm").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            calculateEMI();
+        }
+
+    }
+);
+
+
+document.getElementById("principal").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            calculateCompound();
+        }
+
+    }
+);
+
+
+document.getElementById("compoundRate").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            calculateCompound();
+        }
+
+    }
+);
+
+
+document.getElementById("compoundTime").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            calculateCompound();
+        }
+
+    }
+);
+
+
+document.getElementById("startingAmount").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            calculateSavings();
+        }
+
+    }
+);
+
+
+document.getElementById("monthlyContribution").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            calculateSavings();
+        }
+
+    }
+);
+
+
+document.getElementById("savingsRate").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            calculateSavings();
+        }
+
+    }
+);
+
+
+document.getElementById("savingsTime").addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+            calculateSavings();
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
