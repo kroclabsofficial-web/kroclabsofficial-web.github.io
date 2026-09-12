@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>KROC LABS — Useful Digital Tools</title>
+<title>KROC LABS — Free Online Calculators & Digital Tools</title>
 
-<meta name="description" content="KROC LABS builds simple, fast and useful digital tools for people worldwide.">
+<meta name="description" content="KROC LABS provides free, simple and fast online calculators including percentage, EMI, compound interest and savings tools.">
+
+<link rel="canonical" href="https://kroclabsofficial-web.github.io/">
+
+<meta name="theme-color" content="#050505">
+
+<meta name="robots" content="index, follow">
+
+<!-- =========================
+     STRUCTURED DATA
+========================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "KROC LABS",
+  "url": "https://kroclabsofficial-web.github.io/"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "KROC LABS",
+  "url": "https://kroclabsofficial-web.github.io/",
+  "description": "Free online calculators and useful digital tools from KROC LABS."
+}
+</script>
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -31,13 +63,21 @@ a {
     text-decoration: none;
 }
 
+button,
+input,
+select {
+    font-family: inherit;
+}
+
 .container {
     width: 92%;
     max-width: 1150px;
     margin: auto;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
     position: sticky;
@@ -78,7 +118,9 @@ header {
     color: #00ff88;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
     padding: 90px 0 75px;
@@ -134,7 +176,9 @@ header {
     color: #00ff88;
 }
 
-/* TRUST */
+/* =========================
+   TRUST
+========================= */
 
 .trust {
     border-top: 1px solid #1b1b1b;
@@ -155,7 +199,9 @@ header {
     font-weight: 700;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 section {
     padding: 80px 0;
@@ -175,7 +221,9 @@ section {
     color: #888;
 }
 
-/* PRODUCTS */
+/* =========================
+   PRODUCTS
+========================= */
 
 .products-grid {
     display: grid;
@@ -214,7 +262,9 @@ section {
     font-weight: 800;
 }
 
-/* CALCULATORS */
+/* =========================
+   CALCULATORS
+========================= */
 
 .calculator-section {
     background: #080808;
@@ -306,6 +356,15 @@ section {
     color: #fff;
 }
 
+.calculate:hover {
+    opacity: .9;
+}
+
+.reset:hover {
+    border-color: #00ff88;
+    color: #00ff88;
+}
+
 .error {
     color: #ff5c5c;
     margin-top: 14px;
@@ -343,7 +402,59 @@ section {
     text-align: right;
 }
 
-/* VISION */
+/* =========================
+   FAQ
+========================= */
+
+.faq-section {
+    background: #050505;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.faq-item {
+    background: #0b0b0b;
+    border: 1px solid #202020;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.faq-item summary {
+    cursor: pointer;
+    padding: 18px 20px;
+    font-weight: 700;
+    color: #fff;
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    float: right;
+    color: #00ff88;
+    font-size: 20px;
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+.faq-answer {
+    padding: 0 20px 20px;
+    color: #999;
+    font-size: 15px;
+}
+
+/* =========================
+   VISION
+========================= */
 
 .vision {
     text-align: center;
@@ -364,7 +475,9 @@ section {
     font-size: 18px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     border-top: 1px solid #1d1d1d;
@@ -403,7 +516,9 @@ footer {
     border-top: 1px solid #151515;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width:800px) {
 
@@ -449,7 +564,54 @@ footer {
         flex-direction: column;
     }
 }
+
 </style>
+
+<!-- =========================
+     FAQ STRUCTURED DATA
+========================= -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a percentage calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A percentage calculator helps you quickly calculate a percentage of a number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a loan EMI calculator do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A loan EMI calculator estimates monthly EMI, total interest and total payment based on the loan amount, interest rate and loan term."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is compound interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compound interest is interest calculated on the original amount plus previously accumulated interest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a savings calculator estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A savings calculator estimates future savings based on a starting amount, regular contributions, interest rate and time period."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -467,6 +629,7 @@ footer {
 <a href="#emi">EMI</a>
 <a href="#compound">Compound</a>
 <a href="#savings">Savings</a>
+<a href="#faq">FAQ</a>
 <a href="#vision">Vision</a>
 
 </nav>
@@ -478,8 +641,9 @@ footer {
 
 <main>
 
-
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -516,7 +680,9 @@ Our Vision
 </section>
 
 
-<!-- TRUST -->
+<!-- =========================
+     TRUST
+========================= -->
 
 <div class="trust">
 
@@ -533,7 +699,9 @@ Our Vision
 </div>
 
 
-<!-- PRODUCTS -->
+<!-- =========================
+     PRODUCTS
+========================= -->
 
 <section id="products">
 
@@ -541,10 +709,10 @@ Our Vision
 
 <div class="section-title">
 
-<h2>Our Products</h2>
+<h2>Our Digital Tools</h2>
 
 <p>
-Useful tools designed to solve everyday problems.
+Free and useful tools designed to solve everyday problems.
 </p>
 
 </div>
@@ -558,7 +726,7 @@ Useful tools designed to solve everyday problems.
 <h3>Percentage Calculator</h3>
 
 <p>
-Quickly calculate percentages in seconds.
+Quickly calculate a percentage of any number in seconds.
 </p>
 
 <span class="status">LIVE</span>
@@ -664,7 +832,9 @@ Practical tools for creators and businesses.
 </section>
 
 
-<!-- CALCULATORS -->
+<!-- =========================
+     CALCULATORS
+========================= -->
 
 <section class="calculator-section">
 
@@ -673,7 +843,7 @@ Practical tools for creators and businesses.
 
 <div class="section-title">
 
-<h2>Free Calculators</h2>
+<h2>Free Online Calculators</h2>
 
 <p>
 Simple tools. Fast results. No complicated setup.
@@ -685,14 +855,14 @@ Simple tools. Fast results. No complicated setup.
 <div class="calculator-wrapper">
 
 
-<!-- PERCENTAGE CALCULATOR -->
+<!-- PERCENTAGE -->
 
 <div class="calculator" id="percentage">
 
 <h3>Percentage Calculator</h3>
 
 <p class="calculator-description">
-Find a percentage of any number.
+Use this free percentage calculator to find a percentage of any number quickly.
 </p>
 
 
@@ -778,14 +948,14 @@ id="percentageResult"
 </div>
 
 
-<!-- EMI CALCULATOR -->
+<!-- EMI -->
 
 <div class="calculator" id="emi">
 
 <h3>Loan EMI Calculator</h3>
 
 <p class="calculator-description">
-Estimate your monthly loan payment, total interest and total payment.
+Calculate an estimated monthly EMI, total interest and total loan payment.
 </p>
 
 
@@ -919,14 +1089,14 @@ id="totalPayment"
 </div>
 
 
-<!-- COMPOUND INTEREST CALCULATOR -->
+<!-- COMPOUND -->
 
 <div class="calculator" id="compound">
 
 <h3>Compound Interest Calculator</h3>
 
 <p class="calculator-description">
-Calculate the growth of an investment with compound interest.
+Estimate final investment value and interest earned using compound interest.
 </p>
 
 
@@ -1077,14 +1247,14 @@ id="compoundInterest"
 </div>
 
 
-<!-- SAVINGS CALCULATOR -->
+<!-- SAVINGS -->
 
 <div class="calculator" id="savings">
 
 <h3>Savings Calculator</h3>
 
 <p class="calculator-description">
-Estimate your future savings with regular monthly contributions.
+Estimate future savings with a starting balance, monthly contributions, interest and time.
 </p>
 
 
@@ -1241,699 +1411,59 @@ id="finalSavings"
 </section>
 
 
-<!-- VISION -->
+<!-- =========================
+     FAQ
+========================= -->
 
-<section
-class="vision"
-id="vision"
->
-
-<div class="container vision-content">
-
-<div class="eyebrow">
-OUR VISION
-</div>
-
-<h2>
-Build useful things.<br>
-For everyone.
-</h2>
-
-<p>
-KROC LABS is focused on creating simple,
-useful and accessible digital products for
-people around the world.
-</p>
-
-</div>
-
-</section>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
+<section class="faq-section" id="faq">
 
 <div class="container">
 
-<div class="footer-content">
+<div class="section-title">
 
-
-<div class="footer-brand">
-
-<div class="logo">
-KROC LABS
-</div>
+<h2>Frequently Asked Questions</h2>
 
 <p>
-Useful technology for people worldwide.
+Learn more about our online calculators.
 </p>
 
 </div>
 
 
-<div class="footer-links">
+<div class="faq-container">
 
-<a href="#products">
-Products
-</a>
 
-<a href="#percentage">
-Calculator
-</a>
+<details class="faq-item">
 
-<a href="#emi">
-EMI
-</a>
+<summary>
+What is a percentage calculator?
+</summary>
 
-<a href="#compound">
-Compound
-</a>
-
-<a href="#savings">
-Savings
-</a>
-
-<a href="#vision">
-Vision
-</a>
-
+<div class="faq-answer">
+A percentage calculator helps you quickly calculate a percentage of a number.
 </div>
 
+</details>
+
+
+<details class="faq-item">
+
+<summary>
+What does a loan EMI calculator do?
+</summary>
+
+<div class="faq-answer">
+A loan EMI calculator estimates monthly EMI, total interest and total payment based on the loan amount, interest rate and loan term.
 </div>
 
+</details>
 
-<div class="copyright">
-© 2026 KROC LABS. All rights reserved.
-</div>
 
-</div>
+<details class="faq-item">
 
-</footer>
+<summary>
+What is compound interest?
+</summary>
 
-
-<script>
-
-/* =========================
-   PERCENTAGE CALCULATOR
-========================= */
-
-function calculatePercentage() {
-
-    const percentage =
-        Number(document.getElementById("percent").value);
-
-    const number =
-        Number(document.getElementById("number").value);
-
-    const error =
-        document.getElementById("error");
-
-    const result =
-        document.getElementById("result");
-
-    error.textContent = "";
-
-    result.style.display = "none";
-
-
-    if (
-        !Number.isFinite(percentage) ||
-        !Number.isFinite(number)
-    ) {
-
-        error.textContent =
-            "⚠️ Please enter valid numbers";
-
-        return;
-    }
-
-
-    const answer =
-        (percentage * number) / 100;
-
-
-    document.getElementById("percentageResult").textContent =
-        answer.toLocaleString(undefined, {
-            maximumFractionDigits: 2
-        });
-
-
-    result.style.display = "block";
-}
-
-
-function resetPercentage() {
-
-    document.getElementById("percent").value = "";
-
-    document.getElementById("number").value = "";
-
-    document.getElementById("error").textContent = "";
-
-    document.getElementById("result").style.display = "none";
-}
-
-
-/* =========================
-   EMI CALCULATOR
-========================= */
-
-function calculateEMI() {
-
-    const loan =
-        Number(document.getElementById("loanAmount").value);
-
-    const annualRate =
-        Number(document.getElementById("interestRate").value);
-
-    const years =
-        Number(document.getElementById("loanTerm").value);
-
-    const error =
-        document.getElementById("emiError");
-
-    const result =
-        document.getElementById("emiResult");
-
-
-    error.textContent = "";
-
-    result.style.display = "none";
-
-
-    if (
-        !Number.isFinite(loan) ||
-        !Number.isFinite(annualRate) ||
-        !Number.isFinite(years) ||
-        loan <= 0 ||
-        annualRate < 0 ||
-        years <= 0
-    ) {
-
-        error.textContent =
-            "⚠️ Please enter valid loan details";
-
-        return;
-    }
-
-
-    const monthlyRate =
-        annualRate / 100 / 12;
-
-
-    const payments =
-        years * 12;
-
-
-    let emi;
-
-
-    if (monthlyRate === 0) {
-
-        emi =
-            loan / payments;
-
-    } else {
-
-        const power =
-            Math.pow(
-                1 + monthlyRate,
-                payments
-            );
-
-
-        emi =
-            loan *
-            monthlyRate *
-            power /
-            (power - 1);
-    }
-
-
-    const totalPayment =
-        emi * payments;
-
-
-    const totalInterest =
-        totalPayment - loan;
-
-
-    document.getElementById("monthlyEMI").textContent =
-        emi.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-
-
-    document.getElementById("totalInterest").textContent =
-        totalInterest.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-
-
-    document.getElementById("totalPayment").textContent =
-        totalPayment.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-
-
-    result.style.display = "block";
-}
-
-
-function resetEMI() {
-
-    document.getElementById("loanAmount").value = "";
-
-    document.getElementById("interestRate").value = "";
-
-    document.getElementById("loanTerm").value = "";
-
-    document.getElementById("emiError").textContent = "";
-
-    document.getElementById("emiResult").style.display = "none";
-}
-
-
-/* =========================
-   COMPOUND INTEREST
-========================= */
-
-function calculateCompound() {
-
-    const principal =
-        Number(document.getElementById("principal").value);
-
-    const annualRate =
-        Number(document.getElementById("compoundRate").value);
-
-    const time =
-        Number(document.getElementById("compoundTime").value);
-
-    const frequency =
-        Number(document.getElementById("frequency").value);
-
-    const error =
-        document.getElementById("compoundError");
-
-    const result =
-        document.getElementById("compoundResult");
-
-
-    error.textContent = "";
-
-    result.style.display = "none";
-
-
-    if (
-        !Number.isFinite(principal) ||
-        !Number.isFinite(annualRate) ||
-        !Number.isFinite(time) ||
-        !Number.isFinite(frequency) ||
-        principal <= 0 ||
-        annualRate < 0 ||
-        time <= 0 ||
-        frequency <= 0
-    ) {
-
-        error.textContent =
-            "⚠️ Please enter valid investment details";
-
-        return;
-    }
-
-
-    const finalAmount =
-        principal *
-        Math.pow(
-            1 + (annualRate / 100) / frequency,
-            frequency * time
-        );
-
-
-    const totalInterest =
-        finalAmount - principal;
-
-
-    document.getElementById("finalAmount").textContent =
-        finalAmount.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-
-
-    document.getElementById("compoundInterest").textContent =
-        totalInterest.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-
-
-    result.style.display = "block";
-}
-
-
-function resetCompound() {
-
-    document.getElementById("principal").value = "";
-
-    document.getElementById("compoundRate").value = "";
-
-    document.getElementById("compoundTime").value = "";
-
-    document.getElementById("frequency").value = "12";
-
-    document.getElementById("compoundError").textContent = "";
-
-    document.getElementById("compoundResult").style.display = "none";
-}
-
-
-/* =========================
-   SAVINGS CALCULATOR
-========================= */
-
-function calculateSavings() {
-
-    const startingAmount =
-        Number(
-            document.getElementById("startingAmount").value
-        );
-
-
-    const monthlyContribution =
-        Number(
-            document.getElementById("monthlyContribution").value
-        );
-
-
-    const annualRate =
-        Number(
-            document.getElementById("savingsRate").value
-        );
-
-
-    const years =
-        Number(
-            document.getElementById("savingsTime").value
-        );
-
-
-    const error =
-        document.getElementById("savingsError");
-
-
-    const result =
-        document.getElementById("savingsResult");
-
-
-    error.textContent = "";
-
-    result.style.display = "none";
-
-
-    /* VALIDATION */
-
-    if (
-        !Number.isFinite(startingAmount) ||
-        !Number.isFinite(monthlyContribution) ||
-        !Number.isFinite(annualRate) ||
-        !Number.isFinite(years) ||
-        startingAmount < 0 ||
-        monthlyContribution < 0 ||
-        annualRate < 0 ||
-        years <= 0
-    ) {
-
-        error.textContent =
-            "⚠️ Please enter valid savings details";
-
-        return;
-    }
-
-
-    /* MONTHS */
-
-    const months =
-        Math.round(years * 12);
-
-
-    /* MONTHLY INTEREST RATE */
-
-    const monthlyRate =
-        annualRate / 100 / 12;
-
-
-    let finalSavings;
-
-
-    /* ZERO INTEREST */
-
-    if (monthlyRate === 0) {
-
-        finalSavings =
-            startingAmount +
-            monthlyContribution * months;
-
-    }
-
-
-    /* WITH INTEREST */
-
-    else {
-
-        const growth =
-            Math.pow(
-                1 + monthlyRate,
-                months
-            );
-
-
-        const startingGrowth =
-            startingAmount * growth;
-
-
-        const contributionGrowth =
-            monthlyContribution *
-            ((growth - 1) / monthlyRate);
-
-
-        finalSavings =
-            startingGrowth +
-            contributionGrowth;
-    }
-
-
-    /* TOTAL CONTRIBUTIONS */
-
-    const totalContributions =
-        startingAmount +
-        monthlyContribution * months;
-
-
-    /* INTEREST */
-
-    const interestEarned =
-        finalSavings -
-        totalContributions;
-
-
-    /* DISPLAY */
-
-    document.getElementById("totalContributions").textContent =
-        totalContributions.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-
-
-    document.getElementById("interestEarned").textContent =
-        interestEarned.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-
-
-    document.getElementById("finalSavings").textContent =
-        finalSavings.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-
-
-    result.style.display = "block";
-}
-
-
-function resetSavings() {
-
-    document.getElementById("startingAmount").value = "";
-
-    document.getElementById("monthlyContribution").value = "";
-
-    document.getElementById("savingsRate").value = "";
-
-    document.getElementById("savingsTime").value = "";
-
-    document.getElementById("savingsError").textContent = "";
-
-    document.getElementById("savingsResult").style.display = "none";
-}
-
-
-/* =========================
-   ENTER KEY SUPPORT
-========================= */
-
-document.getElementById("percent").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            calculatePercentage();
-        }
-
-    }
-);
-
-
-document.getElementById("number").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            calculatePercentage();
-        }
-
-    }
-);
-
-
-document.getElementById("loanAmount").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            calculateEMI();
-        }
-
-    }
-);
-
-
-document.getElementById("interestRate").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            calculateEMI();
-        }
-
-    }
-);
-
-
-document.getElementById("loanTerm").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            calculateEMI();
-        }
-
-    }
-);
-
-
-document.getElementById("principal").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            calculateCompound();
-        }
-
-    }
-);
-
-
-document.getElementById("compoundRate").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            calculateCompound();
-        }
-
-    }
-);
-
-
-document.getElementById("compoundTime").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            calculateCompound();
-        }
-
-    }
-);
-
-
-document.getElementById("startingAmount").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            calculateSavings();
-        }
-
-    }
-);
-
-
-document.getElementById("monthlyContribution").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            calculateSavings();
-        }
-
-    }
-);
-
-
-document.getElementById("savingsRate").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            calculateSavings();
-        }
-
-    }
-);
-
-
-document.getElementById("savingsTime").addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Enter") {
-            calculateSavings();
-        }
-
-    }
-);
-
-</script>
-
-</body>
-</html>
+<div class="faq-answer">
+Compound interest is interest calculated on the original amount plus pr
