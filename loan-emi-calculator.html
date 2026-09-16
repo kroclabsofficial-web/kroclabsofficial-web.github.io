@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Loan EMI Calculator - Free Online Tool | KROC LABS</title>
+
+  <meta
+    name="description"
+    content="Free Loan EMI Calculator by KROC LABS. Calculate monthly loan EMI, total interest and total payment quickly and easily."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link
+    rel="canonical"
+    href="https://kroclabsofficial-web.github.io/loan-emi-calculator.html"
+  >
+
+  <meta name="theme-color" content="#050505">
+
+  <meta property="og:title" content="Loan EMI Calculator | KROC LABS">
+  <meta
+    property="og:description"
+    content="Calculate monthly loan EMI, total interest and total payment with the free KROC LABS Loan EMI Calculator."
+  >
+  <meta
+    property="og:url"
+    content="https://kroclabsofficial-web.github.io/loan-emi-calculator.html"
+  >
+  <meta property="og:type" content="website">
+
+
+  <!-- STRUCTURED DATA -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "KROC LABS Loan EMI Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "url": "https://kroclabsofficial-web.github.io/loan-emi-calculator.html",
+    "description": "A free online loan EMI calculator for estimating monthly EMI, total interest and total payment."
+  }
+  </script>
+
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050505;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 255, 136, 0.12);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 18px 22px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #00ff88;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      font-size: 14px;
+      color: #cfcfcf;
+    }
+
+    .nav-links a {
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00ff88;
+    }
+
+    .home-btn {
+      padding: 9px 15px;
+
+      border: 1px solid #00ff88;
+      border-radius: 8px;
+
+      color: #00ff88;
+      font-weight: 700;
+    }
+
+    .home-btn:hover {
+      background: #00ff88;
+      color: #050505;
+    }
+
+
+    /* HERO */
+
+    .hero {
+      max-width: 900px;
+      margin: auto;
+
+      text-align: center;
+
+      padding: 75px 20px 45px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+
+      color: #00ff88;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 7vw, 64px);
+
+      line-height: 1.05;
+
+      margin-bottom: 20px;
+
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span {
+      color: #00ff88;
+    }
+
+    .hero p {
+      max-width: 700px;
+
+      margin: auto;
+
+      color: #a9a9a9;
+
+      font-size: 17px;
+    }
+
+
+    /* CALCULATOR */
+
+    .calculator-section {
+      padding: 20px 20px 80px;
+    }
+
+    .calculator-card {
+      width: 100%;
+      max-width: 650px;
+
+      margin: auto;
+
+      padding: 30px;
+
+      background: #0b0b0b;
+
+      border: 1px solid rgba(0, 255, 136, 0.28);
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 0 50px rgba(0, 255, 136, 0.05);
+    }
+
+    .card-top {
+      margin-bottom: 25px;
+    }
+
+    .card-label {
+      color: #00ff88;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 1.5px;
+
+      margin-bottom: 8px;
+    }
+
+    .card-top h2 {
+      font-size: 27px;
+
+      margin-bottom: 8px;
+    }
+
+    .card-top p {
+      color: #909090;
+
+      font-size: 14px;
+    }
+
+
+    /* INPUTS */
+
+    .input-group {
+      margin-bottom: 18px;
+    }
+
+    .input-group label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      color: #dddddd;
+    }
+
+    .input-group input {
+      width: 100%;
+
+      padding: 15px 16px;
+
+      background: #050505;
+
+      color: #ffffff;
+
+      border: 1px solid #303030;
+
+      border-radius: 10px;
+
+      outline: none;
+
+      font-size: 16px;
+
+      transition: 0.2s ease;
+    }
+
+    .input-group input:focus {
+      border-color: #00ff88;
+
+      box-shadow:
+        0 0 0 3px rgba(0, 255, 136, 0.08);
+    }
+
+
+    /* BUTTONS */
+
+    .button-row {
+      display: flex;
+
+      gap: 12px;
+
+      margin-top: 8px;
+    }
+
+    .calculate-btn,
+    .reset-btn {
+      flex: 1;
+
+      padding: 14px 18px;
+
+      border-radius: 10px;
+
+      font-size: 15px;
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition: 0.2s ease;
+    }
+
+    .calculate-btn {
+      background: #00ff88;
+
+      color: #050505;
+
+      border: 1px solid #00ff88;
+    }
+
+    .calculate-btn:hover {
+      transform: translateY(-1px);
+
+      box-shadow:
+        0 8px 25px rgba(0, 255, 136, 0.15);
+    }
+
+    .reset-btn {
+      background: transparent;
+
+      color: #00ff88;
+
+      border: 1px solid #00ff88;
+    }
+
+    .reset-btn:hover {
+      background: rgba(0, 255, 136, 0.08);
+    }
+
+
+    /* ERROR */
+
+    .error {
+      display: none;
+
+      margin-top: 18px;
+
+      padding: 12px 14px;
+
+      border: 1px solid #5b2525;
+
+      border-radius: 9px;
+
+      background: #160909;
+
+      color: #ff8d8d;
+
+      font-size: 14px;
+
+      font-weight: 700;
+    }
+
+
+    /* RESULT */
+
+    .result {
+      display: none;
+
+      margin-top: 22px;
+
+      padding: 22px;
+
+      background: #07140e;
+
+      border: 1px solid rgba(0, 255, 136, 0.3);
+
+      border-radius: 12px;
+    }
+
+    .result-title {
+      color: #00ff88;
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      letter-spacing: 1.5px;
+
+      margin-bottom: 15px;
+    }
+
+    .main-result {
+      text-align: center;
+
+      padding: 15px 0 20px;
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .main-result-label {
+      color: #999999;
+
+      font-size: 13px;
+
+      margin-bottom: 5px;
+    }
+
+    .monthly-emi {
+      color: #00ff88;
+
+      font-size: clamp(32px, 8vw, 48px);
+
+      font-weight: 900;
+
+      line-height: 1.1;
+
+      word-break: break-word;
+    }
+
+    .result-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+
+      margin-top: 18px;
+    }
+
+    .result-item {
+      background: #050505;
+
+      border: 1px solid #1d1d1d;
+
+      border-radius: 10px;
+
+      padding: 15px;
+    }
+
+    .result-item span {
+      display: block;
+
+      color: #777777;
+
+      font-size: 12px;
+
+      margin-bottom: 5px;
+    }
+
+    .result-item strong {
+      color: #ffffff;
+
+      font-size: 16px;
+
+      word-break: break-word;
+    }
+
+
+    /* INFO */
+
+    .info-section {
+      max-width: 900px;
+
+      margin: auto;
+
+      padding: 0 20px 80px;
+    }
+
+    .info-box {
+      background: #0a0a0a;
+
+      border: 1px solid #202020;
+
+      border-radius: 16px;
+
+      padding: 28px;
+
+      margin-bottom: 20px;
+    }
+
+    .info-box h2 {
+      font-size: 24px;
+
+      margin-bottom: 12px;
+    }
+
+    .info-box h2 span {
+      color: #00ff88;
+    }
+
+    .info-box p {
+      color: #a6a6a6;
+
+      font-size: 15px;
+    }
+
+    .steps {
+      display: grid;
+
+      gap: 12px;
+
+      margin-top: 18px;
+    }
+
+    .step {
+      padding: 15px;
+
+      border-left: 2px solid #00ff88;
+
+      background: #080808;
+
+      color: #bdbdbd;
+
+      font-size: 14px;
+    }
+
+    .step strong {
+      color: #ffffff;
+    }
+
+
+    /* FAQ */
+
+    .faq-section {
+      max-width: 900px;
+
+      margin: auto;
+
+      padding: 0 20px 80px;
+    }
+
+    .section-heading {
+      text-align: center;
+
+      margin-bottom: 28px;
+    }
+
+    .section-heading .small {
+      color: #00ff88;
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+    }
+
+    .section-heading h2 {
+      font-size: 32px;
+
+      margin-top: 8px;
+    }
+
+    details {
+      background: #0a0a0a;
+
+      border: 1px solid #202020;
+
+      border-radius: 12px;
+
+      margin-bottom: 12px;
+
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 18px;
+
+      cursor: pointer;
+
+      font-weight: 700;
+
+      color: #ffffff;
+
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+
+      float: right;
+
+      color: #00ff88;
+
+      font-size: 20px;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      padding: 0 18px 18px;
+
+      color: #9d9d9d;
+
+      font-size: 14px;
+    }
+
+
+    /* DISCLAIMER */
+
+    .disclaimer {
+      max-width: 900px;
+
+      margin: auto;
+
+      padding: 0 20px 70px;
+    }
+
+    .disclaimer-box {
+      border: 1px solid #1d1d1d;
+
+      border-radius: 12px;
+
+      padding: 18px;
+
+      background: #080808;
+    }
+
+    .disclaimer-box strong {
+      color: #00ff88;
+
+      font-size: 13px;
+    }
+
+    .disclaimer-box p {
+      color: #777777;
+
+      font-size: 12px;
+
+      margin-top: 6px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #171717;
+
+      padding: 35px 20px;
+
+      text-align: center;
+    }
+
+    .footer-logo {
+      color: #00ff88;
+
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      color: #666666;
+
+      font-size: 13px;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      .nav {
+        padding: 15px 16px;
+
+        align-items: flex-start;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .nav-links {
+        gap: 9px;
+
+        font-size: 11px;
+
+        flex-wrap: wrap;
+
+        justify-content: flex-end;
+      }
+
+      .home-btn {
+        padding: 7px 10px;
+      }
+
+      .hero {
+        padding: 55px 18px 35px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .calculator-section {
+        padding: 15px 15px 60px;
+      }
+
+      .calculator-card {
+        padding: 22px 18px;
+
+        border-radius: 15px;
+      }
+
+      .card-top h2 {
+        font-size: 24px;
+      }
+
+      .button-row {
+        flex-direction: column;
+      }
+
+      .calculate-btn,
+      .reset-btn {
+        width: 100%;
+      }
+
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-section,
+      .faq-section,
+      .disclaimer {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .info-box {
+        padding: 22px 18px;
+      }
+
+      .section-heading h2 {
+        font-size: 27px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header>
+
+    <nav class="nav">
+
+      <a href="index.html" class="logo">
+        KROC LABS
+      </a>
+
+      <div class="nav-links">
+
+        <a href="index.html#products">
+          Products
+        </a>
+
+        <a href="percentage-calculator.html">
+          Percentage
+        </a>
+
+        <a href="#calculator">
+          EMI
+        </a>
+
+        <a href="#faq">
+          FAQ
+        </a>
+
+        <a href="index.html" class="home-btn">
+          Home
+        </a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="eyebrow">
+        KROC LABS • FREE FINANCE TOOL
+      </div>
+
+      <h1>
+        Loan EMI <span>Calculator</span>
+      </h1>
+
+      <p>
+        Estimate your monthly loan payment, total interest and
+        total payment in seconds.
+      </p>
+
+    </section>
+
+
+    <!-- CALCULATOR -->
+
+    <section class="calculator-section" id="calculator">
+
+      <div class="calculator-card">
+
+        <div class="card-top">
+
+          <div class="card-label">
+            TOOL 02
+          </div>
+
+          <h2>
+            Calculate Your EMI
+          </h2>
+
+          <p>
+            Enter your loan amount, interest rate and loan term.
+          </p>
+
+        </div>
+
+
+        <!-- LOAN AMOUNT -->
+
+        <div class="input-group">
+
+          <label for="loanAmount">
+            Loan Amount
+          </label>
+
+          <input
+            type="number"
+            id="loanAmount"
+            placeholder="Example: 500000"
+            inputmode="decimal"
+            step="any"
+            min="0"
+            autocomplete="off"
+          >
+
+        </div>
+
+
+        <!-- INTEREST RATE -->
+
+        <div class="input-group">
+
+          <label for="interestRate">
+            Annual Interest Rate (%)
+          </label>
+
+          <input
+            type="number"
+            id="interestRate"
+            placeholder="Example: 8.5"
+            inputmode="decimal"
+            step="any"
+            min="0"
+            autocomplete="off"
+          >
+
+        </div>
+
+
+        <!-- LOAN TERM -->
+
+        <div class="input-group">
+
+          <label for="loanTerm">
+            Loan Term (Years)
+          </label>
+
+          <input
+            type="number"
+            id="loanTerm"
+            placeholder="Example: 5"
+            inputmode="decimal"
+            step="any"
+            min="0"
+            autocomplete="off"
+          >
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="button-row">
+
+          <button
+            type="button"
+            class="calculate-btn"
+            onclick="calculateEMI()"
+          >
+            Calculate →
+          </button>
+
+          <button
+            type="button"
+            class="reset-btn"
+            onclick="resetEMI()"
+          >
+            Reset (C)
+          </button>
+
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div id="emiError" class="error">
+          ⚠️ Please enter valid loan details
+        </div>
+
+
+        <!-- RESULT -->
+
+        <div id="emiResult" class="result">
+
+          <div class="result-title">
+            ESTIMATED LOAN SUMMARY
+          </div>
+
+
+          <div class="main-result">
+
+            <div class="main-result-label">
+              Monthly EMI
+            </div>
+
+            <div id="monthlyEMI" class="monthly-emi">
+              0
+            </div>
+
+          </div>
+
+
+          <div class="result-grid">
+
+            <div class="result-item">
+
+              <span>
+                Total Interest
+              </span>
+
+              <strong id="totalInterest">
+                0
+              </strong>
+
+            </div>
+
+
+            <div class="result-item">
+
+              <span>
+                Total Payment
+              </span>
+
+              <strong id="totalPayment">
+                0
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="info-section">
+
+
+      <div class="info-box">
+
+        <h2>
+          How to use the <span>Loan EMI Calculator</span>
+        </h2>
+
+        <p>
+          Enter the three basic loan details to estimate your
+          monthly EMI and overall repayment amount.
+        </p>
+
+
+        <div class="steps">
+
+          <div class="step">
+            <strong>1.</strong>
+            Enter the total loan amount.
+          </div>
+
+          <div class="step">
+            <strong>2.</strong>
+            Enter the annual interest rate.
+          </div>
+
+          <div class="step">
+            <strong>3.</strong>
+            Enter the loan term in years.
+          </div>
+
+          <div class="step">
+            <strong>4.</strong>
+            Tap <strong>Calculate</strong> to see the estimate.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FORMULA -->
+
+      <div class="info-box">
+
+        <h2>
+          EMI <span>Formula</span>
+        </h2>
+
+        <p>
+          The standard reducing-balance EMI formula is:
+        </p>
+
+        <div class="step" style="margin-top: 15px;">
+          <strong>
+            EMI = P × r × (1 + r)ⁿ ÷ ((1 + r)ⁿ − 1)
+          </strong>
+        </div>
+
+        <p style="margin-top: 15px;">
+          P is the principal loan amount, r is the monthly interest
+          rate, and n is the total number of monthly payments.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="faq-section" id="faq">
+
+      <div class="section-heading">
+
+        <div class="small">
+          FREQUENTLY ASKED QUESTIONS
+        </div>
+
+        <h2>
+          Loan EMI Calculator FAQ
+        </h2>
+
+      </div>
+
+
+      <details>
+
+        <summary>
+          What is EMI?
+        </summary>
+
+        <p>
+          EMI stands for Equated Monthly Instalment. It is the
+          regular payment made toward repaying a loan, including
+          principal and interest.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          What information do I need to calculate EMI?
+        </summary>
+
+        <p>
+          You need the loan amount, annual interest rate and loan
+          term. This calculator uses those values to estimate the
+          monthly payment.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Does a higher interest rate increase EMI?
+        </summary>
+
+        <p>
+          Generally, for the same loan amount and term, a higher
+          interest rate results in a higher estimated EMI and
+          higher total interest.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Is this Loan EMI Calculator free?
+        </summary>
+
+        <p>
+          Yes. The KROC LABS Loan EMI Calculator is designed as
+          a free online tool and does not require an account.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Is the calculated EMI guaranteed by a lender?
+        </summary>
+
+        <p>
+          No. The result is an estimate based on the information
+          entered. Actual loan payments can vary depending on the
+          lender, fees, taxes, rate structure and loan agreement.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Can I use this calculator on my phone?
+        </summary>
+
+        <p>
+          Yes. The page is designed to work on smartphones,
+          tablets and desktop browsers.
+        </p>
+
+      </details>
+
+    </section>
+
+
+    <!-- DISCLAIMER -->
+
+    <section class="disclaimer">
+
+      <div class="disclaimer-box">
+
+        <strong>
+          IMPORTANT INFORMATION
+        </strong>
+
+        <p>
+          KROC LABS provides this calculator for general
+          informational and educational purposes. The results are
+          estimates based on the values entered and are not a loan
+          offer, financial advice or a guarantee of actual lender
+          terms. Actual EMI, interest, fees and repayment schedules
+          may differ.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-logo">
+      KROC LABS
+    </div>
+
+    <p>
+      Useful technology. Built differently.
+    </p>
+
+    <p style="margin-top: 8px;">
+      © 2026 KROC LABS. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+
+    function calculateEMI() {
+
+      const loanAmountInput =
+        document.getElementById("loanAmount");
+
+      const interestRateInput =
+        document.getElementById("interestRate");
+
+      const loanTermInput =
+        document.getElementById("loanTerm");
+
+      const error =
+        document.getElementById("emiError");
+
+      const result =
+        document.getElementById("emiResult");
+
+
+      const loanAmount =
+        Number(loanAmountInput.value);
+
+      const annualRate =
+        Number(interestRateInput.value);
+
+      const years =
+        Number(loanTermInput.value);
+
+
+      /*
+        VALIDATION
+      */
+
+      if (
+        loanAmountInput.value.trim() === "" ||
+        interestRateInput.value.trim() === "" ||
+        loanTermInput.value.trim() === "" ||
+
+        
