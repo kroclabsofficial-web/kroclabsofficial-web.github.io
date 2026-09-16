@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Percentage Calculator - Free Online Tool | KROC LABS</title>
+
+  <meta
+    name="description"
+    content="Free Percentage Calculator by KROC LABS. Calculate X% of any number instantly. Fast, simple and easy to use with no signup."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link
+    rel="canonical"
+    href="https://kroclabsofficial-web.github.io/percentage-calculator.html"
+  >
+
+  <meta name="theme-color" content="#050505">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Percentage Calculator | KROC LABS">
+  <meta
+    property="og:description"
+    content="Calculate percentages instantly with the free KROC LABS Percentage Calculator."
+  >
+  <meta
+    property="og:url"
+    content="https://kroclabsofficial-web.github.io/percentage-calculator.html"
+  >
+  <meta property="og:type" content="website">
+
+  <!-- Basic Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "KROC LABS Percentage Calculator",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "url": "https://kroclabsofficial-web.github.io/percentage-calculator.html",
+    "description": "A free online percentage calculator that calculates a percentage of a number."
+  }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050505;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 5, 5, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 255, 136, 0.12);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #00ff88;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+      color: #cfcfcf;
+    }
+
+    .nav-links a {
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00ff88;
+    }
+
+    .home-btn {
+      padding: 9px 15px;
+      border: 1px solid #00ff88;
+      border-radius: 8px;
+      color: #00ff88;
+      font-weight: 700;
+    }
+
+    .home-btn:hover {
+      background: #00ff88;
+      color: #050505;
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      padding: 75px 20px 45px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #00ff88;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 7vw, 64px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span {
+      color: #00ff88;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: auto;
+      color: #a9a9a9;
+      font-size: 17px;
+    }
+
+    /* CALCULATOR */
+
+    .calculator-section {
+      padding: 20px 20px 80px;
+    }
+
+    .calculator-card {
+      width: 100%;
+      max-width: 650px;
+      margin: auto;
+      padding: 30px;
+      background: #0b0b0b;
+      border: 1px solid rgba(0, 255, 136, 0.28);
+      border-radius: 18px;
+      box-shadow:
+        0 0 50px rgba(0, 255, 136, 0.05);
+    }
+
+    .card-top {
+      margin-bottom: 25px;
+    }
+
+    .card-label {
+      color: #00ff88;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+
+    .card-top h2 {
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .card-top p {
+      color: #909090;
+      font-size: 14px;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #dddddd;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 15px 16px;
+      background: #050505;
+      color: #ffffff;
+      border: 1px solid #303030;
+      border-radius: 10px;
+      outline: none;
+      font-size: 16px;
+      transition: 0.2s ease;
+    }
+
+    .input-group input:focus {
+      border-color: #00ff88;
+      box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.08);
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .calculate-btn,
+    .reset-btn {
+      flex: 1;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .calculate-btn {
+      background: #00ff88;
+      color: #050505;
+      border: 1px solid #00ff88;
+    }
+
+    .calculate-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 25px rgba(0, 255, 136, 0.15);
+    }
+
+    .reset-btn {
+      background: transparent;
+      color: #00ff88;
+      border: 1px solid #00ff88;
+    }
+
+    .reset-btn:hover {
+      background: rgba(0, 255, 136, 0.08);
+    }
+
+    .error {
+      display: none;
+      margin-top: 18px;
+      padding: 12px 14px;
+      border: 1px solid #5b2525;
+      border-radius: 9px;
+      background: #160909;
+      color: #ff8d8d;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .result {
+      display: none;
+      margin-top: 22px;
+      padding: 22px;
+      background: #07140e;
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .result-label {
+      color: #999999;
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    .result-value {
+      color: #00ff88;
+      font-size: clamp(30px, 7vw, 44px);
+      font-weight: 900;
+      word-break: break-word;
+    }
+
+    .formula {
+      color: #8e8e8e;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    /* INFO */
+
+    .info-section {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px 80px;
+    }
+
+    .info-box {
+      background: #0a0a0a;
+      border: 1px solid #202020;
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+
+    .info-box h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .info-box h2 span {
+      color: #00ff88;
+    }
+
+    .info-box p {
+      color: #a6a6a6;
+      font-size: 15px;
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .step {
+      padding: 15px;
+      border-left: 2px solid #00ff88;
+      background: #080808;
+      color: #bdbdbd;
+      font-size: 14px;
+    }
+
+    .step strong {
+      color: #ffffff;
+    }
+
+    /* FAQ */
+
+    .faq-section {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px 80px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .section-heading .small {
+      color: #00ff88;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .section-heading h2 {
+      font-size: 32px;
+      margin-top: 8px;
+    }
+
+    details {
+      background: #0a0a0a;
+      border: 1px solid #202020;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 18px;
+      cursor: pointer;
+      font-weight: 700;
+      color: #ffffff;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      float: right;
+      color: #00ff88;
+      font-size: 20px;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      padding: 0 18px 18px;
+      color: #9d9d9d;
+      font-size: 14px;
+    }
+
+    /* DISCLAIMER */
+
+    .disclaimer {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px 70px;
+    }
+
+    .disclaimer-box {
+      border: 1px solid #1d1d1d;
+      border-radius: 12px;
+      padding: 18px;
+      background: #080808;
+    }
+
+    .disclaimer-box strong {
+      color: #00ff88;
+      font-size: 13px;
+    }
+
+    .disclaimer-box p {
+      color: #777777;
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #171717;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      color: #00ff88;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      color: #666666;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      .nav {
+        padding: 15px 16px;
+        align-items: flex-start;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .nav-links {
+        gap: 10px;
+        font-size: 11px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .home-btn {
+        padding: 7px 10px;
+      }
+
+      .hero {
+        padding: 55px 18px 35px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .calculator-section {
+        padding: 15px 15px 60px;
+      }
+
+      .calculator-card {
+        padding: 22px 18px;
+        border-radius: 15px;
+      }
+
+      .card-top h2 {
+        font-size: 24px;
+      }
+
+      .button-row {
+        flex-direction: column;
+      }
+
+      .calculate-btn,
+      .reset-btn {
+        width: 100%;
+      }
+
+      .info-section,
+      .faq-section,
+      .disclaimer {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .info-box {
+        padding: 22px 18px;
+      }
+
+      .section-heading h2 {
+        font-size: 27px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <nav class="nav">
+
+      <a href="index.html" class="logo">
+        KROC LABS
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html#products">Products</a>
+        <a href="index.html#calculator">Tools</a>
+        <a href="#faq">FAQ</a>
+
+        <a href="index.html" class="home-btn">
+          Home
+        </a>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="eyebrow">
+        KROC LABS • FREE ONLINE TOOL
+      </div>
+
+      <h1>
+        Percentage <span>Calculator</span>
+      </h1>
+
+      <p>
+        Calculate a percentage of any number instantly.
+        Fast, simple and easy to use — with no signup required.
+      </p>
+
+    </section>
+
+
+    <!-- CALCULATOR -->
+
+    <section class="calculator-section" id="calculator">
+
+      <div class="calculator-card">
+
+        <div class="card-top">
+
+          <div class="card-label">
+            TOOL 01
+          </div>
+
+          <h2>
+            Calculate a Percentage
+          </h2>
+
+          <p>
+            Enter a percentage and a number to calculate the result.
+          </p>
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="percent">
+            Percentage (%)
+          </label>
+
+          <input
+            type="number"
+            id="percent"
+            placeholder="Example: 20"
+            inputmode="decimal"
+            step="any"
+            autocomplete="off"
+          >
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="number">
+            Number
+          </label>
+
+          <input
+            type="number"
+            id="number"
+            placeholder="Example: 500"
+            inputmode="decimal"
+            step="any"
+            autocomplete="off"
+          >
+
+        </div>
+
+
+        <div class="button-row">
+
+          <button
+            type="button"
+            class="calculate-btn"
+            onclick="calculatePercentage()"
+          >
+            Calculate →
+          </button>
+
+          <button
+            type="button"
+            class="reset-btn"
+            onclick="resetPercentage()"
+          >
+            Reset (C)
+          </button>
+
+        </div>
+
+
+        <div id="error" class="error">
+          ⚠️ Please enter valid numbers
+        </div>
+
+
+        <div id="result" class="result">
+
+          <div class="result-label">
+            Result
+          </div>
+
+          <div id="percentageResult" class="result-value">
+            0
+          </div>
+
+          <div id="formula" class="formula">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="info-section">
+
+      <div class="info-box">
+
+        <h2>
+          How to use the <span>Percentage Calculator</span>
+        </h2>
+
+        <p>
+          Use this free online calculator to quickly find a percentage
+          of any number.
+        </p>
+
+        <div class="steps">
+
+          <div class="step">
+            <strong>1.</strong>
+            Enter the percentage you want to calculate.
+          </div>
+
+          <div class="step">
+            <strong>2.</strong>
+            Enter the number.
+          </div>
+
+          <div class="step">
+            <strong>3.</strong>
+            Tap <strong>Calculate</strong> to see the result.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <h2>
+          Percentage <span>Formula</span>
+        </h2>
+
+        <p>
+          To calculate X% of Y, use:
+        </p>
+
+        <div class="step" style="margin-top: 15px;">
+          <strong>(X × Y) ÷ 100</strong>
+        </div>
+
+        <p style="margin-top: 15px;">
+          Example: 20% of 500 = (20 × 500) ÷ 100 = 100.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="faq-section" id="faq">
+
+      <div class="section-heading">
+
+        <div class="small">
+          FREQUENTLY ASKED QUESTIONS
+        </div>
+
+        <h2>
+          Percentage Calculator FAQ
+        </h2>
+
+      </div>
+
+
+      <details>
+        <summary>
+          What is a percentage?
+        </summary>
+
+        <p>
+          A percentage is a way of expressing a number as a fraction
+          of 100. For example, 25% means 25 out of 100.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          How do I calculate a percentage of a number?
+        </summary>
+
+        <p>
+          Multiply the percentage by the number and divide the result
+          by 100. For example, 20% of 500 is 100.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Is this Percentage Calculator free?
+        </summary>
+
+        <p>
+          Yes. The KROC LABS Percentage Calculator is designed as a
+          free online tool and does not require an account to perform
+          a calculation.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Can I use this calculator on my phone?
+        </summary>
+
+        <p>
+          Yes. The calculator is designed to work on smartphones,
+          tablets and desktop browsers.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          Does the calculator save my numbers?
+        </summary>
+
+        <p>
+          This calculator does not require you to create an account
+          or enter personal information to perform a calculation.
+        </p>
+      </details>
+
+    </section>
+
+
+    <!-- DISCLAIMER -->
+
+    <section class="disclaimer">
+
+      <div class="disclaimer-box">
+
+        <strong>
+          INFORMATIONAL USE
+        </strong>
+
+        <p>
+          KROC LABS calculators are provided for general informational
+          and educational purposes. Results are mathematical estimates
+          based on the values entered and should be independently
+          verified when used for financial, business or other important
+          decisions.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-logo">
+      KROC LABS
+    </div>
+
+    <p>
+      Useful technology. Built differently.
+    </p>
+
+    <p style="margin-top: 8px;">
+      © 2026 KROC LABS. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function calculatePercentage() {
+
+      const percentInput = document.getElementById("percent");
+      const numberInput = document.getElementById("number");
+
+      const error = document.getElementById("error");
+      const result = document.getElementById("result");
+      const percentageResult = document.getElementById("percentageResult");
+      const formula = document.getElementById("formula");
+
+      const percent = Number(percentInput.value);
+      const number = Number(numberInput.value);
+
+      /*
+        Validation
+      */
+
+      if (
+        percentInput.value.trim() === "" ||
+        numberInput.value.trim() === "" ||
+        !Number.isFinite(percent) ||
+        !Number.isFinite(number)
+      ) {
+
+        error.style.display = "block";
+        result.style.display = "none";
+
+        return;
+      }
+
+      /*
+        Calculation
+      */
+
+      const answer = (percent * number) / 100;
+
+      /*
+        Hide error
+      */
+
+      error.style.display = "none";
+
+      /*
+        Show result
+      */
+
+      result.style.display = "block";
+
+      percentageResult.textContent =
+        answer.toLocaleString(undefined, {
+          maximumFractionDigits: 10
+        });
+
+      formula.textContent =
+        `${percent}% of ${number} = ${answer}`;
+
+    }
+
+
+    function resetPercentage() {
+
+      document.getElementById("percent").value = "";
+      document.getElementById("number").value = "";
+
+      document.getElementById("error").style.display = "none";
+      document.getElementById("result").style.display = "none";
+
+      document.getElementById("percentageResult").textContent = "0";
+      document.getElementById("formula").textContent = "";
+
+      document.getElementById("percent").focus();
+
+    }
+
+
+    /*
+      Enter key support
+    */
+
+    document
+      .getElementById("percent")
+      .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+          calculatePercentage();
+        }
+
+      });
+
+
+    document
+      .getElementById("number")
+      .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+          calculatePercentage();
+        }
+
+      });
+
+  </script>
+
+</body>
+</html>
