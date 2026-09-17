@@ -2,37 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Savings Calculator - Free Online Tool | KROC LABS</title>
 
-  <meta name="description" content="Free Savings Calculator by KROC LABS. Calculate your future savings, total contributions and estimated interest with monthly contributions.">
+  <meta name="description" content="Free Savings Calculator by KROC LABS. Calculate future savings, monthly contributions and estimated interest instantly.">
 
   <meta name="robots" content="index, follow">
-
   <meta name="theme-color" content="#050505">
 
   <link rel="canonical" href="https://kroclabsofficial-web.github.io/savings-calculator.html">
 
   <meta property="og:title" content="Savings Calculator | KROC LABS">
-  <meta property="og:description" content="Calculate your future savings, contributions and estimated interest with the free KROC LABS Savings Calculator.">
+  <meta property="og:description" content="Calculate your estimated future savings, total contributions and interest with KROC LABS.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kroclabsofficial-web.github.io/savings-calculator.html">
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "KROC LABS Savings Calculator",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Web",
-    "description": "A free online savings calculator for estimating future savings, total contributions and interest.",
-    "url": "https://kroclabsofficial-web.github.io/savings-calculator.html",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"KROC LABS Savings Calculator",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Web",
+    "description":"Free online savings calculator for estimating future savings, contributions and interest.",
+    "url":"https://kroclabsofficial-web.github.io/savings-calculator.html",
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"USD"
     }
   }
   </script>
@@ -50,7 +48,7 @@
     }
 
     body{
-      font-family:Arial, Helvetica, sans-serif;
+      font-family:Arial,Helvetica,sans-serif;
       background:#050505;
       color:#f5f5f5;
       line-height:1.6;
@@ -72,7 +70,7 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(5,5,5,.94);
+      background:rgba(5,5,5,.95);
       backdrop-filter:blur(12px);
       border-bottom:1px solid #1c1c1c;
     }
@@ -96,7 +94,7 @@
     .nav-links{
       display:flex;
       align-items:center;
-      gap:22px;
+      gap:20px;
       font-size:14px;
       color:#bdbdbd;
     }
@@ -141,7 +139,7 @@
     }
 
     .hero p{
-      max-width:700px;
+      max-width:720px;
       margin:auto;
       color:#a7a7a7;
       font-size:17px;
@@ -176,7 +174,7 @@
       margin-bottom:8px;
     }
 
-    .calculator-card .intro{
+    .intro{
       color:#999;
       margin-bottom:28px;
     }
@@ -538,6 +536,7 @@
       .section-title h2{
         font-size:27px;
       }
+
     }
 
   </style>
@@ -548,6 +547,7 @@
   <!-- HEADER -->
 
   <header>
+
     <div class="container nav">
 
       <a href="index.html" class="logo">
@@ -555,18 +555,35 @@
       </a>
 
       <nav class="nav-links">
-        <a href="index.html#products">Products</a>
-        <a href="percentage-calculator.html">Percentage</a>
-        <a href="loan-emi-calculator.html">EMI</a>
-        <a href="compound-interest-calculator.html">Compound</a>
-        <a href="#faq">FAQ</a>
+
+        <a href="index.html#products">
+          Products
+        </a>
+
+        <a href="percentage-calculator.html">
+          Percentage
+        </a>
+
+        <a href="loan-emi-calculator.html">
+          EMI
+        </a>
+
+        <a href="compound-interest-calculator.html">
+          Compound
+        </a>
+
+        <a href="#faq">
+          FAQ
+        </a>
 
         <a href="index.html" class="home-btn">
           Home
         </a>
+
       </nav>
 
     </div>
+
   </header>
 
 
@@ -613,10 +630,12 @@
           </h2>
 
           <p class="intro">
-            Enter your starting amount, monthly contribution, interest rate and
-            saving period.
+            Enter your starting amount, monthly contribution,
+            interest rate and saving period.
           </p>
 
+
+          <!-- STARTING AMOUNT -->
 
           <div class="input-group">
 
@@ -640,6 +659,8 @@
           </div>
 
 
+          <!-- MONTHLY CONTRIBUTION -->
+
           <div class="input-group">
 
             <label for="monthlyContribution">
@@ -661,6 +682,8 @@
 
           </div>
 
+
+          <!-- INTEREST RATE -->
 
           <div class="input-group">
 
@@ -684,6 +707,8 @@
           </div>
 
 
+          <!-- TIME -->
+
           <div class="input-group">
 
             <label for="savingsTime">
@@ -706,12 +731,14 @@
           </div>
 
 
+          <!-- BUTTONS -->
+
           <div class="buttons">
 
             <button
               type="button"
               class="calculate-btn"
-              onclick="calculateSavings()"
+              id="calculateButton"
             >
               Calculate →
             </button>
@@ -719,7 +746,7 @@
             <button
               type="button"
               class="reset-btn"
-              onclick="resetSavings()"
+              id="resetButton"
             >
               Reset (C)
             </button>
@@ -742,7 +769,6 @@
               ESTIMATED SAVINGS RESULT
             </div>
 
-
             <div class="main-result">
 
               <span>
@@ -754,7 +780,6 @@
               </strong>
 
             </div>
-
 
             <div class="result-grid">
 
@@ -769,7 +794,6 @@
                 </strong>
 
               </div>
-
 
               <div class="result-item">
 
@@ -818,7 +842,7 @@
           <div class="info-box">
 
             <h3>
-              01 — Enter Your Starting Amount
+              01 — Starting Amount
             </h3>
 
             <p>
@@ -832,7 +856,7 @@
           <div class="info-box">
 
             <h3>
-              02 — Add Monthly Contributions
+              02 — Monthly Contributions
             </h3>
 
             <p>
@@ -845,9 +869,223 @@
           <div class="info-box">
 
             <h3>
-              03 — Enter Interest Rate
+              03 — Interest Rate
             </h3>
 
             <p>
               Enter an estimated annual interest rate.
-              Actual rates can vary depending on the account or investment.
+              Actual rates can vary depending on the account or financial product.
+            </p>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <h3>
+              04 — Saving Period
+            </h3>
+
+            <p>
+              Enter the number of years you plan to save.
+              The calculator uses monthly compounding.
+            </p>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <h3>
+              Savings Formula
+            </h3>
+
+            <p>
+              The calculation combines your starting amount with regular
+              monthly contributions and estimated monthly interest growth.
+            </p>
+
+            <div class="formula">
+              Monthly Rate = Annual Rate ÷ 12
+            </div>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <h3>
+              Example
+            </h3>
+
+            <p>
+              Starting with 5,000, adding 500 each month, earning an estimated
+              5% annually and saving for 10 years produces an estimated result.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="faq-section" id="faq">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <div class="small">
+            FAQ
+          </div>
+
+          <h2>
+            Savings Calculator Questions
+          </h2>
+
+        </div>
+
+
+        <div class="faq">
+
+          <details>
+
+            <summary>
+              What is a savings calculator?
+            </summary>
+
+            <p>
+              A savings calculator estimates how your savings may grow based
+              on an initial amount, regular contributions, an estimated
+              interest rate and the amount of time you save.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Does this calculator include monthly contributions?
+            </summary>
+
+            <p>
+              Yes. The calculator includes your monthly contribution and
+              assumes contributions are added at the end of each month.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              How is interest calculated?
+            </summary>
+
+            <p>
+              This calculator uses monthly compounding based on the annual
+              interest rate you enter.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Are the results guaranteed?
+            </summary>
+
+            <p>
+              No. The result is an estimate for informational purposes.
+              Actual savings growth can differ because rates, fees, taxes,
+              contribution timing and account conditions may vary.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Is the Savings Calculator free?
+            </summary>
+
+            <p>
+              Yes. KROC LABS provides this calculator as a free online tool.
+              No signup is required.
+            </p>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DISCLAIMER -->
+
+    <div class="container">
+
+      <div class="disclaimer">
+
+        <strong>Disclaimer:</strong>
+        This calculator provides estimates for informational and educational
+        purposes only. It does not provide financial advice or guarantee
+        future returns. Actual results may vary depending on interest rates,
+        fees, taxes, contribution timing and the terms of your financial product.
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <strong>
+        KROC LABS
+      </strong>
+
+      <p>
+        Useful technology. Built differently.
+      </p>
+
+      <p>
+        © 2026 KROC LABS. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    /* ================================
+       SAVINGS CALCULATOR
+    ================================= */
+
+    function calculateSavings(){
+
+      const startingAmountInput =
+        document.getElementById("startingAmount");
+
+      const monthlyContributionInput =
+        document.getElementById("monthlyContribution");
+      
