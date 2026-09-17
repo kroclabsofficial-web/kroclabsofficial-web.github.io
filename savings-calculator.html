@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Savings Calculator - Free Online Tool | KROC LABS</title>
+
+  <meta name="description" content="Free Savings Calculator by KROC LABS. Calculate your future savings, total contributions and estimated interest with monthly contributions.">
+
+  <meta name="robots" content="index, follow">
+
+  <meta name="theme-color" content="#050505">
+
+  <link rel="canonical" href="https://kroclabsofficial-web.github.io/savings-calculator.html">
+
+  <meta property="og:title" content="Savings Calculator | KROC LABS">
+  <meta property="og:description" content="Calculate your future savings, contributions and estimated interest with the free KROC LABS Savings Calculator.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kroclabsofficial-web.github.io/savings-calculator.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "KROC LABS Savings Calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "A free online savings calculator for estimating future savings, total contributions and interest.",
+    "url": "https://kroclabsofficial-web.github.io/savings-calculator.html",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <style>
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#050505;
+      color:#f5f5f5;
+      line-height:1.6;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(1100px,92%);
+      margin:auto;
+    }
+
+    /* HEADER */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(5,5,5,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid #1c1c1c;
+    }
+
+    .nav{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .logo{
+      font-size:21px;
+      font-weight:900;
+      letter-spacing:1.5px;
+      color:#00ff88;
+      white-space:nowrap;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      font-size:14px;
+      color:#bdbdbd;
+    }
+
+    .nav-links a:hover{
+      color:#00ff88;
+    }
+
+    .home-btn{
+      border:1px solid #00ff88;
+      color:#00ff88;
+      padding:9px 15px;
+      border-radius:10px;
+      transition:.2s;
+    }
+
+    .home-btn:hover{
+      background:#00ff88;
+      color:#050505;
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:78px 0 45px;
+      text-align:center;
+    }
+
+    .eyebrow{
+      color:#00ff88;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:2px;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:clamp(36px,7vw,68px);
+      line-height:1.05;
+      letter-spacing:-2px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      color:#a7a7a7;
+      font-size:17px;
+    }
+
+    /* CALCULATOR */
+
+    .calculator-section{
+      padding:25px 0 70px;
+    }
+
+    .calculator-card{
+      max-width:720px;
+      margin:auto;
+      background:#0b0b0b;
+      border:1px solid #242424;
+      border-radius:22px;
+      padding:30px;
+      box-shadow:0 20px 60px rgba(0,0,0,.35);
+    }
+
+    .card-label{
+      color:#00ff88;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:1.5px;
+      margin-bottom:8px;
+    }
+
+    .calculator-card h2{
+      font-size:30px;
+      margin-bottom:8px;
+    }
+
+    .calculator-card .intro{
+      color:#999;
+      margin-bottom:28px;
+    }
+
+    .input-group{
+      margin-bottom:19px;
+    }
+
+    label{
+      display:block;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:8px;
+      color:#e8e8e8;
+    }
+
+    input{
+      width:100%;
+      background:#050505;
+      color:#fff;
+      border:1px solid #303030;
+      border-radius:12px;
+      padding:15px;
+      font-size:16px;
+      outline:none;
+      transition:.2s;
+    }
+
+    input:focus{
+      border-color:#00ff88;
+      box-shadow:0 0 0 3px rgba(0,255,136,.08);
+    }
+
+    .hint{
+      color:#707070;
+      font-size:12px;
+      margin-top:6px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:12px;
+      margin-top:25px;
+    }
+
+    button{
+      flex:1;
+      border:none;
+      border-radius:12px;
+      padding:15px;
+      font-size:15px;
+      font-weight:800;
+      cursor:pointer;
+      transition:.2s;
+    }
+
+    .calculate-btn{
+      background:#00ff88;
+      color:#050505;
+    }
+
+    .calculate-btn:hover{
+      transform:translateY(-1px);
+      box-shadow:0 8px 25px rgba(0,255,136,.16);
+    }
+
+    .reset-btn{
+      background:transparent;
+      color:#00ff88;
+      border:1px solid #00ff88;
+    }
+
+    .reset-btn:hover{
+      background:#00ff88;
+      color:#050505;
+    }
+
+    /* ERROR */
+
+    .error{
+      display:none;
+      margin-top:20px;
+      padding:14px;
+      border:1px solid #542020;
+      background:#170909;
+      color:#ff7777;
+      border-radius:12px;
+      text-align:center;
+      font-size:14px;
+    }
+
+    /* RESULT */
+
+    .result{
+      display:none;
+      margin-top:25px;
+      background:#070707;
+      border:1px solid #00ff88;
+      border-radius:18px;
+      padding:25px;
+    }
+
+    .result-title{
+      color:#00ff88;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:1px;
+      margin-bottom:20px;
+    }
+
+    .main-result{
+      text-align:center;
+      padding:20px 10px 25px;
+      border-bottom:1px solid #202020;
+      margin-bottom:20px;
+    }
+
+    .main-result span{
+      display:block;
+      color:#858585;
+      font-size:13px;
+      margin-bottom:7px;
+    }
+
+    .main-result strong{
+      display:block;
+      color:#00ff88;
+      font-size:38px;
+      line-height:1.15;
+      word-break:break-word;
+    }
+
+    .result-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+
+    .result-item{
+      background:#0c0c0c;
+      border:1px solid #202020;
+      border-radius:12px;
+      padding:16px;
+    }
+
+    .result-item span{
+      display:block;
+      color:#777;
+      font-size:12px;
+      margin-bottom:5px;
+    }
+
+    .result-item strong{
+      color:#f5f5f5;
+      font-size:18px;
+    }
+
+    /* INFO */
+
+    .info-section{
+      padding:20px 0 70px;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:35px;
+    }
+
+    .section-title .small{
+      color:#00ff88;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:2px;
+      margin-bottom:10px;
+    }
+
+    .section-title h2{
+      font-size:32px;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .info-box{
+      background:#0a0a0a;
+      border:1px solid #202020;
+      border-radius:16px;
+      padding:25px;
+    }
+
+    .info-box h3{
+      font-size:19px;
+      margin-bottom:10px;
+      color:#fff;
+    }
+
+    .info-box p{
+      color:#999;
+      font-size:14px;
+    }
+
+    .formula{
+      margin-top:15px;
+      padding:15px;
+      background:#050505;
+      border:1px solid #202020;
+      border-radius:10px;
+      color:#00ff88;
+      font-family:monospace;
+      font-size:14px;
+      overflow-x:auto;
+    }
+
+    /* FAQ */
+
+    .faq-section{
+      padding:20px 0 70px;
+    }
+
+    .faq{
+      max-width:800px;
+      margin:auto;
+    }
+
+    details{
+      background:#0a0a0a;
+      border:1px solid #202020;
+      border-radius:13px;
+      margin-bottom:12px;
+      overflow:hidden;
+    }
+
+    summary{
+      cursor:pointer;
+      padding:18px;
+      font-weight:700;
+      list-style:none;
+    }
+
+    summary::-webkit-details-marker{
+      display:none;
+    }
+
+    summary::after{
+      content:"+";
+      float:right;
+      color:#00ff88;
+      font-size:20px;
+    }
+
+    details[open] summary::after{
+      content:"−";
+    }
+
+    details p{
+      padding:0 18px 18px;
+      color:#999;
+      font-size:14px;
+    }
+
+    /* DISCLAIMER */
+
+    .disclaimer{
+      max-width:800px;
+      margin:0 auto 70px;
+      padding:20px;
+      border-left:3px solid #00ff88;
+      background:#0a0a0a;
+      color:#888;
+      font-size:13px;
+    }
+
+    .disclaimer strong{
+      color:#ddd;
+    }
+
+    /* FOOTER */
+
+    footer{
+      border-top:1px solid #1d1d1d;
+      padding:35px 0;
+      color:#777;
+      text-align:center;
+    }
+
+    footer strong{
+      color:#00ff88;
+      letter-spacing:1px;
+    }
+
+    footer p{
+      margin-top:7px;
+      font-size:13px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:700px){
+
+      .nav{
+        min-height:68px;
+      }
+
+      .logo{
+        font-size:18px;
+      }
+
+      .nav-links{
+        gap:10px;
+        font-size:12px;
+      }
+
+      .nav-links a:nth-child(2),
+      .nav-links a:nth-child(3),
+      .nav-links a:nth-child(4){
+        display:none;
+      }
+
+      .home-btn{
+        padding:7px 10px;
+      }
+
+      .hero{
+        padding:58px 0 35px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .calculator-card{
+        padding:22px;
+        border-radius:18px;
+      }
+
+      .calculator-card h2{
+        font-size:25px;
+      }
+
+      .buttons{
+        flex-direction:column;
+      }
+
+      .result-grid{
+        grid-template-columns:1fr;
+      }
+
+      .main-result strong{
+        font-size:31px;
+      }
+
+      .info-grid{
+        grid-template-columns:1fr;
+      }
+
+      .section-title h2{
+        font-size:27px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="index.html" class="logo">
+        KROC LABS
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html#products">Products</a>
+        <a href="percentage-calculator.html">Percentage</a>
+        <a href="loan-emi-calculator.html">EMI</a>
+        <a href="compound-interest-calculator.html">Compound</a>
+        <a href="#faq">FAQ</a>
+
+        <a href="index.html" class="home-btn">
+          Home
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="eyebrow">
+          KROC LABS • FINANCE TOOL
+        </div>
+
+        <h1>
+          Savings Calculator
+        </h1>
+
+        <p>
+          Estimate how your savings could grow over time with an initial amount,
+          monthly contributions and an estimated annual interest rate.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CALCULATOR -->
+
+    <section class="calculator-section">
+
+      <div class="container">
+
+        <div class="calculator-card">
+
+          <div class="card-label">
+            FREE ONLINE CALCULATOR
+          </div>
+
+          <h2>
+            Calculate Your Future Savings
+          </h2>
+
+          <p class="intro">
+            Enter your starting amount, monthly contribution, interest rate and
+            saving period.
+          </p>
+
+
+          <div class="input-group">
+
+            <label for="startingAmount">
+              Starting Amount
+            </label>
+
+            <input
+              type="number"
+              id="startingAmount"
+              placeholder="Example: 5000"
+              min="0"
+              step="any"
+              inputmode="decimal"
+            >
+
+            <div class="hint">
+              Your initial savings amount.
+            </div>
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="monthlyContribution">
+              Monthly Contribution
+            </label>
+
+            <input
+              type="number"
+              id="monthlyContribution"
+              placeholder="Example: 500"
+              min="0"
+              step="any"
+              inputmode="decimal"
+            >
+
+            <div class="hint">
+              Amount you plan to add every month.
+            </div>
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="savingsRate">
+              Annual Interest Rate (%)
+            </label>
+
+            <input
+              type="number"
+              id="savingsRate"
+              placeholder="Example: 5"
+              min="0"
+              step="any"
+              inputmode="decimal"
+            >
+
+            <div class="hint">
+              Enter an estimated yearly interest rate.
+            </div>
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="savingsTime">
+              Saving Period (Years)
+            </label>
+
+            <input
+              type="number"
+              id="savingsTime"
+              placeholder="Example: 10"
+              min="0.01"
+              step="any"
+              inputmode="decimal"
+            >
+
+            <div class="hint">
+              How long you plan to save.
+            </div>
+
+          </div>
+
+
+          <div class="buttons">
+
+            <button
+              type="button"
+              class="calculate-btn"
+              onclick="calculateSavings()"
+            >
+              Calculate →
+            </button>
+
+            <button
+              type="button"
+              class="reset-btn"
+              onclick="resetSavings()"
+            >
+              Reset (C)
+            </button>
+
+          </div>
+
+
+          <!-- ERROR -->
+
+          <div id="savingsError" class="error">
+            ⚠️ Please enter valid numbers
+          </div>
+
+
+          <!-- RESULT -->
+
+          <div id="savingsResult" class="result">
+
+            <div class="result-title">
+              ESTIMATED SAVINGS RESULT
+            </div>
+
+
+            <div class="main-result">
+
+              <span>
+                Final Savings
+              </span>
+
+              <strong id="finalSavings">
+                0.00
+              </strong>
+
+            </div>
+
+
+            <div class="result-grid">
+
+              <div class="result-item">
+
+                <span>
+                  Total Contributions
+                </span>
+
+                <strong id="totalContributions">
+                  0.00
+                </strong>
+
+              </div>
+
+
+              <div class="result-item">
+
+                <span>
+                  Estimated Interest
+                </span>
+
+                <strong id="interestEarned">
+                  0.00
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="info-section">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <div class="small">
+            HOW IT WORKS
+          </div>
+
+          <h2>
+            Simple Savings Calculation
+          </h2>
+
+        </div>
+
+
+        <div class="info-grid">
+
+          <div class="info-box">
+
+            <h3>
+              01 — Enter Your Starting Amount
+            </h3>
+
+            <p>
+              Enter the amount you already have saved.
+              You can enter zero if you are starting from scratch.
+            </p>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <h3>
+              02 — Add Monthly Contributions
+            </h3>
+
+            <p>
+              Enter how much you plan to add to your savings every month.
+            </p>
+
+          </div>
+
+
+          <div class="info-box">
+
+            <h3>
+              03 — Enter Interest Rate
+            </h3>
+
+            <p>
+              Enter an estimated annual interest rate.
+              Actual rates can vary depending on the account or investment.
