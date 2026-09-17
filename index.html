@@ -30,24 +30,31 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="KROC LABS — Free Online Calculators & Digital Tools">
+
+  <meta
+    property="og:title"
+    content="KROC LABS — Free Online Calculators & Digital Tools"
+  >
+
   <meta
     property="og:description"
     content="Simple, fast and useful digital tools built by KROC LABS."
   >
+
   <meta
     property="og:url"
     content="https://kroclabsofficial-web.github.io/"
   >
+
   <meta property="og:site_name" content="KROC LABS">
 
-  <!-- Favicon using inline SVG -->
+  <!-- Favicon -->
   <link
     rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23050505'/%3E%3Ctext x='50' y='67' text-anchor='middle' font-size='55' font-family='Arial' font-weight='700' fill='%2300ff88'%3EK%3C/text%3E%3C/svg%3E"
   >
 
-  <!-- Structured Data: Organization -->
+  <!-- Organization Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -57,7 +64,7 @@
   }
   </script>
 
-  <!-- Structured Data: WebSite -->
+  <!-- Website Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -68,7 +75,7 @@
   }
   </script>
 
-  <!-- Structured Data: FAQ -->
+  <!-- FAQ Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -111,19 +118,24 @@
   </script>
 
   <style>
+
     :root {
       --bg: #050505;
-      --bg-soft: #0a0a0a;
+      --bg-soft: #080808;
       --card: #0d0d0d;
       --card-hover: #111111;
+
       --green: #00ff88;
       --green-soft: rgba(0, 255, 136, 0.12);
       --green-border: rgba(0, 255, 136, 0.28);
+
       --white: #ffffff;
       --text: #eeeeee;
       --muted: #9a9a9a;
+
       --border: #202020;
       --danger: #ff5c5c;
+
       --max: 1180px;
       --radius: 18px;
     }
@@ -141,6 +153,7 @@
     body {
       background: var(--bg);
       color: var(--text);
+
       font-family:
         Inter,
         system-ui,
@@ -149,6 +162,7 @@
         "Segoe UI",
         Arial,
         sans-serif;
+
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -160,8 +174,7 @@
 
     button,
     input,
-    select,
-    textarea {
+    select {
       font: inherit;
     }
 
@@ -174,6 +187,7 @@
       color: #000;
     }
 
+
     /* =========================
        HEADER
     ========================= */
@@ -182,27 +196,37 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+
       background: rgba(5, 5, 5, 0.94);
+
       backdrop-filter: blur(14px);
+
       border-bottom: 1px solid var(--border);
     }
 
     .header-inner {
       max-width: var(--max);
       margin: auto;
+
       min-height: 72px;
+
       padding: 0 22px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 25px;
     }
 
     .logo {
       font-size: 20px;
       font-weight: 900;
+
       letter-spacing: 1.5px;
+
       color: var(--white);
+
       white-space: nowrap;
     }
 
@@ -214,67 +238,97 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
+
       gap: 5px;
+
       flex-wrap: wrap;
     }
 
     .nav a {
       color: #bdbdbd;
+
       font-size: 14px;
       font-weight: 600;
+
       padding: 9px 11px;
+
       border-radius: 10px;
+
       transition: 0.2s ease;
     }
 
     .nav a:hover,
     .nav a:focus {
       color: var(--green);
+
       background: var(--green-soft);
+
       outline: none;
     }
+
 
     /* =========================
        GLOBAL
     ========================= */
 
     .container {
-      width: min(var(--max), calc(100% - 36px));
+      width: min(
+        var(--max),
+        calc(100% - 36px)
+      );
+
       margin: auto;
     }
 
     .section {
       padding: 90px 0;
+
       scroll-margin-top: 75px;
     }
 
     .section-heading {
       max-width: 720px;
+
       margin-bottom: 38px;
     }
 
     .eyebrow {
       color: var(--green);
+
       font-size: 12px;
       font-weight: 800;
+
       letter-spacing: 2px;
+
       text-transform: uppercase;
+
       margin-bottom: 12px;
     }
 
     .section-title {
       color: var(--white);
-      font-size: clamp(30px, 5vw, 46px);
+
+      font-size: clamp(
+        30px,
+        5vw,
+        46px
+      );
+
       line-height: 1.1;
+
       letter-spacing: -1.5px;
+
       margin-bottom: 14px;
     }
 
     .section-text {
       color: var(--muted);
+
       font-size: 16px;
+
       max-width: 680px;
     }
+
 
     /* =========================
        HERO
@@ -282,55 +336,82 @@
 
     .hero {
       position: relative;
+
       min-height: 650px;
+
       display: flex;
       align-items: center;
+
       overflow: hidden;
+
       border-bottom: 1px solid var(--border);
     }
 
     .hero::before {
       content: "";
+
       position: absolute;
+
       width: 600px;
       height: 600px;
+
       right: -180px;
       top: -200px;
-      background: radial-gradient(
-        circle,
-        rgba(0, 255, 136, 0.12),
-        transparent 65%
-      );
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(0, 255, 136, 0.12),
+          transparent 65%
+        );
+
       pointer-events: none;
     }
 
     .hero::after {
       content: "";
+
       position: absolute;
+
       width: 500px;
       height: 500px;
+
       left: -220px;
       bottom: -250px;
-      background: radial-gradient(
-        circle,
-        rgba(0, 255, 136, 0.06),
-        transparent 65%
-      );
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(0, 255, 136, 0.06),
+          transparent 65%
+        );
+
       pointer-events: none;
     }
 
     .hero-content {
       position: relative;
+
       z-index: 2;
+
       max-width: 850px;
+
       padding: 80px 0;
     }
 
     .hero h1 {
       color: var(--white);
-      font-size: clamp(48px, 8vw, 82px);
+
+      font-size: clamp(
+        48px,
+        8vw,
+        82px
+      );
+
       line-height: 0.98;
+
       letter-spacing: -4px;
+
       margin-bottom: 25px;
     }
 
@@ -340,42 +421,64 @@
 
     .hero-description {
       color: #b4b4b4;
+
       max-width: 680px;
-      font-size: clamp(17px, 2.5vw, 20px);
+
+      font-size: clamp(
+        17px,
+        2.5vw,
+        20px
+      );
+
       margin-bottom: 32px;
     }
 
     .hero-buttons {
       display: flex;
+
       gap: 12px;
+
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
+
       min-height: 48px;
+
       padding: 0 20px;
+
       border-radius: 11px;
+
       border: 1px solid var(--green);
+
       font-weight: 800;
+
       font-size: 14px;
+
       transition: 0.2s ease;
     }
 
     .btn-primary {
       background: var(--green);
+
       color: #000;
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0, 255, 136, 0.18);
+
+      box-shadow:
+        0 8px 30px
+        rgba(0, 255, 136, 0.18);
     }
 
     .btn-secondary {
       background: transparent;
+
       color: var(--green);
     }
 
@@ -383,24 +486,31 @@
       background: var(--green-soft);
     }
 
+
     /* =========================
        TRUST BAR
     ========================= */
 
     .trust-bar {
       border-bottom: 1px solid var(--border);
+
       background: #080808;
     }
 
     .trust-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+
+      grid-template-columns:
+        repeat(5, 1fr);
     }
 
     .trust-item {
       padding: 25px 15px;
+
       text-align: center;
-      border-right: 1px solid var(--border);
+
+      border-right:
+        1px solid var(--border);
     }
 
     .trust-item:last-child {
@@ -409,15 +519,20 @@
 
     .trust-item strong {
       display: block;
+
       color: var(--white);
+
       font-size: 15px;
+
       margin-bottom: 3px;
     }
 
     .trust-item span {
       color: #777;
+
       font-size: 12px;
     }
+
 
     /* =========================
        PRODUCTS
@@ -425,84 +540,127 @@
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 18px;
     }
 
     .product-card {
       position: relative;
+
       display: flex;
       flex-direction: column;
+
       min-height: 235px;
+
       padding: 26px;
+
       background: var(--card);
-      border: 1px solid var(--border);
+
+      border:
+        1px solid var(--border);
+
       border-radius: var(--radius);
+
       transition: 0.25s ease;
     }
 
     .product-card:hover {
       background: var(--card-hover);
-      border-color: var(--green-border);
+
+      border-color:
+        var(--green-border);
+
       transform: translateY(-3px);
     }
 
     .product-card.live {
-      border-color: rgba(0, 255, 136, 0.25);
+      border-color:
+        rgba(0, 255, 136, 0.25);
+
+      cursor: pointer;
+    }
+
+    .product-card.live:focus-within {
+      border-color: var(--green);
     }
 
     .product-icon {
       width: 44px;
       height: 44px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       border-radius: 12px;
+
       background: var(--green-soft);
+
       color: var(--green);
+
       font-size: 20px;
       font-weight: 900;
+
       margin-bottom: 20px;
     }
 
     .status {
       position: absolute;
+
       top: 20px;
       right: 20px;
+
       padding: 5px 9px;
+
       border-radius: 20px;
+
       font-size: 10px;
+
       font-weight: 900;
+
       letter-spacing: 0.8px;
     }
 
     .status.live {
       color: #000;
+
       background: var(--green);
     }
 
     .status.soon {
       color: #aaa;
+
       border: 1px solid #333;
+
       background: #151515;
     }
 
     .product-card h3 {
       color: var(--white);
+
       font-size: 20px;
+
       margin-bottom: 8px;
     }
 
     .product-card p {
       color: var(--muted);
+
       font-size: 14px;
+
       margin-bottom: 20px;
     }
 
     .product-link {
       margin-top: auto;
+
       color: var(--green);
+
       font-size: 13px;
+
       font-weight: 800;
     }
 
@@ -512,25 +670,34 @@
 
     .product-card.disabled:hover {
       transform: none;
+
       border-color: var(--border);
     }
 
+
     /* =========================
-       CALCULATORS
+       CALCULATOR SECTION
     ========================= */
 
     .calculator-section {
       background: #080808;
+
       border-top: 1px solid var(--border);
+
       border-bottom: 1px solid var(--border);
     }
 
     .calculator {
       background: var(--card);
+
       border: 1px solid var(--border);
+
       border-radius: 20px;
+
       padding: 30px;
+
       margin-bottom: 35px;
+
       scroll-margin-top: 90px;
     }
 
@@ -540,44 +707,65 @@
 
     .calculator-header {
       display: flex;
+
       align-items: flex-start;
+
       justify-content: space-between;
+
       gap: 20px;
+
       margin-bottom: 25px;
     }
 
     .calculator-header h3 {
       color: var(--white);
+
       font-size: 25px;
+
       margin-bottom: 6px;
     }
 
     .calculator-header p {
       color: var(--muted);
+
       font-size: 14px;
     }
 
     .calc-badge {
       flex-shrink: 0;
+
       color: var(--green);
-      border: 1px solid var(--green-border);
+
+      border:
+        1px solid var(--green-border);
+
       background: var(--green-soft);
+
       border-radius: 20px;
+
       padding: 6px 10px;
+
       font-size: 10px;
+
       font-weight: 900;
+
       letter-spacing: 0.8px;
     }
 
     .form-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
       gap: 17px;
     }
 
     .field {
       display: flex;
+
       flex-direction: column;
+
       gap: 8px;
     }
 
@@ -587,20 +775,30 @@
 
     .field label {
       color: #d7d7d7;
+
       font-size: 13px;
+
       font-weight: 700;
     }
 
     .field input,
     .field select {
       width: 100%;
+
       height: 48px;
+
       padding: 0 14px;
+
       color: var(--white);
+
       background: #080808;
+
       border: 1px solid #2a2a2a;
+
       border-radius: 10px;
+
       outline: none;
+
       transition: 0.2s ease;
     }
 
@@ -611,110 +809,167 @@
     .field input:focus,
     .field select:focus {
       border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.08);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(0, 255, 136, 0.08);
     }
 
     .field select option {
       background: #111;
+
       color: #fff;
     }
 
     .calc-actions {
       display: flex;
+
       gap: 10px;
+
       margin-top: 20px;
+
       flex-wrap: wrap;
     }
 
     .calc-btn {
       min-height: 46px;
+
       padding: 0 20px;
+
       border-radius: 10px;
+
       border: 1px solid var(--green);
+
       background: var(--green);
+
       color: #000;
+
       font-size: 14px;
+
       font-weight: 900;
     }
 
     .reset-btn {
       min-height: 46px;
+
       padding: 0 20px;
+
       border-radius: 10px;
+
       border: 1px solid #333;
+
       background: transparent;
+
       color: #aaa;
+
       font-size: 14px;
+
       font-weight: 800;
     }
 
     .reset-btn:hover {
       color: var(--white);
+
       border-color: #555;
     }
 
     .error {
       display: none;
+
       margin-top: 14px;
+
       color: var(--danger);
+
       font-size: 13px;
+
       font-weight: 700;
     }
 
     .result-box {
       display: none;
+
       margin-top: 22px;
+
       padding: 22px;
+
       background: #080808;
-      border: 1px solid var(--green-border);
+
+      border:
+        1px solid var(--green-border);
+
       border-radius: 14px;
     }
 
     .result-main {
       color: var(--green);
-      font-size: clamp(27px, 5vw, 38px);
+
+      font-size:
+        clamp(27px, 5vw, 38px);
+
       font-weight: 900;
+
       line-height: 1.15;
+
       margin-bottom: 14px;
+
       overflow-wrap: anywhere;
     }
 
     .result-label {
       color: #777;
+
       font-size: 11px;
+
       text-transform: uppercase;
+
       letter-spacing: 1px;
+
       font-weight: 800;
     }
 
     .result-details {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
       gap: 12px;
+
       margin-top: 15px;
     }
 
     .result-detail {
       padding: 13px;
+
       border: 1px solid #202020;
+
       border-radius: 10px;
+
       background: #0b0b0b;
     }
 
     .result-detail strong {
       display: block;
+
       color: var(--white);
+
       font-size: 17px;
+
       margin-top: 3px;
+
       overflow-wrap: anywhere;
     }
 
     .disclaimer {
       margin-top: 17px;
+
       color: #666;
+
       font-size: 11px;
+
       line-height: 1.6;
     }
+
 
     /* =========================
        FAQ
@@ -725,39 +980,62 @@
     }
 
     .faq-item {
-      border: 1px solid var(--border);
+      border:
+        1px solid var(--border);
+
       border-radius: 13px;
+
       margin-bottom: 12px;
+
       overflow: hidden;
+
       background: var(--card);
     }
 
     .faq-question {
       width: 100%;
+
       min-height: 60px;
+
       padding: 15px 18px;
+
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       gap: 15px;
+
       border: 0;
+
       background: transparent;
+
       color: var(--white);
+
       text-align: left;
+
       font-size: 15px;
+
       font-weight: 800;
     }
 
     .faq-question span:last-child {
       color: var(--green);
+
       font-size: 22px;
+
       line-height: 1;
     }
 
     .faq-answer {
       display: none;
-      padding: 0 18px 18px;
+
+      padding:
+        0 18px 18px;
+
       color: var(--muted);
+
       font-size: 14px;
     }
 
@@ -765,14 +1043,58 @@
       display: block;
     }
 
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .about-card {
+      padding: 25px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      background: var(--card);
+    }
+
+    .about-card h3 {
+      color: var(--white);
+
+      font-size: 18px;
+
+      margin-bottom: 8px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+
+      font-size: 14px;
+    }
+
+
     /* =========================
        VISION
     ========================= */
 
     .vision-box {
       padding: 55px;
-      border: 1px solid var(--green-border);
+
+      border:
+        1px solid var(--green-border);
+
       border-radius: 24px;
+
       background:
         radial-gradient(
           circle at top right,
@@ -784,8 +1106,12 @@
 
     .vision-box h2 {
       color: var(--white);
-      font-size: clamp(32px, 5vw, 55px);
+
+      font-size:
+        clamp(32px, 5vw, 55px);
+
       line-height: 1.05;
+
       margin-bottom: 15px;
     }
 
@@ -795,74 +1121,66 @@
 
     .vision-box p {
       color: var(--muted);
+
       max-width: 720px;
+
       font-size: 16px;
     }
 
-    /* =========================
-       ABOUT / TRUST
-    ========================= */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .about-card {
-      padding: 25px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--card);
-    }
-
-    .about-card h3 {
-      color: var(--white);
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .about-card p {
-      color: var(--muted);
-      font-size: 14px;
-    }
 
     /* =========================
        FOOTER
     ========================= */
 
     footer {
-      border-top: 1px solid var(--border);
+      border-top:
+        1px solid var(--border);
+
       background: #030303;
+
       padding: 55px 0 25px;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
+
+      grid-template-columns:
+        1.5fr 1fr 1fr;
+
       gap: 40px;
+
       padding-bottom: 40px;
     }
 
     .footer-brand p {
       max-width: 390px;
+
       color: #777;
+
       font-size: 14px;
+
       margin-top: 12px;
     }
 
     .footer-column h4 {
       color: var(--white);
+
       font-size: 13px;
+
       margin-bottom: 13px;
     }
 
     .footer-column a {
       display: block;
+
       width: fit-content;
+
       color: #777;
+
       font-size: 13px;
+
       margin-bottom: 8px;
+
       transition: 0.2s;
     }
 
@@ -872,14 +1190,23 @@
 
     .footer-bottom {
       padding-top: 22px;
-      border-top: 1px solid var(--border);
+
+      border-top:
+        1px solid var(--border);
+
       display: flex;
+
       justify-content: space-between;
+
       gap: 15px;
+
       color: #555;
+
       font-size: 11px;
+
       flex-wrap: wrap;
     }
+
 
     /* =========================
        RESPONSIVE
@@ -897,15 +1224,18 @@
 
       .nav a {
         font-size: 12px;
+
         padding: 7px 8px;
       }
 
       .products-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
       .trust-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+          repeat(3, 1fr);
       }
 
       .trust-item:nth-child(3) {
@@ -913,7 +1243,8 @@
       }
 
       .trust-item:nth-child(n + 4) {
-        border-top: 1px solid var(--border);
+        border-top:
+          1px solid var(--border);
       }
 
       .about-grid {
@@ -921,7 +1252,8 @@
       }
 
       .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+          1fr 1fr;
       }
 
       .footer-brand {
@@ -929,16 +1261,24 @@
       }
     }
 
+
     @media (max-width: 650px) {
 
       .container {
-        width: min(100% - 28px, var(--max));
+        width:
+          min(
+            100% - 28px,
+            var(--max)
+          );
       }
 
       .header-inner {
         padding: 8px 14px;
+
         align-items: flex-start;
+
         flex-direction: column;
+
         gap: 5px;
       }
 
@@ -948,10 +1288,15 @@
 
       .nav {
         width: 100%;
+
         justify-content: flex-start;
+
         overflow-x: auto;
+
         flex-wrap: nowrap;
+
         scrollbar-width: none;
+
         padding-bottom: 2px;
       }
 
@@ -961,7 +1306,9 @@
 
       .nav a {
         flex: 0 0 auto;
+
         font-size: 11px;
+
         padding: 6px 8px;
       }
 
@@ -970,11 +1317,18 @@
       }
 
       .hero-content {
-        padding: 75px 0 70px;
+        padding:
+          75px 0 70px;
       }
 
       .hero h1 {
-        font-size: clamp(44px, 14vw, 65px);
+        font-size:
+          clamp(
+            44px,
+            14vw,
+            65px
+          );
+
         letter-spacing: -3px;
       }
 
@@ -991,11 +1345,13 @@
       }
 
       .trust-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
       .trust-item {
-        border-right: 1px solid var(--border);
+        border-right:
+          1px solid var(--border);
       }
 
       .trust-item:nth-child(2n) {
@@ -1003,16 +1359,19 @@
       }
 
       .trust-item:nth-child(n + 3) {
-        border-top: 1px solid var(--border);
+        border-top:
+          1px solid var(--border);
       }
 
       .calculator {
         padding: 20px;
+
         border-radius: 16px;
       }
 
       .calculator-header {
         flex-direction: column;
+
         gap: 12px;
       }
 
@@ -1034,59 +1393,74 @@
 
       .footer-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
       }
 
       .footer-brand {
         grid-column: auto;
       }
-    }
 
-    @media (max-width: 380px) {
-
-      .hero h1 {
-        font-size: 43px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .calc-actions button {
-        width: 100%;
-      }
-
-      .trust-item strong {
-        font-size: 13px;
+      .footer-bottom {
+        flex-direction: column;
       }
     }
+
   </style>
 </head>
 
+
 <body>
+
 
   <!-- =========================
        HEADER
   ========================= -->
 
   <header class="header">
+
     <div class="header-inner">
 
-      <a class="logo" href="#home" aria-label="KROC LABS Home">
+      <a
+        href="index.html"
+        class="logo"
+        aria-label="KROC LABS Home"
+      >
         KROC <span>LABS</span>
       </a>
 
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#products">Products</a>
-        <a href="#percentage">Percentage</a>
-        <a href="#emi">EMI</a>
-        <a href="#compound">Compound</a>
-        <a href="#savings">Savings</a>
-        <a href="#faq">FAQ</a>
-        <a href="#vision">Vision</a>
+      <nav class="nav">
+
+        <a href="#products">
+          Products
+        </a>
+
+        <a href="percentage-calculator.html">
+          Percentage
+        </a>
+
+        <a href="loan-emi-calculator.html">
+          EMI
+        </a>
+
+        <a href="compound-interest-calculator.html">
+          Compound
+        </a>
+
+        <a href="savings-calculator.html">
+          Savings
+        </a>
+
+        <a href="#faq">
+          FAQ
+        </a>
+
+        <a href="#vision">
+          Vision
+        </a>
+
       </nav>
 
     </div>
+
   </header>
 
 
@@ -1096,7 +1470,8 @@
 
   <main>
 
-    <section class="hero" id="home">
+    <section class="hero">
+
       <div class="container">
 
         <div class="hero-content">
@@ -1106,28 +1481,38 @@
           </div>
 
           <h1>
-            Useful technology.<br>
+            Useful technology.
+            <br>
             <span>Built differently.</span>
           </h1>
 
           <p class="hero-description">
-            KROC LABS builds simple, fast and useful digital tools
-            designed to make everyday tasks easier for people worldwide.
+            KROC LABS builds simple, fast and useful
+            digital tools and products for people worldwide.
           </p>
 
           <div class="hero-buttons">
-            <a href="#products" class="btn btn-primary">
-              Explore Products
+
+            <a
+              href="#products"
+              class="btn btn-primary"
+            >
+              Explore Products →
             </a>
 
-            <a href="#vision" class="btn btn-secondary">
+            <a
+              href="#vision"
+              class="btn btn-secondary"
+            >
               Our Vision
             </a>
+
           </div>
 
         </div>
 
       </div>
+
     </section>
 
 
@@ -1135,35 +1520,41 @@
          TRUST BAR
     ========================= -->
 
-    <section class="trust-bar" aria-label="KROC LABS principles">
-      <div class="container trust-grid">
+    <section class="trust-bar">
 
-        <div class="trust-item">
-          <strong>Fast</strong>
-          <span>Quick experiences</span>
-        </div>
+      <div class="container">
 
-        <div class="trust-item">
-          <strong>Simple</strong>
-          <span>Easy to understand</span>
-        </div>
+        <div class="trust-grid">
 
-        <div class="trust-item">
-          <strong>Useful</strong>
-          <span>Built for real needs</span>
-        </div>
+          <div class="trust-item">
+            <strong>Fast</strong>
+            <span>Quick to use</span>
+          </div>
 
-        <div class="trust-item">
-          <strong>Global</strong>
-          <span>Made for everyone</span>
-        </div>
+          <div class="trust-item">
+            <strong>Simple</strong>
+            <span>No unnecessary complexity</span>
+          </div>
 
-        <div class="trust-item">
-          <strong>Built to Scale</strong>
-          <span>Growing step by step</span>
+          <div class="trust-item">
+            <strong>Useful</strong>
+            <span>Built around real needs</span>
+          </div>
+
+          <div class="trust-item">
+            <strong>Global</strong>
+            <span>For people worldwide</span>
+          </div>
+
+          <div class="trust-item">
+            <strong>Built to Scale</strong>
+            <span>Designed for growth</span>
+          </div>
+
         </div>
 
       </div>
+
     </section>
 
 
@@ -1171,41 +1562,57 @@
          PRODUCTS
     ========================= -->
 
-    <section class="section" id="products">
+    <section
+      class="section"
+      id="products"
+    >
 
       <div class="container">
 
         <div class="section-heading">
-          <div class="eyebrow">OUR PRODUCTS</div>
+
+          <div class="eyebrow">
+            01 — Products
+          </div>
 
           <h2 class="section-title">
-            Digital tools that solve everyday problems.
+            Useful tools. One place.
           </h2>
 
           <p class="section-text">
-            Start with simple tools today. More useful products will be
-            added to KROC LABS over time.
+            Explore practical digital tools built to
+            solve everyday problems quickly and simply.
           </p>
+
         </div>
 
 
         <div class="products-grid">
 
+
           <!-- Percentage -->
+
           <a
-            href="#percentage"
+            href="percentage-calculator.html"
             class="product-card live"
             aria-label="Open Percentage Calculator"
           >
 
-            <span class="status live">LIVE</span>
+            <span class="status live">
+              LIVE
+            </span>
 
-            <div class="product-icon">%</div>
+            <div class="product-icon">
+              %
+            </div>
 
-            <h3>Percentage Calculator</h3>
+            <h3>
+              Percentage Calculator
+            </h3>
 
             <p>
-              Calculate percentages quickly and easily.
+              Calculate percentages quickly
+              and easily.
             </p>
 
             <span class="product-link">
@@ -1216,20 +1623,28 @@
 
 
           <!-- EMI -->
+
           <a
-            href="#emi"
+            href="loan-emi-calculator.html"
             class="product-card live"
             aria-label="Open Loan EMI Calculator"
           >
 
-            <span class="status live">LIVE</span>
+            <span class="status live">
+              LIVE
+            </span>
 
-            <div class="product-icon">₹</div>
+            <div class="product-icon">
+              ₹
+            </div>
 
-            <h3>Loan EMI Calculator</h3>
+            <h3>
+              Loan EMI Calculator
+            </h3>
 
             <p>
-              Estimate monthly loan payments, interest and total payment.
+              Estimate monthly loan payments,
+              total interest and total payment.
             </p>
 
             <span class="product-link">
@@ -1240,20 +1655,28 @@
 
 
           <!-- Compound -->
+
           <a
-            href="#compound"
+            href="compound-interest-calculator.html"
             class="product-card live"
             aria-label="Open Compound Interest Calculator"
           >
 
-            <span class="status live">LIVE</span>
+            <span class="status live">
+              LIVE
+            </span>
 
-            <div class="product-icon">↗</div>
+            <div class="product-icon">
+              ↗
+            </div>
 
-            <h3>Compound Interest</h3>
+            <h3>
+              Compound Interest
+            </h3>
 
             <p>
-              Estimate how money can grow with compound interest.
+              Estimate how money can grow
+              with compound interest.
             </p>
 
             <span class="product-link">
@@ -1264,20 +1687,28 @@
 
 
           <!-- Savings -->
+
           <a
-            href="#savings"
+            href="savings-calculator.html"
             class="product-card live"
             aria-label="Open Savings Calculator"
           >
 
-            <span class="status live">LIVE</span>
+            <span class="status live">
+              LIVE
+            </span>
 
-            <div class="product-icon">$</div>
+            <div class="product-icon">
+              $
+            </div>
 
-            <h3>Savings Calculator</h3>
+            <h3>
+              Savings Calculator
+            </h3>
 
             <p>
-              Estimate future savings with regular contributions.
+              Estimate future savings with
+              monthly contributions and interest.
             </p>
 
             <span class="product-link">
@@ -1288,103 +1719,144 @@
 
 
           <!-- Finance -->
+
           <div class="product-card disabled">
 
-            <span class="status soon">COMING SOON</span>
+            <span class="status soon">
+              COMING SOON
+            </span>
 
-            <div class="product-icon">F</div>
+            <div class="product-icon">
+              $
+            </div>
 
-            <h3>Finance Tools</h3>
+            <h3>
+              Finance Tools
+            </h3>
 
             <p>
-              More practical financial tools are being planned.
+              More practical tools for
+              personal finance and planning.
             </p>
 
             <span class="product-link">
-              In Development
+              In development
             </span>
 
           </div>
 
 
           <!-- AI -->
+
           <div class="product-card disabled">
 
-            <span class="status soon">COMING SOON</span>
+            <span class="status soon">
+              COMING SOON
+            </span>
 
-            <div class="product-icon">AI</div>
+            <div class="product-icon">
+              AI
+            </div>
 
-            <h3>AI Tools</h3>
+            <h3>
+              AI Tools
+            </h3>
 
             <p>
-              Useful AI-powered tools for everyday tasks.
+              Simple intelligent tools designed
+              for everyday users.
             </p>
 
             <span class="product-link">
-              In Development
+              In development
             </span>
 
           </div>
 
 
           <!-- Productivity -->
+
           <div class="product-card disabled">
 
-            <span class="status soon">COMING SOON</span>
+            <span class="status soon">
+              COMING SOON
+            </span>
 
-            <div class="product-icon">✓</div>
+            <div class="product-icon">
+              ✓
+            </div>
 
-            <h3>Productivity Tools</h3>
+            <h3>
+              Productivity
+            </h3>
 
             <p>
-              Tools designed to help people work smarter.
+              Tools designed to help people
+              organize and work more efficiently.
             </p>
 
             <span class="product-link">
-              In Development
+              In development
             </span>
 
           </div>
 
 
           <!-- Business -->
+
           <div class="product-card disabled">
 
-            <span class="status soon">COMING SOON</span>
+            <span class="status soon">
+              COMING SOON
+            </span>
 
-            <div class="product-icon">B</div>
+            <div class="product-icon">
+              B
+            </div>
 
-            <h3>Business Tools</h3>
+            <h3>
+              Business Tools
+            </h3>
 
             <p>
-              Practical digital tools for businesses and creators.
+              Practical digital tools for
+              businesses and creators.
             </p>
 
             <span class="product-link">
-              In Development
+              In development
             </span>
 
           </div>
 
 
           <!-- More -->
+
           <div class="product-card disabled">
 
-            <span class="status soon">IN DEVELOPMENT</span>
+            <span class="status soon">
+              IN DEVELOPMENT
+            </span>
 
-            <div class="product-icon">+</div>
+            <div class="product-icon">
+              +
+            </div>
 
-            <h3>More Products</h3>
+            <h3>
+              More Products
+            </h3>
 
             <p>
-              KROC LABS will continue expanding its digital product ecosystem.
+              New digital products and tools
+              will be added over time.
             </p>
 
             <span class="product-link">
-              More Coming Soon
+              More coming soon
             </span>
 
           </div>
+
 
         </div>
 
@@ -1397,43 +1869,58 @@
          CALCULATORS
     ========================= -->
 
-    <section class="section calculator-section" id="tools">
+    <section
+      class="section calculator-section"
+      id="calculator"
+    >
 
       <div class="container">
 
         <div class="section-heading">
-          <div class="eyebrow">LIVE TOOLS</div>
+
+          <div class="eyebrow">
+            02 — Live Products
+          </div>
 
           <h2 class="section-title">
-            Free calculators. Simple results.
+            Try the tools now.
           </h2>
 
           <p class="section-text">
-            Use the calculators below without creating an account.
-            Results are provided for informational purposes.
+            No signup. No unnecessary complexity.
+            Just useful calculators that work directly
+            in your browser.
           </p>
+
         </div>
 
 
-        <!-- =========================
-             PERCENTAGE CALCULATOR
-        ========================= -->
+        <!-- =====================
+             PERCENTAGE
+        ====================== -->
 
-        <div class="calculator" id="percentage">
+        <div
+          class="calculator"
+          id="percentage"
+        >
 
           <div class="calculator-header">
 
             <div>
-              <h3>Percentage Calculator</h3>
+
+              <h3>
+                Percentage Calculator
+              </h3>
 
               <p>
-                Calculate what percentage of a number instantly.
+                Calculate X% of a number instantly.
               </p>
+
             </div>
 
-            <div class="calc-badge">
-              FREE TOOL
-            </div>
+            <span class="calc-badge">
+              LIVE • MVP 1
+            </span>
 
           </div>
 
@@ -1443,16 +1930,14 @@
             <div class="field">
 
               <label for="percent">
-                Percentage
+                Percentage (%)
               </label>
 
               <input
-                type="number"
                 id="percent"
-                placeholder="e.g. 20"
+                type="number"
                 inputmode="decimal"
-                min="0"
-                step="any"
+                placeholder="Example: 20"
               >
 
             </div>
@@ -1465,11 +1950,10 @@
               </label>
 
               <input
-                type="number"
                 id="number"
-                placeholder="e.g. 500"
+                type="number"
                 inputmode="decimal"
-                step="any"
+                placeholder="Example: 500"
               >
 
             </div>
@@ -1482,15 +1966,15 @@
             <button
               type="button"
               class="calc-btn"
-              onclick="calculatePercentage()"
+              id="percentageCalculateButton"
             >
-              Calculate
+              Calculate →
             </button>
 
             <button
               type="button"
               class="reset-btn"
-              onclick="resetPercentage()"
+              id="percentageResetButton"
             >
               Reset (C)
             </button>
@@ -1499,57 +1983,71 @@
 
 
           <div
+            id="percentageError"
             class="error"
-            id="error"
-            role="alert"
           >
             ⚠️ Please enter valid numbers
           </div>
 
 
           <div
-            class="result-box"
             id="percentageResult"
-            aria-live="polite"
+            class="result-box"
           >
 
             <div class="result-label">
               Result
             </div>
 
-            <div class="result-main" id="result">
-              0
+            <div
+              class="result-main"
+              id="percentageValue"
+            >
+              0.00
             </div>
 
-            <div class="disclaimer">
-              This calculator provides an estimate for informational
-              purposes only.
+            <div class="result-label">
+              Percentage Result
             </div>
 
           </div>
 
+
+          <p class="disclaimer">
+            This calculator is provided for general
+            informational and educational purposes.
+          </p>
+
         </div>
 
 
-        <!-- =========================
-             EMI CALCULATOR
-        ========================= -->
+        <!-- =====================
+             EMI
+        ====================== -->
 
-        <div class="calculator" id="emi">
+        <div
+          class="calculator"
+          id="emi"
+        >
 
           <div class="calculator-header">
 
             <div>
-              <h3>Loan EMI Calculator</h3>
+
+              <h3>
+                Loan EMI Calculator
+              </h3>
 
               <p>
-                Estimate monthly EMI, total interest and total payment.
+                Estimate monthly EMI, total interest
+                and total payment.
               </p>
+
             </div>
 
-            <div class="calc-badge">
-              FREE TOOL
-            </div>
+            <span class="calc-badge">
+              LIVE • MVP 1
+            </span>
 
           </div>
 
@@ -1563,12 +2061,10 @@
               </label>
 
               <input
-                type="number"
                 id="loanAmount"
-                placeholder="e.g. 100000"
+                type="number"
                 inputmode="decimal"
-                min="0"
-                step="any"
+                placeholder="Example: 500000"
               >
 
             </div>
@@ -1581,30 +2077,28 @@
               </label>
 
               <input
-                type="number"
                 id="interestRate"
-                placeholder="e.g. 8.5"
+                type="number"
                 inputmode="decimal"
-                min="0"
-                step="any"
+                step="0.01"
+                placeholder="Example: 8.5"
               >
 
             </div>
 
 
-            <div class="field">
+            <div class="field full">
 
               <label for="loanTerm">
                 Loan Term (Years)
               </label>
 
               <input
-                type="number"
                 id="loanTerm"
-                placeholder="e.g. 5"
+                type="number"
                 inputmode="decimal"
-                min="0"
-                step="any"
+                step="0.1"
+                placeholder="Example: 5"
               >
 
             </div>
@@ -1617,15 +2111,15 @@
             <button
               type="button"
               class="calc-btn"
-              onclick="calculateEMI()"
+              id="emiCalculateButton"
             >
-              Calculate
+              Calculate →
             </button>
 
             <button
               type="button"
               class="reset-btn"
-              onclick="resetEMI()"
+              id="emiResetButton"
             >
               Reset (C)
             </button>
@@ -1634,26 +2128,27 @@
 
 
           <div
-            class="error"
             id="emiError"
-            role="alert"
+            class="error"
           >
             ⚠️ Please enter valid numbers
           </div>
 
 
           <div
-            class="result-box"
             id="emiResult"
-            aria-live="polite"
+            class="result-box"
           >
 
             <div class="result-label">
               Estimated Monthly EMI
             </div>
 
-            <div class="result-main" id="monthlyEMI">
-              0
+            <div
+              class="result-main"
+              id="monthlyEMI"
+            >
+              0.00
             </div>
 
 
@@ -1666,7 +2161,7 @@
                 </div>
 
                 <strong id="totalInterest">
-                  0
+                  0.00
                 </strong>
 
               </div>
@@ -1679,44 +2174,51 @@
                 </div>
 
                 <strong id="totalPayment">
-                  0
+                  0.00
                 </strong>
 
               </div>
 
             </div>
 
-
-            <div class="disclaimer">
-              EMI results are estimates for informational purposes only.
-              Actual payments may vary depending on the lender, fees,
-              taxes, loan terms and other conditions.
-            </div>
-
           </div>
+
+
+          <p class="disclaimer">
+            EMI results are estimates for informational
+            purposes only. Actual lender terms, fees,
+            taxes and rates may vary.
+          </p>
 
         </div>
 
 
-        <!-- =========================
-             COMPOUND INTEREST
-        ========================= -->
+        <!-- =====================
+             COMPOUND
+        ====================== -->
 
-        <div class="calculator" id="compound">
+        <div
+          class="calculator"
+          id="compound"
+        >
 
           <div class="calculator-header">
 
             <div>
-              <h3>Compound Interest Calculator</h3>
+
+              <h3>
+                Compound Interest Calculator
+              </h3>
 
               <p>
                 Estimate future value using compound interest.
               </p>
+
             </div>
 
-            <div class="calc-badge">
-              FREE TOOL
-            </div>
+            <span class="calc-badge">
+              LIVE • MVP 1
+            </span>
 
           </div>
 
@@ -1730,12 +2232,10 @@
               </label>
 
               <input
-                type="number"
                 id="principal"
-                placeholder="e.g. 10000"
+                type="number"
                 inputmode="decimal"
-                min="0"
-                step="any"
+                placeholder="Example: 10000"
               >
 
             </div>
@@ -1748,12 +2248,11 @@
               </label>
 
               <input
-                type="number"
                 id="compoundRate"
-                placeholder="e.g. 8"
+                type="number"
                 inputmode="decimal"
-                min="0"
-                step="any"
+                step="0.01"
+                placeholder="Example: 8"
               >
 
             </div>
@@ -1766,12 +2265,11 @@
               </label>
 
               <input
-                type="number"
                 id="compoundTime"
-                placeholder="e.g. 10"
+                type="number"
                 inputmode="decimal"
-                min="0"
-                step="any"
+                step="0.1"
+                placeholder="Example: 5"
               >
 
             </div>
@@ -1817,15 +2315,15 @@
             <button
               type="button"
               class="calc-btn"
-              onclick="calculateCompound()"
+              id="compoundCalculateButton"
             >
-              Calculate
+              Calculate →
             </button>
 
             <button
               type="button"
               class="reset-btn"
-              onclick="resetCompound()"
+              id="compoundResetButton"
             >
               Reset (C)
             </button>
@@ -1834,71 +2332,97 @@
 
 
           <div
-            class="error"
             id="compoundError"
-            role="alert"
+            class="error"
           >
             ⚠️ Please enter valid numbers
           </div>
 
 
           <div
-            class="result-box"
             id="compoundResult"
-            aria-live="polite"
+            class="result-box"
           >
 
             <div class="result-label">
-              Estimated Final Amount
+              Final Amount
             </div>
 
-            <div class="result-main" id="finalAmount">
-              0
+            <div
+              class="result-main"
+              id="finalAmount"
+            >
+              0.00
             </div>
 
 
-            <div class="result-detail">
+            <div class="result-details">
 
-              <div class="result-label">
-                Interest Earned
+              <div class="result-detail">
+
+                <div class="result-label">
+                  Starting Amount
+                </div>
+
+                <strong id="startingAmountResult">
+                  0.00
+                </strong>
+
               </div>
 
-              <strong id="compoundInterest">
-                0
-              </strong>
 
-            </div>
+              <div class="result-detail">
 
+                <div class="result-label">
+                  Compound Interest
+                </div>
 
-            <div class="disclaimer">
-              Results are estimates based on the information entered.
-              Actual investment returns are not guaranteed.
+                <strong id="compoundInterest">
+                  0.00
+                </strong>
+
+              </div>
+
             </div>
 
           </div>
 
+
+          <p class="disclaimer">
+            Results are estimates based on the information
+            entered. Actual returns can vary and are not guaranteed.
+          </p>
+
         </div>
 
 
-        <!-- =========================
-             SAVINGS CALCULATOR
-        ========================= -->
+        <!-- =====================
+             SAVINGS
+        ====================== -->
 
-        <div class="calculator" id="savings">
+        <div
+          class="calculator"
+          id="savings"
+        >
 
           <div class="calculator-header">
 
             <div>
-              <h3>Savings Calculator</h3>
+
+              <h3>
+                Savings Calculator
+              </h3>
 
               <p>
-                Estimate future savings with regular monthly contributions.
+                Estimate future savings with monthly
+                contributions and interest.
               </p>
+
             </div>
 
-            <div class="calc-badge">
-              FREE TOOL
-            </div>
+            <span class="calc-badge">
+              LIVE • MVP 1
+            </span>
 
           </div>
 
@@ -1912,12 +2436,10 @@
               </label>
 
               <input
-                type="number"
                 id="startingAmount"
-                placeholder="e.g. 5000"
+                type="number"
                 inputmode="decimal"
-                min="0"
-                step="any"
+                placeholder="Example: 5000"
               >
 
             </div>
@@ -1930,12 +2452,10 @@
               </label>
 
               <input
-                type="number"
                 id="monthlyContribution"
-                placeholder="e.g. 500"
+                type="number"
                 inputmode="decimal"
-                min="0"
-                step="any"
+                placeholder="Example: 500"
               >
 
             </div>
@@ -1948,12 +2468,11 @@
               </label>
 
               <input
-                type="number"
                 id="savingsRate"
-                placeholder="e.g. 5"
+                type="number"
                 inputmode="decimal"
-                min="0"
-                step="any"
+                step="0.01"
+                placeholder="Example: 5"
               >
 
             </div>
@@ -1962,16 +2481,15 @@
             <div class="field">
 
               <label for="savingsTime">
-                Time (Years)
+                Saving Period (Years)
               </label>
 
               <input
-                type="number"
                 id="savingsTime"
-                placeholder="e.g. 10"
+                type="number"
                 inputmode="decimal"
-                min="0"
-                step="any"
+                step="0.1"
+                placeholder="Example: 10"
               >
 
             </div>
@@ -1984,15 +2502,15 @@
             <button
               type="button"
               class="calc-btn"
-              onclick="calculateSavings()"
+              id="savingsCalculateButton"
             >
-              Calculate
+              Calculate →
             </button>
 
             <button
               type="button"
               class="reset-btn"
-              onclick="resetSavings()"
+              id="savingsResetButton"
             >
               Reset (C)
             </button>
@@ -2001,26 +2519,27 @@
 
 
           <div
-            class="error"
             id="savingsError"
-            role="alert"
+            class="error"
           >
             ⚠️ Please enter valid numbers
           </div>
 
 
           <div
-            class="result-box"
             id="savingsResult"
-            aria-live="polite"
+            class="result-box"
           >
 
             <div class="result-label">
               Estimated Final Savings
             </div>
 
-            <div class="result-main" id="finalSavings">
-              0
+            <div
+              class="result-main"
+              id="finalSavings"
+            >
+              0.00
             </div>
 
 
@@ -2033,7 +2552,7 @@
                 </div>
 
                 <strong id="totalContributions">
-                  0
+                  0.00
                 </strong>
 
               </div>
@@ -2046,21 +2565,20 @@
                 </div>
 
                 <strong id="interestEarned">
-                  0
+                  0.00
                 </strong>
 
               </div>
 
             </div>
 
-
-            <div class="disclaimer">
-              Results are estimates and assume a constant annual rate
-              with monthly compounding and end-of-month contributions.
-              Actual savings returns may differ.
-            </div>
-
           </div>
+
+
+          <p class="disclaimer">
+            Results are estimates based on the assumptions
+            entered and do not guarantee future returns.
+          </p>
 
         </div>
 
@@ -2070,27 +2588,30 @@
 
 
     <!-- =========================
-         ABOUT / WHY
+         ABOUT
     ========================= -->
 
-    <section class="section" id="about">
+    <section
+      class="section"
+      id="about"
+    >
 
       <div class="container">
 
         <div class="section-heading">
 
           <div class="eyebrow">
-            ABOUT KROC LABS
+            03 — About KROC LABS
           </div>
 
           <h2 class="section-title">
-            Built around useful digital products.
+            Built with a simple idea.
           </h2>
 
           <p class="section-text">
-            KROC LABS is being developed as a global digital product
-            platform focused on practical, accessible and easy-to-use
-            online tools.
+            KROC LABS focuses on creating digital
+            products that are practical, accessible
+            and easy to use.
           </p>
 
         </div>
@@ -2098,13 +2619,16 @@
 
         <div class="about-grid">
 
+
           <div class="about-card">
 
-            <h3>Simple by Design</h3>
+            <h3>
+              Simple by Design
+            </h3>
 
             <p>
-              We aim to make useful digital experiences easy to understand
-              and simple to use.
+              Useful products should be easy to
+              understand and straightforward to use.
             </p>
 
           </div>
@@ -2112,11 +2636,13 @@
 
           <div class="about-card">
 
-            <h3>Useful First</h3>
+            <h3>
+              Useful First
+            </h3>
 
             <p>
-              Products are planned around real everyday problems rather
-              than adding features just for the sake of complexity.
+              We focus on solving real problems
+              before adding unnecessary complexity.
             </p>
 
           </div>
@@ -2124,14 +2650,17 @@
 
           <div class="about-card">
 
-            <h3>Growing Step by Step</h3>
+            <h3>
+              Growing Step by Step
+            </h3>
 
             <p>
-              KROC LABS starts with focused tools and will expand its
-              product ecosystem over time.
+              KROC LABS is being developed gradually,
+              with new tools and products added over time.
             </p>
 
           </div>
+
 
         </div>
 
@@ -2144,40 +2673,55 @@
          FAQ
     ========================= -->
 
-    <section class="section" id="faq">
+    <section
+      class="section"
+      id="faq"
+    >
 
       <div class="container">
 
         <div class="section-heading">
 
           <div class="eyebrow">
-            FAQ
+            04 — FAQ
           </div>
 
           <h2 class="section-title">
             Frequently asked questions.
           </h2>
 
+          <p class="section-text">
+            A few simple answers about KROC LABS
+            and the calculators.
+          </p>
+
         </div>
 
 
         <div class="faq-list">
 
+
           <div class="faq-item">
 
             <button
               type="button"
               class="faq-question"
-              onclick="toggleFAQ(this)"
               aria-expanded="false"
             >
-              <span>Are KROC LABS calculators free?</span>
-              <span>+</span>
+
+              <span>
+                Are KROC LABS calculators free?
+              </span>
+
+              <span>
+                +
+              </span>
+
             </button>
 
             <div class="faq-answer">
-              Yes. The calculators currently available on KROC LABS
-              are free to use.
+              Yes. The calculators currently available
+              on KROC LABS are free to use.
             </div>
 
           </div>
@@ -2188,16 +2732,22 @@
             <button
               type="button"
               class="faq-question"
-              onclick="toggleFAQ(this)"
               aria-expanded="false"
             >
-              <span>Do I need to create an account?</span>
-              <span>+</span>
+
+              <span>
+                Do I need to create an account?
+              </span>
+
+              <span>
+                +
+              </span>
+
             </button>
 
             <div class="faq-answer">
-              No account is required to use the calculators currently
-              available on this website.
+              No account is required to use the
+              calculators currently available on this website.
             </div>
 
           </div>
@@ -2208,17 +2758,22 @@
             <button
               type="button"
               class="faq-question"
-              onclick="toggleFAQ(this)"
               aria-expanded="false"
             >
-              <span>Are calculator results financial advice?</span>
-              <span>+</span>
+
+              <span>
+                Are calculator results financial advice?
+              </span>
+
+              <span>
+                +
+              </span>
+
             </button>
 
             <div class="faq-answer">
-              No. Calculator results are estimates for informational
-              and educational purposes only. They should not be treated
-              as personalized financial advice.
+              No. Calculator results are estimates for
+              informational and educational purposes only.
             </div>
 
           </div>
@@ -2229,39 +2784,26 @@
             <button
               type="button"
               class="faq-question"
-              onclick="toggleFAQ(this)"
               aria-expanded="false"
             >
-              <span>Can I use KROC LABS on my phone?</span>
-              <span>+</span>
+
+              <span>
+                Can I use KROC LABS on my phone?
+              </span>
+
+              <span>
+                +
+              </span>
+
             </button>
 
             <div class="faq-answer">
-              Yes. KROC LABS is designed to work on phones, tablets
-              and desktop devices.
+              Yes. KROC LABS is designed to work on
+              phones, tablets and desktop devices.
             </div>
 
           </div>
 
-
-          <div class="faq-item">
-
-            <button
-              type="button"
-              class="faq-question"
-              onclick="toggleFAQ(this)"
-              aria-expanded="false"
-            >
-              <span>Will KROC LABS add more tools?</span>
-              <span>+</span>
-            </button>
-
-            <div class="faq-answer">
-              Yes. More digital tools and product categories are planned
-              as KROC LABS grows.
-            </div>
-
-          </div>
 
         </div>
 
@@ -2274,60 +2816,29 @@
          VISION
     ========================= -->
 
-    <section class="section" id="vision">
+    <section
+      class="section"
+      id="vision"
+    >
 
       <div class="container">
 
         <div class="vision-box">
 
           <div class="eyebrow">
-            OUR VISION
+            05 — Vision
           </div>
 
           <h2>
-            Build useful things.<br>
+            Build useful things.
+            <br>
             <span>For everyone.</span>
           </h2>
 
           <p>
-            KROC LABS aims to grow from a collection of simple tools
-            into a broader digital product ecosystem. The focus is on
-            creating useful technology that people can access easily,
-            wherever they are.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         DISCLAIMER
-    ========================= -->
-
-    <section class="section" id="disclaimer">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div class="eyebrow">
-            IMPORTANT
-          </div>
-
-          <h2 class="section-title">
-            Calculator disclaimer.
-          </h2>
-
-          <p class="section-text">
-            KROC LABS calculators are provided for general informational
-            and educational purposes. Results are estimates based on the
-            values entered by the user. Actual financial results may vary
-            because of lender terms, fees, taxes, interest-rate changes,
-            compounding methods and other factors. KROC LABS does not
-            provide personalized financial, investment or lending advice.
+            KROC LABS aims to build practical digital
+            products that are fast, simple and useful
+            for people around the world.
           </p>
 
         </div>
@@ -2352,13 +2863,13 @@
 
         <div class="footer-brand">
 
-          <a class="logo" href="#home">
+          <div class="logo">
             KROC <span>LABS</span>
-          </a>
+          </div>
 
           <p>
-            Building simple, fast and useful digital tools for people
-            worldwide.
+            Building simple, fast and useful
+            digital tools for people worldwide.
           </p>
 
         </div>
@@ -2366,21 +2877,27 @@
 
         <div class="footer-column">
 
-          <h4>Products</h4>
+          <h4>
+            Products
+          </h4>
 
-          <a href="#percentage">
+          <a href="#products">
+            All Products
+          </a>
+
+          <a href="percentage-calculator.html">
             Percentage Calculator
           </a>
 
-          <a href="#emi">
+          <a href="loan-emi-calculator.html">
             Loan EMI Calculator
           </a>
 
-          <a href="#compound">
+          <a href="compound-interest-calculator.html">
             Compound Interest
           </a>
 
-          <a href="#savings">
+          <a href="savings-calculator.html">
             Savings Calculator
           </a>
 
@@ -2389,7 +2906,9 @@
 
         <div class="footer-column">
 
-          <h4>Company</h4>
+          <h4>
+            KROC LABS
+          </h4>
 
           <a href="#about">
             About
@@ -2403,11 +2922,12 @@
             Vision
           </a>
 
-          <a href="#disclaimer">
-            Disclaimer
+          <a href="#calculator">
+            Tools
           </a>
 
         </div>
+
 
       </div>
 
@@ -2415,11 +2935,11 @@
       <div class="footer-bottom">
 
         <span>
-          © <span id="currentYear"></span> KROC LABS. All rights reserved.
+          © 2026 KROC LABS. All rights reserved.
         </span>
 
         <span>
-          Useful technology. Built differently.
+          Built for people worldwide.
         </span>
 
       </div>
@@ -2435,64 +2955,20 @@
 
   <script>
 
+
     /* =========================
-       HELPER FUNCTIONS
+       NUMBER FORMATTER
     ========================= */
 
     function formatNumber(value) {
 
-      if (!Number.isFinite(value)) {
-        return "0.00";
-      }
-
-      return value.toLocaleString("en-US", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
-
-    }
-
-
-    function showError(id) {
-
-      const error = document.getElementById(id);
-
-      if (error) {
-        error.style.display = "block";
-      }
-
-    }
-
-
-    function hideError(id) {
-
-      const error = document.getElementById(id);
-
-      if (error) {
-        error.style.display = "none";
-      }
-
-    }
-
-
-    function hideResult(id) {
-
-      const result = document.getElementById(id);
-
-      if (result) {
-        result.style.display = "none";
-      }
-
-    }
-
-
-    function showResult(id) {
-
-      const result = document.getElementById(id);
-
-      if (result) {
-        result.style.display = "block";
-      }
+      return value.toLocaleString(
+        undefined,
+        {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }
+      );
 
     }
 
@@ -2503,61 +2979,97 @@
 
     function calculatePercentage() {
 
-      const percentage =
-        Number(document.getElementById("percent").value);
+      const percentInput =
+        document.getElementById("percent");
+
+      const numberInput =
+        document.getElementById("number");
+
+      const error =
+        document.getElementById("percentageError");
+
+      const result =
+        document.getElementById("percentageResult");
+
+      const percentageValue =
+        document.getElementById("percentageValue");
+
+
+      const percent =
+        Number(percentInput.value);
 
       const number =
-        Number(document.getElementById("number").value);
+        Number(numberInput.value);
 
 
       if (
-        !Number.isFinite(percentage) ||
-        !Number.isFinite(number) ||
-        document.getElementById("percent").value.trim() === "" ||
-        document.getElementById("number").value.trim() === ""
+        percentInput.value.trim() === "" ||
+        numberInput.value.trim() === "" ||
+        !Number.isFinite(percent) ||
+        !Number.isFinite(number)
       ) {
 
-        showError("error");
-        hideResult("percentageResult");
+        error.style.display = "block";
+
+        result.style.display = "none";
 
         return;
       }
 
 
-      hideError("error");
+      const answer =
+        (percent * number) / 100;
 
 
-      const result =
-        (percentage * number) / 100;
+      percentageValue.textContent =
+        formatNumber(answer);
 
 
-      if (!Number.isFinite(result)) {
+      error.style.display = "none";
 
-        showError("error");
-        hideResult("percentageResult");
-
-        return;
-      }
+      result.style.display = "block";
 
 
-      document.getElementById("result").textContent =
-        formatNumber(result);
+      result.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
 
-
-      showResult("percentageResult");
     }
 
 
     function resetPercentage() {
 
       document.getElementById("percent").value = "";
+
       document.getElementById("number").value = "";
 
-      document.getElementById("result").textContent = "0";
+      document.getElementById("percentageError")
+        .style.display = "none";
 
-      hideError("error");
-      hideResult("percentageResult");
+      document.getElementById("percentageResult")
+        .style.display = "none";
+
+      document.getElementById("percentageValue")
+        .textContent = "0.00";
+
     }
+
+
+    document
+      .getElementById("percentageCalculateButton")
+      .addEventListener(
+        "click",
+        calculatePercentage
+      );
+
+
+    document
+      .getElementById("percentageResetButton")
+      .addEventListener(
+        "click",
+        resetPercentage
+      );
 
 
     /* =========================
@@ -2566,49 +3078,67 @@
 
     function calculateEMI() {
 
+      const loanAmountInput =
+        document.getElementById("loanAmount");
+
+      const interestRateInput =
+        document.getElementById("interestRate");
+
+      const loanTermInput =
+        document.getElementById("loanTerm");
+
+      const error =
+        document.getElementById("emiError");
+
+      const result =
+        document.getElementById("emiResult");
+
+      const monthlyEMI =
+        document.getElementById("monthlyEMI");
+
+      const totalInterest =
+        document.getElementById("totalInterest");
+
+      const totalPayment =
+        document.getElementById("totalPayment");
+
+
       const loanAmount =
-        Number(document.getElementById("loanAmount").value);
+        Number(loanAmountInput.value);
 
       const annualRate =
-        Number(document.getElementById("interestRate").value);
+        Number(interestRateInput.value);
 
       const years =
-        Number(document.getElementById("loanTerm").value);
+        Number(loanTermInput.value);
 
 
       if (
+        loanAmountInput.value.trim() === "" ||
+        interestRateInput.value.trim() === "" ||
+        loanTermInput.value.trim() === "" ||
         !Number.isFinite(loanAmount) ||
         !Number.isFinite(annualRate) ||
         !Number.isFinite(years) ||
-        document.getElementById("loanAmount").value.trim() === "" ||
-        document.getElementById("interestRate").value.trim() === "" ||
-        document.getElementById("loanTerm").value.trim() === "" ||
         loanAmount <= 0 ||
         annualRate < 0 ||
         years <= 0
       ) {
 
-        showError("emiError");
-        hideResult("emiResult");
+        error.style.display = "block";
+
+        result.style.display = "none";
 
         return;
       }
 
 
-      const months =
+      const numberOfPayments =
         Math.round(years * 12);
+
 
       const monthlyRate =
         annualRate / 100 / 12;
-
-
-      if (months <= 0) {
-
-        showError("emiError");
-        hideResult("emiResult");
-
-        return;
-      }
 
 
       let emi;
@@ -2616,71 +3146,105 @@
 
       if (monthlyRate === 0) {
 
-        emi = loanAmount / months;
+        emi =
+          loanAmount /
+          numberOfPayments;
 
       } else {
 
         const power =
-          Math.pow(1 + monthlyRate, months);
+          Math.pow(
+            1 + monthlyRate,
+            numberOfPayments
+          );
 
         emi =
           loanAmount *
           monthlyRate *
           power /
           (power - 1);
+
       }
 
 
-      const totalPayment =
-        emi * months;
-
-      const totalInterest =
-        totalPayment - loanAmount;
+      const totalPaymentAmount =
+        emi * numberOfPayments;
 
 
-      if (
-        !Number.isFinite(emi) ||
-        !Number.isFinite(totalPayment) ||
-        !Number.isFinite(totalInterest)
-      ) {
-
-        showError("emiError");
-        hideResult("emiResult");
-
-        return;
-      }
+      const totalInterestAmount =
+        totalPaymentAmount -
+        loanAmount;
 
 
-      hideError("emiError");
-
-
-      document.getElementById("monthlyEMI").textContent =
+      monthlyEMI.textContent =
         formatNumber(emi);
 
-      document.getElementById("totalInterest").textContent =
-        formatNumber(Math.max(0, totalInterest));
 
-      document.getElementById("totalPayment").textContent =
-        formatNumber(totalPayment);
+      totalInterest.textContent =
+        formatNumber(
+          totalInterestAmount
+        );
 
 
-      showResult("emiResult");
+      totalPayment.textContent =
+        formatNumber(
+          totalPaymentAmount
+        );
+
+
+      error.style.display = "none";
+
+      result.style.display = "block";
+
+
+      result.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+
     }
 
 
     function resetEMI() {
 
       document.getElementById("loanAmount").value = "";
+
       document.getElementById("interestRate").value = "";
+
       document.getElementById("loanTerm").value = "";
 
-      document.getElementById("monthlyEMI").textContent = "0";
-      document.getElementById("totalInterest").textContent = "0";
-      document.getElementById("totalPayment").textContent = "0";
+      document.getElementById("emiError")
+        .style.display = "none";
 
-      hideError("emiError");
-      hideResult("emiResult");
+      document.getElementById("emiResult")
+        .style.display = "none";
+
+      document.getElementById("monthlyEMI")
+        .textContent = "0.00";
+
+      document.getElementById("totalInterest")
+        .textContent = "0.00";
+
+      document.getElementById("totalPayment")
+        .textContent = "0.00";
+
     }
+
+
+    document
+      .getElementById("emiCalculateButton")
+      .addEventListener(
+        "click",
+        calculateEMI
+      );
+
+
+    document
+      .getElementById("emiResetButton")
+      .addEventListener(
+        "click",
+        resetEMI
+      );
 
 
     /* =========================
@@ -2689,96 +3253,166 @@
 
     function calculateCompound() {
 
-      const principal =
-        Number(document.getElementById("principal").value);
+      const principalInput =
+        document.getElementById("principal");
 
-      const annualRate =
-        Number(document.getElementById("compoundRate").value);
+      const rateInput =
+        document.getElementById("compoundRate");
 
-      const years =
-        Number(document.getElementById("compoundTime").value);
+      const timeInput =
+        document.getElementById("compoundTime");
 
-      const frequency =
-        Number(document.getElementById("frequency").value);
+      const frequencyInput =
+        document.getElementById("frequency");
 
+      const error =
+        document.getElementById("compoundError");
 
-      if (
-        !Number.isFinite(principal) ||
-        !Number.isFinite(annualRate) ||
-        !Number.isFinite(years) ||
-        !Number.isFinite(frequency) ||
-        document.getElementById("principal").value.trim() === "" ||
-        document.getElementById("compoundRate").value.trim() === "" ||
-        document.getElementById("compoundTime").value.trim() === "" ||
-        principal < 0 ||
-        annualRate < 0 ||
-        years <= 0 ||
-        frequency <= 0
-      ) {
-
-        showError("compoundError");
-        hideResult("compoundResult");
-
-        return;
-      }
-
-
-      const rate =
-        annualRate / 100;
-
+      const result =
+        document.getElementById("compoundResult");
 
       const finalAmount =
-        principal *
-        Math.pow(
-          1 + rate / frequency,
-          frequency * years
+        document.getElementById("finalAmount");
+
+      const startingAmountResult =
+        document.getElementById(
+          "startingAmountResult"
+        );
+
+      const compoundInterest =
+        document.getElementById(
+          "compoundInterest"
         );
 
 
-      const interest =
-        finalAmount - principal;
+      const principal =
+        Number(principalInput.value);
+
+      const annualRate =
+        Number(rateInput.value);
+
+      const time =
+        Number(timeInput.value);
+
+      const frequency =
+        Number(frequencyInput.value);
 
 
       if (
-        !Number.isFinite(finalAmount) ||
-        !Number.isFinite(interest)
+        principalInput.value.trim() === "" ||
+        rateInput.value.trim() === "" ||
+        timeInput.value.trim() === "" ||
+        !Number.isFinite(principal) ||
+        !Number.isFinite(annualRate) ||
+        !Number.isFinite(time) ||
+        !Number.isFinite(frequency) ||
+        principal < 0 ||
+        annualRate < 0 ||
+        time <= 0 ||
+        frequency <= 0
       ) {
 
-        showError("compoundError");
-        hideResult("compoundResult");
+        error.style.display = "block";
+
+        result.style.display = "none";
 
         return;
       }
 
 
-      hideError("compoundError");
+      let amount;
 
 
-      document.getElementById("finalAmount").textContent =
-        formatNumber(finalAmount);
+      if (annualRate === 0) {
 
-      document.getElementById("compoundInterest").textContent =
-        formatNumber(Math.max(0, interest));
+        amount = principal;
+
+      } else {
+
+        const rate =
+          annualRate / 100;
+
+        amount =
+          principal *
+          Math.pow(
+            1 + rate / frequency,
+            frequency * time
+          );
+
+      }
 
 
-      showResult("compoundResult");
+      const interest =
+        amount - principal;
+
+
+      finalAmount.textContent =
+        formatNumber(amount);
+
+
+      startingAmountResult.textContent =
+        formatNumber(principal);
+
+
+      compoundInterest.textContent =
+        formatNumber(interest);
+
+
+      error.style.display = "none";
+
+      result.style.display = "block";
+
+
+      result.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+
     }
 
 
     function resetCompound() {
 
       document.getElementById("principal").value = "";
+
       document.getElementById("compoundRate").value = "";
+
       document.getElementById("compoundTime").value = "";
 
       document.getElementById("frequency").value = "12";
 
-      document.getElementById("finalAmount").textContent = "0";
-      document.getElementById("compoundInterest").textContent = "0";
+      document.getElementById("compoundError")
+        .style.display = "none";
 
-      hideError("compoundError");
-      hideResult("compoundResult");
+      document.getElementById("compoundResult")
+        .style.display = "none";
+
+      document.getElementById("finalAmount")
+        .textContent = "0.00";
+
+      document.getElementById("startingAmountResult")
+        .textContent = "0.00";
+
+      document.getElementById("compoundInterest")
+        .textContent = "0.00";
+
     }
+
+
+    document
+      .getElementById("compoundCalculateButton")
+      .addEventListener(
+        "click",
+        calculateCompound
+      );
+
+
+    document
+      .getElementById("compoundResetButton")
+      .addEventListener(
+        "click",
+        resetCompound
+      );
 
 
     /* =========================
@@ -2787,36 +3421,91 @@
 
     function calculateSavings() {
 
+      const startingAmountInput =
+        document.getElementById(
+          "startingAmount"
+        );
+
+      const monthlyContributionInput =
+        document.getElementById(
+          "monthlyContribution"
+        );
+
+      const savingsRateInput =
+        document.getElementById(
+          "savingsRate"
+        );
+
+      const savingsTimeInput =
+        document.getElementById(
+          "savingsTime"
+        );
+
+      const error =
+        document.getElementById(
+          "savingsError"
+        );
+
+      const result =
+        document.getElementById(
+          "savingsResult"
+        );
+
+      const finalSavings =
+        document.getElementById(
+          "finalSavings"
+        );
+
+      const totalContributions =
+        document.getElementById(
+          "totalContributions"
+        );
+
+      const interestEarned =
+        document.getElementById(
+          "interestEarned"
+        );
+
+
       const startingAmount =
-        Number(document.getElementById("startingAmount").value);
+        Number(
+          startingAmountInput.value
+        );
 
       const monthlyContribution =
-        Number(document.getElementById("monthlyContribution").value);
+        Number(
+          monthlyContributionInput.value
+        );
 
       const annualRate =
-        Number(document.getElementById("savingsRate").value);
+        Number(
+          savingsRateInput.value
+        );
 
       const years =
-        Number(document.getElementById("savingsTime").value);
+        Number(
+          savingsTimeInput.value
+        );
 
 
       if (
+        startingAmountInput.value.trim() === "" ||
+        monthlyContributionInput.value.trim() === "" ||
+        savingsRateInput.value.trim() === "" ||
+        savingsTimeInput.value.trim() === "" ||
         !Number.isFinite(startingAmount) ||
         !Number.isFinite(monthlyContribution) ||
         !Number.isFinite(annualRate) ||
         !Number.isFinite(years) ||
-        document.getElementById("startingAmount").value.trim() === "" ||
-        document.getElementById("monthlyContribution").value.trim() === "" ||
-        document.getElementById("savingsRate").value.trim() === "" ||
-        document.getElementById("savingsTime").value.trim() === "" ||
         startingAmount < 0 ||
         monthlyContribution < 0 ||
         annualRate < 0 ||
         years <= 0
       ) {
 
-        showError("savingsError");
-        hideResult("savingsResult");
+        error.style.display = "block";
+
+        result.style.display = "none";
 
         return;
       }
@@ -2826,220 +3515,306 @@
         Math.round(years * 12);
 
 
-      if (months <= 0) {
-
-        showError("savingsError");
-        hideResult("savingsResult");
-
-        return;
-      }
-
-
       const monthlyRate =
         annualRate / 100 / 12;
 
 
-      let finalSavings;
+      let finalAmount;
 
 
       if (monthlyRate === 0) {
 
-        finalSavings =
+        finalAmount =
           startingAmount +
-          monthlyContribution * months;
+          (
+            monthlyContribution *
+            months
+          );
 
       } else {
 
         const growth =
-          Math.pow(1 + monthlyRate, months);
+          Math.pow(
+            1 + monthlyRate,
+            months
+          );
 
 
         const startingGrowth =
-          startingAmount * growth;
+          startingAmount *
+          growth;
 
 
         const contributionGrowth =
           monthlyContribution *
-          ((growth - 1) / monthlyRate);
+          (
+            (growth - 1) /
+            monthlyRate
+          );
 
 
-        finalSavings =
+        finalAmount =
           startingGrowth +
           contributionGrowth;
+
       }
 
 
-      const totalContributions =
+      const contributions =
         startingAmount +
-        monthlyContribution * months;
+        (
+          monthlyContribution *
+          months
+        );
 
 
-      const interestEarned =
-        finalSavings - totalContributions;
+      const interest =
+        finalAmount -
+        contributions;
 
 
-      if (
-        !Number.isFinite(finalSavings) ||
-        !Number.isFinite(totalContributions) ||
-        !Number.isFinite(interestEarned)
-      ) {
-
-        showError("savingsError");
-        hideResult("savingsResult");
-
-        return;
-      }
+      finalSavings.textContent =
+        formatNumber(finalAmount);
 
 
-      hideError("savingsError");
+      totalContributions.textContent =
+        formatNumber(contributions);
 
 
-      document.getElementById("finalSavings").textContent =
-        formatNumber(finalSavings);
-
-      document.getElementById("totalContributions").textContent =
-        formatNumber(totalContributions);
-
-      document.getElementById("interestEarned").textContent =
-        formatNumber(Math.max(0, interestEarned));
+      interestEarned.textContent =
+        formatNumber(interest);
 
 
-      showResult("savingsResult");
+      error.style.display = "none";
+
+      result.style.display = "block";
+
+
+      result.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+
     }
 
 
     function resetSavings() {
 
-      document.getElementById("startingAmount").value = "";
-      document.getElementById("monthlyContribution").value = "";
-      document.getElementById("savingsRate").value = "";
-      document.getElementById("savingsTime").value = "";
+      document.getElementById(
+        "startingAmount"
+      ).value = "";
 
-      document.getElementById("finalSavings").textContent = "0";
-      document.getElementById("totalContributions").textContent = "0";
-      document.getElementById("interestEarned").textContent = "0";
+      document.getElementById(
+        "monthlyContribution"
+      ).value = "";
 
-      hideError("savingsError");
-      hideResult("savingsResult");
-    }
+      document.getElementById(
+        "savingsRate"
+      ).value = "";
 
+      document.getElementById(
+        "savingsTime"
+      ).value = "";
 
-    /* =========================
-       FAQ
-    ========================= */
+      document.getElementById(
+        "savingsError"
+      ).style.display = "none";
 
-    function toggleFAQ(button) {
+      document.getElementById(
+        "savingsResult"
+      ).style.display = "none";
 
-      const item =
-        button.closest(".faq-item");
+      document.getElementById(
+        "finalSavings"
+      ).textContent = "0.00";
 
-      const isOpen =
-        item.classList.contains("open");
+      document.getElementById(
+        "totalContributions"
+      ).textContent = "0.00";
 
-
-      document
-        .querySelectorAll(".faq-item")
-        .forEach(function(faq) {
-
-          faq.classList.remove("open");
-
-          const faqButton =
-            faq.querySelector(".faq-question");
-
-          if (faqButton) {
-            faqButton.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-
-            const symbol =
-              faqButton.querySelector("span:last-child");
-
-            if (symbol) {
-              symbol.textContent = "+";
-            }
-          }
-
-        });
-
-
-      if (!isOpen) {
-
-        item.classList.add("open");
-
-        button.setAttribute(
-          "aria-expanded",
-          "true"
-        );
-
-        const symbol =
-          button.querySelector("span:last-child");
-
-        if (symbol) {
-          symbol.textContent = "−";
-        }
-      }
+      document.getElementById(
+        "interestEarned"
+      ).textContent = "0.00";
 
     }
+
+
+    document
+      .getElementById("savingsCalculateButton")
+      .addEventListener(
+        "click",
+        calculateSavings
+      );
+
+
+    document
+      .getElementById("savingsResetButton")
+      .addEventListener(
+        "click",
+        resetSavings
+      );
 
 
     /* =========================
        ENTER KEY SUPPORT
     ========================= */
 
-    document.addEventListener("keydown", function(event) {
+    document.addEventListener(
+      "keydown",
+      function(event) {
 
-      if (event.key !== "Enter") {
-        return;
+        if (event.key !== "Enter") {
+          return;
+        }
+
+
+        const active =
+          document.activeElement;
+
+
+        if (!active) {
+          return;
+        }
+
+
+        if (
+          active.id === "percent" ||
+          active.id === "number"
+        ) {
+
+          calculatePercentage();
+
+          return;
+        }
+
+
+        if (
+          active.id === "loanAmount" ||
+          active.id === "interestRate" ||
+          active.id === "loanTerm"
+        ) {
+
+          calculateEMI();
+
+          return;
+        }
+
+
+        if (
+          active.id === "principal" ||
+          active.id === "compoundRate" ||
+          active.id === "compoundTime" ||
+          active.id === "frequency"
+        ) {
+
+          calculateCompound();
+
+          return;
+        }
+
+
+        if (
+          active.id === "startingAmount" ||
+          active.id === "monthlyContribution" ||
+          active.id === "savingsRate" ||
+          active.id === "savingsTime"
+        ) {
+
+          calculateSavings();
+
+        }
+
       }
-
-
-      const target =
-        event.target;
-
-
-      if (!target.matches("input, select")) {
-        return;
-      }
-
-
-      const calculator =
-        target.closest(".calculator");
-
-
-      if (!calculator) {
-        return;
-      }
-
-
-      event.preventDefault();
-
-
-      if (calculator.id === "percentage") {
-        calculatePercentage();
-      }
-
-      else if (calculator.id === "emi") {
-        calculateEMI();
-      }
-
-      else if (calculator.id === "compound") {
-        calculateCompound();
-      }
-
-      else if (calculator.id === "savings") {
-        calculateSavings();
-      }
-
-    });
+    );
 
 
     /* =========================
-       CURRENT YEAR
+       FAQ ACCORDION
     ========================= */
 
-    document.getElementById("currentYear").textContent =
-      new Date().getFullYear();
+    const faqQuestions =
+      document.querySelectorAll(
+        ".faq-question"
+      );
+
+
+    faqQuestions.forEach(
+      function(question) {
+
+        question.addEventListener(
+          "click",
+          function() {
+
+            const item =
+              question.parentElement;
+
+            const isOpen =
+              item.classList.contains("open");
+
+
+            document
+              .querySelectorAll(".faq-item")
+              .forEach(
+                function(otherItem) {
+
+                  otherItem.classList.remove(
+                    "open"
+                  );
+
+                  const otherButton =
+                    otherItem.querySelector(
+                      ".faq-question"
+                    );
+
+                  if (otherButton) {
+
+                    otherButton
+                      .setAttribute(
+                        "aria-expanded",
+                        "false"
+                      );
+
+                    const icon =
+                      otherButton.querySelector(
+                        "span:last-child"
+                      );
+
+                    if (icon) {
+                      icon.textContent = "+";
+                    }
+
+                  }
+
+                }
+              );
+
+
+            if (!isOpen) {
+
+              item.classList.add("open");
+
+              question.setAttribute(
+                "aria-expanded",
+                "true"
+              );
+
+              const icon =
+                question.querySelector(
+                  "span:last-child"
+                );
+
+              if (icon) {
+                icon.textContent = "−";
+              }
+
+            }
+
+          }
+        );
+
+      }
+    );
+
 
   </script>
 
