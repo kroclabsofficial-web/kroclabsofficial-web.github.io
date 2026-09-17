@@ -1,20 +1,67 @@
  <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Compound Interest Calculator - Free Online Tool | KROC LABS</title>
 
-<meta name="description" content="Free Compound Interest Calculator by KROC LABS. Calculate final amount and compound interest instantly.">
+<meta
+  name="description"
+  content="Free Compound Interest Calculator by KROC LABS. Calculate final amount and compound interest instantly."
+>
 
 <meta name="robots" content="index, follow">
 
-<link rel="canonical" href="https://kroclabsofficial-web.github.io/compound-interest-calculator.html">
+<link
+  rel="canonical"
+  href="https://kroclabsofficial-web.github.io/compound-interest-calculator.html"
+>
 
 <meta name="theme-color" content="#050505">
 
+<meta
+  property="og:title"
+  content="Compound Interest Calculator | KROC LABS"
+>
+
+<meta
+  property="og:description"
+  content="Calculate compound interest and final investment amount with the free KROC LABS calculator."
+>
+
+<meta
+  property="og:url"
+  content="https://kroclabsofficial-web.github.io/compound-interest-calculator.html"
+>
+
+<meta property="og:type" content="website">
+
+
+<!-- STRUCTURED DATA -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "KROC LABS Compound Interest Calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "url": "https://kroclabsofficial-web.github.io/compound-interest-calculator.html",
+  "description": "A free online compound interest calculator for estimating final amount and compound interest."
+}
+</script>
+
+
 <style>
+
+/* =========================
+   RESET
+========================= */
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -37,40 +84,60 @@ a{
   color:inherit;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
+
 header{
   position:sticky;
   top:0;
   z-index:1000;
+
   background:rgba(5,5,5,.96);
+
   border-bottom:1px solid rgba(0,255,136,.15);
+
   backdrop-filter:blur(12px);
 }
 
 .nav{
   max-width:1200px;
   margin:auto;
+
   padding:18px 24px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   gap:20px;
 }
 
 .logo{
   font-size:22px;
   font-weight:900;
+
   letter-spacing:2px;
+
   color:#00ff88;
+
   white-space:nowrap;
 }
 
 .nav-links{
   display:flex;
   align-items:center;
+
   gap:20px;
+
   color:#ccc;
+
   font-size:14px;
+}
+
+.nav-links a{
+  transition:.2s ease;
 }
 
 .nav-links a:hover{
@@ -79,31 +146,53 @@ header{
 
 .home-btn{
   border:1px solid #00ff88;
+
   color:#00ff88;
+
   padding:9px 15px;
+
   border-radius:9px;
+
   font-weight:700;
 }
 
-/* HERO */
+.home-btn:hover{
+  background:#00ff88;
+  color:#050505;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
   max-width:900px;
+
   margin:auto;
+
   text-align:center;
+
   padding:70px 20px 40px;
 }
 
 .eyebrow{
   color:#00ff88;
+
   font-size:12px;
+
   font-weight:800;
+
   letter-spacing:2px;
+
   margin-bottom:18px;
 }
 
 .hero h1{
   font-size:clamp(36px,7vw,62px);
+
   line-height:1.05;
+
   margin-bottom:20px;
 }
 
@@ -113,42 +202,68 @@ header{
 
 .hero p{
   color:#aaa;
+
   font-size:17px;
+
   max-width:700px;
+
   margin:auto;
 }
 
-/* CALCULATOR */
+
+/* =========================
+   CALCULATOR
+========================= */
+
 .calculator-section{
   padding:20px 20px 70px;
 }
 
 .calculator-card{
   max-width:650px;
+
   margin:auto;
+
   padding:30px;
+
   background:#0b0b0b;
+
   border:1px solid rgba(0,255,136,.3);
+
   border-radius:18px;
+
+  box-shadow:
+    0 0 50px rgba(0,255,136,.04);
 }
 
 .tool-label{
   color:#00ff88;
+
   font-size:13px;
+
   font-weight:800;
+
   letter-spacing:2px;
+
   margin-bottom:10px;
 }
 
 .calculator-card h2{
   font-size:28px;
+
   margin-bottom:8px;
 }
 
 .description{
   color:#999;
+
   margin-bottom:28px;
 }
+
+
+/* =========================
+   INPUTS
+========================= */
 
 .input-group{
   margin-bottom:20px;
@@ -156,127 +271,1365 @@ header{
 
 .input-group label{
   display:block;
+
   margin-bottom:8px;
+
   color:#ddd;
+
   font-weight:700;
 }
 
 .input-group input,
 .input-group select{
+
   width:100%;
+
   padding:16px;
+
   background:#050505;
+
   color:#fff;
+
   border:1px solid #333;
+
   border-radius:11px;
+
   font-size:16px;
+
   outline:none;
+
+  transition:.2s ease;
 }
 
 .input-group input:focus,
 .input-group select:focus{
+
   border-color:#00ff88;
-  box-shadow:0 0 0 3px rgba(0,255,136,.08);
+
+  box-shadow:
+    0 0 0 3px rgba(0,255,136,.08);
 }
 
-/* BUTTONS */
+
+/* =========================
+   BUTTONS
+========================= */
+
 .button-row{
+
   display:flex;
+
   gap:14px;
+
   margin-top:8px;
 }
 
 button{
+
   flex:1;
+
   padding:16px;
+
   border-radius:11px;
+
   font-size:16px;
+
   font-weight:800;
+
   cursor:pointer;
+
+  transition:.2s ease;
 }
 
 .calculate-btn{
+
   background:#00ff88;
+
   color:#050505;
+
   border:1px solid #00ff88;
+}
+
+.calculate-btn:hover{
+
+  transform:translateY(-1px);
+
+  box-shadow:
+    0 8px 25px rgba(0,255,136,.15);
 }
 
 .reset-btn{
+
   background:transparent;
+
   color:#00ff88;
+
   border:1px solid #00ff88;
 }
 
-/* ERROR */
+.reset-btn:hover{
+
+  background:rgba(0,255,136,.08);
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
 #error{
+
   display:none;
+
   margin-top:18px;
+
   padding:13px;
+
   border-radius:10px;
+
   background:#180909;
+
   border:1px solid #632525;
+
   color:#ff9999;
+
   font-weight:700;
+
+  font-size:14px;
 }
 
-/* RESULT */
+
+/* =========================
+   RESULT
+========================= */
+
 #result{
+
   display:none;
+
   margin-top:24px;
+
   padding:24px;
+
   background:#07140e;
+
   border:1px solid #00ff88;
+
   border-radius:14px;
+
+  animation:resultAppear .25s ease;
+}
+
+@keyframes resultAppear{
+
+  from{
+    opacity:0;
+    transform:translateY(8px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
 }
 
 .result-label{
+
   color:#999;
+
   font-size:13px;
+
   font-weight:700;
+
   letter-spacing:1px;
 }
 
 .final-amount{
+
   color:#00ff88;
+
   font-size:46px;
+
   font-weight:900;
+
   margin:6px 0 20px;
+
   word-break:break-word;
 }
 
 .result-grid{
+
   display:grid;
+
   grid-template-columns:1fr 1fr;
+
   gap:12px;
 }
 
 .result-box{
+
   background:#050505;
+
   border:1px solid #222;
+
   border-radius:10px;
+
   padding:16px;
 }
 
 .result-box small{
+
   display:block;
+
   color:#777;
+
   margin-bottom:5px;
+
+  font-size:12px;
 }
 
 .result-box strong{
+
+  color:#fff;
+
   font-size:17px;
+
+  word-break:break-word;
 }
 
-/* INFO */
+
+/* =========================
+   INFO
+========================= */
+
 .info{
+
   max-width:900px;
+
   margin:auto;
+
   padding:0 20px 70px;
 }
 
 .info-box{
+
   background:#0a0a0a;
+
   border:1px solid #202020;
+
   border-radius:16px;
+
   padding:28px;
-  margin
+
+  margin-bottom:20px;
+}
+
+.info-box h2{
+
+  font-size:24px;
+
+  margin-bottom:12px;
+}
+
+.info-box h2 span{
+
+  color:#00ff88;
+}
+
+.info-box p{
+
+  color:#a6a6a6;
+
+  font-size:15px;
+}
+
+.steps{
+
+  display:grid;
+
+  gap:12px;
+
+  margin-top:18px;
+}
+
+.step{
+
+  padding:15px;
+
+  border-left:2px solid #00ff88;
+
+  background:#080808;
+
+  color:#bdbdbd;
+
+  font-size:14px;
+}
+
+.step strong{
+
+  color:#fff;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq-section{
+
+  max-width:900px;
+
+  margin:auto;
+
+  padding:0 20px 70px;
+}
+
+.section-heading{
+
+  text-align:center;
+
+  margin-bottom:28px;
+}
+
+.section-heading .small{
+
+  color:#00ff88;
+
+  font-size:12px;
+
+  font-weight:800;
+
+  letter-spacing:2px;
+}
+
+.section-heading h2{
+
+  font-size:32px;
+
+  margin-top:8px;
+}
+
+details{
+
+  background:#0a0a0a;
+
+  border:1px solid #202020;
+
+  border-radius:12px;
+
+  margin-bottom:12px;
+
+  overflow:hidden;
+}
+
+summary{
+
+  padding:18px;
+
+  cursor:pointer;
+
+  font-weight:700;
+
+  color:#fff;
+
+  list-style:none;
+}
+
+summary::-webkit-details-marker{
+
+  display:none;
+}
+
+summary::after{
+
+  content:"+";
+
+  float:right;
+
+  color:#00ff88;
+
+  font-size:20px;
+}
+
+details[open] summary::after{
+
+  content:"−";
+}
+
+details p{
+
+  padding:0 18px 18px;
+
+  color:#9d9d9d;
+
+  font-size:14px;
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.disclaimer{
+
+  max-width:900px;
+
+  margin:auto;
+
+  padding:0 20px 70px;
+}
+
+.disclaimer-box{
+
+  border:1px solid #1d1d1d;
+
+  border-radius:12px;
+
+  padding:18px;
+
+  background:#080808;
+}
+
+.disclaimer-box strong{
+
+  color:#00ff88;
+
+  font-size:13px;
+}
+
+.disclaimer-box p{
+
+  color:#777;
+
+  font-size:12px;
+
+  margin-top:6px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+  border-top:1px solid #171717;
+
+  padding:35px 20px;
+
+  text-align:center;
+}
+
+.footer-logo{
+
+  color:#00ff88;
+
+  font-weight:900;
+
+  letter-spacing:2px;
+
+  margin-bottom:8px;
+}
+
+footer p{
+
+  color:#666;
+
+  font-size:13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:700px){
+
+  .nav{
+
+    padding:15px 16px;
+
+    align-items:flex-start;
+  }
+
+  .logo{
+
+    font-size:18px;
+  }
+
+  .nav-links{
+
+    gap:9px;
+
+    font-size:11px;
+
+    flex-wrap:wrap;
+
+    justify-content:flex-end;
+  }
+
+  .home-btn{
+
+    padding:7px 10px;
+  }
+
+  .hero{
+
+    padding:55px 18px 35px;
+  }
+
+  .hero p{
+
+    font-size:15px;
+  }
+
+  .calculator-section{
+
+    padding:15px 15px 60px;
+  }
+
+  .calculator-card{
+
+    padding:22px 18px;
+
+    border-radius:15px;
+  }
+
+  .calculator-card h2{
+
+    font-size:24px;
+  }
+
+  .button-row{
+
+    flex-direction:column;
+  }
+
+  button{
+
+    width:100%;
+  }
+
+  .result-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .final-amount{
+
+    font-size:38px;
+  }
+
+  .info,
+  .faq-section,
+  .disclaimer{
+
+    padding-left:15px;
+
+    padding-right:15px;
+  }
+
+  .info-box{
+
+    padding:22px 18px;
+  }
+
+  .section-heading h2{
+
+    font-size:27px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+  <nav class="nav">
+
+    <a href="index.html" class="logo">
+      KROC LABS
+    </a>
+
+    <div class="nav-links">
+
+      <a href="index.html#products">
+        Products
+      </a>
+
+      <a href="percentage-calculator.html">
+        Percentage
+      </a>
+
+      <a href="loan-emi-calculator.html">
+        EMI
+      </a>
+
+      <a href="#calculator">
+        Compound
+      </a>
+
+      <a href="#faq">
+        FAQ
+      </a>
+
+      <a href="index.html" class="home-btn">
+        Home
+      </a>
+
+    </div>
+
+  </nav>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="eyebrow">
+    KROC LABS • FREE FINANCE TOOL
+  </div>
+
+  <h1>
+    Compound Interest <span>Calculator</span>
+  </h1>
+
+  <p>
+    Calculate your estimated final amount and compound interest
+    using your starting amount, interest rate and investment time.
+  </p>
+
+</section>
+
+
+<!-- CALCULATOR -->
+
+<section class="calculator-section" id="calculator">
+
+  <div class="calculator-card">
+
+    <div class="tool-label">
+      TOOL 03
+    </div>
+
+    <h2>
+      Calculate Compound Interest
+    </h2>
+
+    <p class="description">
+      Enter your principal, annual rate, time and compounding frequency.
+    </p>
+
+
+    <!-- STARTING AMOUNT -->
+
+    <div class="input-group">
+
+      <label for="principal">
+        Starting Amount
+      </label>
+
+      <input
+        type="number"
+        id="principal"
+        placeholder="Example: 10000"
+        inputmode="decimal"
+        step="any"
+        min="0"
+        autocomplete="off"
+      >
+
+    </div>
+
+
+    <!-- INTEREST RATE -->
+
+    <div class="input-group">
+
+      <label for="compoundRate">
+        Annual Interest Rate (%)
+      </label>
+
+      <input
+        type="number"
+        id="compoundRate"
+        placeholder="Example: 8"
+        inputmode="decimal"
+        step="any"
+        min="0"
+        autocomplete="off"
+      >
+
+    </div>
+
+
+    <!-- TIME -->
+
+    <div class="input-group">
+
+      <label for="compoundTime">
+        Time (Years)
+      </label>
+
+      <input
+        type="number"
+        id="compoundTime"
+        placeholder="Example: 5"
+        inputmode="decimal"
+        step="any"
+        min="0"
+        autocomplete="off"
+      >
+
+    </div>
+
+
+    <!-- FREQUENCY -->
+
+    <div class="input-group">
+
+      <label for="frequency">
+        Compound Frequency
+      </label>
+
+      <select id="frequency">
+
+        <option value="1">
+          Annually
+        </option>
+
+        <option value="2">
+          Half-Yearly
+        </option>
+
+        <option value="4">
+          Quarterly
+        </option>
+
+        <option value="12" selected>
+          Monthly
+        </option>
+
+        <option value="365">
+          Daily
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <!-- BUTTONS -->
+
+    <div class="button-row">
+
+      <button
+        type="button"
+        class="calculate-btn"
+        onclick="calculateCompound()"
+      >
+        Calculate →
+      </button>
+
+      <button
+        type="button"
+        class="reset-btn"
+        onclick="resetCompound()"
+      >
+        Reset (C)
+      </button>
+
+    </div>
+
+
+    <!-- ERROR -->
+
+    <div id="error">
+      ⚠️ Please enter valid numbers
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div id="result">
+
+      <div class="result-label">
+        ESTIMATED FINAL AMOUNT
+      </div>
+
+      <div
+        id="finalAmount"
+        class="final-amount"
+      >
+        0.00
+      </div>
+
+
+      <div class="result-grid">
+
+        <div class="result-box">
+
+          <small>
+            Starting Amount
+          </small>
+
+          <strong id="startingAmountResult">
+            0.00
+          </strong>
+
+        </div>
+
+
+        <div class="result-box">
+
+          <small>
+            Compound Interest
+          </small>
+
+          <strong id="compoundInterest">
+            0.00
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     INFORMATION
+========================= -->
+
+<section class="info">
+
+
+  <!-- HOW TO USE -->
+
+  <div class="info-box">
+
+    <h2>
+      How to use the <span>Compound Interest Calculator</span>
+    </h2>
+
+    <p>
+      Enter your starting amount, annual interest rate, investment
+      time and how often the interest is compounded.
+    </p>
+
+
+    <div class="steps">
+
+      <div class="step">
+        <strong>1.</strong>
+        Enter your starting amount.
+      </div>
+
+      <div class="step">
+        <strong>2.</strong>
+        Enter the annual interest rate.
+      </div>
+
+      <div class="step">
+        <strong>3.</strong>
+        Enter the investment time in years.
+      </div>
+
+      <div class="step">
+        <strong>4.</strong>
+        Select the compounding frequency.
+      </div>
+
+      <div class="step">
+        <strong>5.</strong>
+        Tap <strong>Calculate</strong> to see the estimate.
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- FORMULA -->
+
+  <div class="info-box">
+
+    <h2>
+      Compound Interest <span>Formula</span>
+    </h2>
+
+    <p>
+      The standard compound interest formula used by this calculator is:
+    </p>
+
+    <div
+      class="step"
+      style="margin-top:15px;"
+    >
+
+      <strong>
+        A = P × (1 + r/n)ⁿᵗ
+      </strong>
+
+    </div>
+
+    <p style="margin-top:15px;">
+
+      P is the starting amount, r is the annual interest rate
+      expressed as a decimal, n is the number of compounding
+      periods per year, and t is the time in years.
+
+    </p>
+
+  </div>
+
+
+  <!-- EXAMPLE -->
+
+  <div class="info-box">
+
+    <h2>
+      Compound Interest <span>Example</span>
+    </h2>
+
+    <p>
+      If you start with 10,000, earn an annual rate of 8% and
+      compound the interest monthly for 5 years, the calculator
+      estimates the final amount using monthly compounding.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="faq-section" id="faq">
+
+  <div class="section-heading">
+
+    <div class="small">
+      FREQUENTLY ASKED QUESTIONS
+    </div>
+
+    <h2>
+      Compound Interest Calculator FAQ
+    </h2>
+
+  </div>
+
+
+  <details>
+
+    <summary>
+      What is compound interest?
+    </summary>
+
+    <p>
+      Compound interest is interest calculated on an initial amount
+      and on the interest accumulated during previous periods.
+    </p>
+
+  </details>
+
+
+  <details>
+
+    <summary>
+      What information do I need?
+    </summary>
+
+    <p>
+      You need the starting amount, annual interest rate, investment
+      time and compounding frequency.
+    </p>
+
+  </details>
+
+
+  <details>
+
+    <summary>
+      What does compounding frequency mean?
+    </summary>
+
+    <p>
+      Compounding frequency describes how often interest is added
+      to the balance. Common frequencies include annually,
+      quarterly, monthly and daily.
+    </p>
+
+  </details>
+
+
+  <details>
+
+    <summary>
+      Does more frequent compounding always produce a higher result?
+    </summary>
+
+    <p>
+      For the same positive nominal annual rate and time period,
+      more frequent compounding generally produces a higher
+      mathematical result. Actual investment products may use
+      different terms and conditions.
+    </p>
+
+  </details>
+
+
+  <details>
+
+    <summary>
+      Is this calculator free?
+    </summary>
+
+    <p>
+      Yes. The KROC LABS Compound Interest Calculator is designed
+      as a free online tool and does not require an account.
+    </p>
+
+  </details>
+
+
+  <details>
+
+    <summary>
+      Are the results guaranteed?
+    </summary>
+
+    <p>
+      No. The calculator provides a mathematical estimate based
+      on the values entered. Actual investment returns, rates,
+      fees, taxes and product terms can differ.
+    </p>
+
+  </details>
+
+</section>
+
+
+<!-- =========================
+     DISCLAIMER
+========================= -->
+
+<section class="disclaimer">
+
+  <div class="disclaimer-box">
+
+    <strong>
+      IMPORTANT INFORMATION
+    </strong>
+
+    <p>
+      KROC LABS provides this calculator for general informational
+      and educational purposes. The results are mathematical
+      estimates based on the values entered and are not financial
+      advice, investment advice or a guarantee of actual returns.
+      Actual rates, fees, taxes, compounding methods and investment
+      results may differ.
+    </p>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="footer-logo">
+    KROC LABS
+  </div>
+
+  <p>
+    Useful technology. Built differently.
+  </p>
+
+  <p style="margin-top:8px;">
+    © 2026 KROC LABS. All rights reserved.
+  </p>
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+/* =========================
+   COMPOUND CALCULATOR
+========================= */
+
+function calculateCompound(){
+
+  const principalInput =
+    document.getElementById("principal");
+
+  const rateInput =
+    document.getElementById("compoundRate");
+
+  const timeInput =
+    document.getElementById("compoundTime");
+
+  const frequencyInput =
+    document.getElementById("frequency");
+
+  const error =
+    document.getElementById("error");
+
+  const result =
+    document.getElementById("result");
+
+  const finalAmount =
+    document.getElementById("finalAmount");
+
+  const startingAmountResult =
+    document.getElementById("startingAmountResult");
+
+  const compoundInterest =
+    document.getElementById("compoundInterest");
+
+
+  const principal =
+    Number(principalInput.value);
+
+  const annualRate =
+    Number(rateInput.value);
+
+  const time =
+    Number(timeInput.value);
+
+  const frequency =
+    Number(frequencyInput.value);
+
+
+  /* =========================
+     VALIDATION
+  ========================= */
+
+  if(
+
+    principalInput.value.trim() === "" ||
+
+    rateInput.value.trim() === "" ||
+
+    timeInput.value.trim() === "" ||
+
+    !Number.isFinite(principal) ||
+
+    !Number.isFinite(annualRate) ||
+
+    !Number.isFinite(time) ||
+
+    !Number.isFinite(frequency) ||
+
+    principal < 0 ||
+
+    annualRate < 0 ||
+
+    time <= 0 ||
+
+    frequency <= 0
+
+  ){
+
+    error.style.display = "block";
+
+    result.style.display = "none";
+
+    return;
+
+  }
+
+
+  /* =========================
+     CALCULATION
+  ========================= */
+
+  let amount;
+
+
+  if(annualRate === 0){
+
+    amount = principal;
+
+  }
+
+  else{
+
+    const rate =
+      annualRate / 100;
+
+    amount =
+      principal *
+      Math.pow(
+        1 + rate / frequency,
+        frequency * time
+      );
+
+  }
+
+
+  const interest =
+    amount - principal;
+
+
+  /* =========================
+     FORMAT RESULTS
+  ========================= */
+
+  finalAmount.textContent =
+    amount.toLocaleString(undefined,{
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    });
+
+
+  startingAmountResult.textContent =
+    principal.toLocaleString(undefined,{
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    });
+
+
+  compoundInterest.textContent =
+    interest.toLocaleString(undefined,{
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    });
+
+
+  /* =========================
+     SHOW RESULT
+  ========================= */
+
+  error.style.display = "none";
+
+  result.style.display = "block";
+
+
+  /* =========================
+     SCROLL TO RESULT
+  ========================= */
+
+  result.scrollIntoView({
+    behavior:"smooth",
+    block:"nearest"
+  });
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+function resetCompound(){
+
+  document.getElementById("principal").value = "";
+
+  document.getElementById("compoundRate").value = "";
+
+  document.getElementById("compoundTime").value = "";
+
+  document.getElementById("frequency").value = "12";
+
+
+  document.getElementById("error").style.display =
+    "none";
+
+  document.getElementById("result").style.display =
+    "none";
+
+
+  document.getElementById("finalAmount").textContent =
+    "0.00";
+
+  document.getElementById("startingAmountResult").textContent =
+    "0.00";
+
+  document.getElementById("compoundInterest").textContent =
+    "0.00";
+
+}
+
+
+/* =========================
+   ENTER KEY SUPPORT
+========================= */
+
+document.addEventListener("keydown",function(event){
+
+  if(event.key === "Enter"){
+
+    const active =
+      document.activeElement;
+
+    if(
+
+      active &&
+
+      (
+
+        active.id === "principal" ||
+
+        active.id === "compoundRate" ||
+
+        active.id === "compoundTime" ||
+
+        active.id === "frequency"
+
+      )
+
+    ){
+
+      calculateCompound();
+
+    }
+
+  }
+
+});
+
+</script>
+
+
+</body>
+</html>
