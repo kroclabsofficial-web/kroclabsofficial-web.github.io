@@ -4,19 +4,16 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Loan EMI Calculator - Free Online Tool | KROC LABS</title>
 
   <meta name="description"
         content="Free Loan EMI Calculator by KROC LABS. Calculate monthly EMI, total interest and total payment quickly and easily.">
 
-  <meta name="robots"
-        content="index, follow">
+  <meta name="robots" content="index, follow">
 
-  <meta name="theme-color"
-        content="#050505">
+  <meta name="theme-color" content="#050505">
 
   <link rel="canonical"
         href="https://kroclabsofficial-web.github.io/loan-emi-calculator.html">
@@ -27,8 +24,7 @@
   <meta property="og:description"
         content="Calculate your monthly loan EMI, total interest and total payment with KROC LABS.">
 
-  <meta property="og:type"
-        content="website">
+  <meta property="og:type" content="website">
 
   <meta property="og:url"
         content="https://kroclabsofficial-web.github.io/loan-emi-calculator.html">
@@ -293,7 +289,7 @@
       text-align:center;
     }
 
-    .main-result span{
+    .main-result-label{
       display:block;
       color:#888;
       font-size:13px;
@@ -564,8 +560,7 @@
 
     <div class="container nav">
 
-      <a href="index.html"
-         class="logo">
+      <a href="index.html" class="logo">
         KROC LABS
       </a>
 
@@ -748,16 +743,12 @@
 
             <div class="main-result">
 
-              <span>
+              <span class="main-result-label">
                 Monthly EMI
               </span>
 
-              <strong>
-                <span
-                  id="monthlyEMI"
-                  style="display:inline;color:#00ff88;font-size:inherit;margin:0;">
-                  0.00
-                </span>
+              <strong id="monthlyEMI">
+                0.00
               </strong>
 
             </div>
@@ -771,8 +762,7 @@
                   Total Interest
                 </span>
 
-                <strong
-                  id="totalInterest">
+                <strong id="totalInterest">
                   0.00
                 </strong>
 
@@ -785,8 +775,7 @@
                   Total Payment
                 </span>
 
-                <strong
-                  id="totalPayment">
+                <strong id="totalPayment">
                   0.00
                 </strong>
 
@@ -931,7 +920,9 @@
             type="button"
             class="faq-question">
 
-            What is EMI?
+            <span>
+              What is EMI?
+            </span>
 
             <span class="faq-icon">
               +
@@ -956,7 +947,9 @@
             type="button"
             class="faq-question">
 
-            Is this EMI calculator free?
+            <span>
+              Is this EMI calculator free?
+            </span>
 
             <span class="faq-icon">
               +
@@ -980,7 +973,9 @@
             type="button"
             class="faq-question">
 
-            Does this calculator give an exact bank EMI?
+            <span>
+              Does this calculator give an exact bank EMI?
+            </span>
 
             <span class="faq-icon">
               +
@@ -1006,7 +1001,9 @@
             type="button"
             class="faq-question">
 
-            Can I use a zero interest rate?
+            <span>
+              Can I use a zero interest rate?
+            </span>
 
             <span class="faq-icon">
               +
@@ -1031,7 +1028,9 @@
             type="button"
             class="faq-question">
 
-            Can I press Enter to calculate?
+            <span>
+              Can I press Enter to calculate?
+            </span>
 
             <span class="faq-icon">
               +
@@ -1104,7 +1103,11 @@
 
   <script>
 
-    function calculateEMI() {
+    /* =========================
+       EMI CALCULATOR
+    ========================= */
+
+    function calculateEMI(){
 
       const loanAmountInput =
         document.getElementById("loanAmount");
@@ -1143,7 +1146,7 @@
 
       /* VALIDATION */
 
-      if (
+      if(
         loanAmountInput.value.trim() === "" ||
         interestRateInput.value.trim() === "" ||
         loanTermInput.value.trim() === "" ||
@@ -1153,7 +1156,7 @@
         loanAmount <= 0 ||
         annualRate < 0 ||
         years <= 0
-      ) {
+      ){
 
         error.style.display = "block";
         result.style.display = "none";
@@ -1162,30 +1165,31 @@
       }
 
 
-      /* CALCULATION */
+      /* MONTHLY PAYMENTS */
 
       const numberOfPayments =
         Math.round(years * 12);
 
+
       const monthlyRate =
         annualRate / 100 / 12;
+
 
       let emi;
 
 
       /* ZERO INTEREST */
 
-      if (monthlyRate === 0) {
+      if(monthlyRate === 0){
 
         emi =
           loanAmount / numberOfPayments;
 
       }
 
-
       /* NORMAL EMI */
 
-      else {
+      else{
 
         const power =
           Math.pow(
@@ -1202,6 +1206,8 @@
       }
 
 
+      /* TOTALS */
+
       const totalPaymentAmount =
         emi * numberOfPayments;
 
@@ -1209,28 +1215,30 @@
         totalPaymentAmount - loanAmount;
 
 
-      /* SHOW RESULTS */
+      /* DISPLAY */
 
       monthlyEMI.textContent =
-        emi.toLocaleString(undefined, {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2
+        emi.toLocaleString(undefined,{
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
         });
 
 
       totalInterest.textContent =
-        totalInterestAmount.toLocaleString(undefined, {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2
+        totalInterestAmount.toLocaleString(undefined,{
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
         });
 
 
       totalPayment.textContent =
-        totalPaymentAmount.toLocaleString(undefined, {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2
+        totalPaymentAmount.toLocaleString(undefined,{
+          minimumFractionDigits:2,
+          maximumFractionDigits:2
         });
 
+
+      /* SHOW RESULT */
 
       error.style.display = "none";
 
@@ -1240,16 +1248,18 @@
       /* SCROLL TO RESULT */
 
       result.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
+        behavior:"smooth",
+        block:"nearest"
       });
 
     }
 
 
-    /* RESET */
+    /* =========================
+       RESET
+    ========================= */
 
-    function resetEMI() {
+    function resetEMI(){
 
       document.getElementById("loanAmount").value = "";
 
@@ -1270,23 +1280,25 @@
     }
 
 
-    /* ENTER KEY SUPPORT */
+    /* =========================
+       ENTER KEY
+    ========================= */
 
-    document.addEventListener("keydown", function(event) {
+    document.addEventListener("keydown",function(event){
 
-      if (event.key === "Enter") {
+      if(event.key === "Enter"){
 
         const active =
           document.activeElement;
 
-        if (
+        if(
           active &&
           (
             active.id === "loanAmount" ||
             active.id === "interestRate" ||
             active.id === "loanTerm"
           )
-        ) {
+        ){
 
           calculateEMI();
 
@@ -1297,36 +1309,38 @@
     });
 
 
-    /* FAQ */
+    /* =========================
+       FAQ
+    ========================= */
 
-    const faqQuestions =
-      document.querySelectorAll(".faq-question");
+    document.querySelectorAll(".faq-question")
+      .forEach(function(button){
 
-    faqQuestions.forEach(function(question) {
+        button.addEventListener("click",function(){
 
-      question.addEventListener("click", function() {
+          const item =
+            button.parentElement;
 
-        const item =
-          question.parentElement;
+          const icon =
+            button.querySelector(".faq-icon");
 
-        const icon =
-          question.querySelector(".faq-icon");
 
-        item.classList.toggle("active");
+          item.classList.toggle("active");
 
-        if (item.classList.contains("active")) {
 
-          icon.textContent = "−";
+          if(item.classList.contains("active")){
 
-        } else {
+            icon.textContent = "−";
 
-          icon.textContent = "+";
+          }else{
 
-        }
+            icon.textContent = "+";
+
+          }
+
+        });
 
       });
-
-    });
 
   </script>
 
