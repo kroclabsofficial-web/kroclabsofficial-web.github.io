@@ -1,2010 +1,1149 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>
-    KROC LABS — Free Online Calculators & Digital Tools
-  </title>
+  <title>KROC LABS — Free Online Calculators & Digital Tools</title>
 
   <meta
     name="description"
     content="KROC LABS provides free, simple and fast online calculators including percentage, EMI, compound interest and savings tools."
   >
 
-  <meta
-    name="robots"
-    content="index, follow"
-  >
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#050505">
 
-  <meta
-    name="theme-color"
-    content="#050505"
-  >
+  <link rel="canonical" href="https://kroclabsofficial-web.github.io/">
 
-  <link
-    rel="canonical"
-    href="https://kroclabsofficial-web.github.io/"
-  >
-
-  <meta
-    property="og:type"
-    content="website"
-  >
-
-  <meta
-    property="og:title"
-    content="KROC LABS — Free Online Calculators & Digital Tools"
-  >
-
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KROC LABS — Free Online Calculators & Digital Tools">
   <meta
     property="og:description"
     content="Simple, fast and useful digital tools built by KROC LABS."
   >
-
-  <meta
-    property="og:url"
-    content="https://kroclabsofficial-web.github.io/"
-  >
-
-  <meta
-    property="og:site_name"
-    content="KROC LABS"
-  >
+  <meta property="og:url" content="https://kroclabsofficial-web.github.io/">
+  <meta property="og:site_name" content="KROC LABS">
 
   <style>
-
     :root {
-      --bg: #050505;
-      --panel: #0b0b0b;
-      --panel-2: #101010;
-      --green: #00ff88;
-      --green-dark: #00c96b;
-      --text: #f5f5f5;
-      --muted: #a5a5a5;
-      --border: #202020;
-      --max: 1150px;
+      --bg:#050505;
+      --panel:#0b0b0b;
+      --panel-2:#101010;
+      --green:#00ff88;
+      --green-dark:#00c96b;
+      --text:#f5f5f5;
+      --muted:#a5a5a5;
+      --border:#202020;
+      --max:1150px;
     }
 
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior:smooth;
     }
 
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family:
-        Inter,
-        Arial,
-        Helvetica,
-        sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Arial, Helvetica, sans-serif;
+      line-height:1.6;
+      overflow-x:hidden;
     }
 
     a {
-      color: inherit;
-      text-decoration: none;
+      color:inherit;
+      text-decoration:none;
     }
 
     button,
-    a {
-      -webkit-tap-highlight-color: transparent;
+    input,
+    select {
+      font:inherit;
     }
 
     .container {
-      width: min(
-        calc(100% - 40px),
-        var(--max)
-      );
-
-      margin: 0 auto;
+      width:min(92%, var(--max));
+      margin:auto;
     }
 
     /* =========================
        HEADER
-    ========================== */
+    ========================= */
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-
-      background:
-        rgba(5, 5, 5, 0.94);
-
-      border-bottom:
-        1px solid var(--border);
-
-      backdrop-filter: blur(14px);
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(5,5,5,.94);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
     }
 
     .header-inner {
-      min-height: 72px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
     }
 
     .logo {
-      color: var(--green);
-
-      font-size: 21px;
-      font-weight: 900;
-
-      letter-spacing: 1.5px;
-
-      white-space: nowrap;
+      font-size:22px;
+      font-weight:900;
+      letter-spacing:2px;
+      color:#fff;
+      white-space:nowrap;
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-
-      gap: 18px;
-
-      flex-wrap: wrap;
+    .logo span {
+      color:var(--green);
     }
 
-    .nav a {
-      color: #cfcfcf;
-
-      font-size: 13px;
-      font-weight: 600;
-
-      transition: 0.2s ease;
+    nav {
+      display:flex;
+      align-items:center;
+      gap:22px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
-    .nav a:hover,
-    .nav a:focus-visible {
-      color: var(--green);
+    nav a {
+      color:#aaa;
+      font-size:13px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color:var(--green);
     }
 
     .nav-cta {
-      border:
-        1px solid var(--green);
-
-      color: var(--green) !important;
-
-      padding:
-        8px 14px;
-
-      border-radius: 999px;
+      padding:10px 15px;
+      border:1px solid var(--green);
+      border-radius:9px;
+      color:var(--green);
     }
 
     .nav-cta:hover,
     .nav-cta:focus-visible {
-      background: var(--green);
-      color: #000 !important;
+      background:var(--green);
+      color:#000 !important;
     }
 
     /* =========================
        HERO
-    ========================== */
+    ========================= */
 
     .hero {
-      padding:
-        105px 0
-        85px;
-
-      text-align: center;
-
-      position: relative;
+      padding:105px 0 85px;
+      text-align:center;
+      position:relative;
     }
 
     .hero::before {
-      content: "";
-
-      position: absolute;
-
-      width: 280px;
-      height: 280px;
-
-      left: 50%;
-      top: 70px;
-
-      transform: translateX(-50%);
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(0, 255, 136, 0.10),
-          transparent 70%
-        );
-
-      pointer-events: none;
+      content:"";
+      position:absolute;
+      width:280px;
+      height:280px;
+      left:50%;
+      top:70px;
+      transform:translateX(-50%);
+      background:radial-gradient(
+        circle,
+        rgba(0,255,136,.10),
+        transparent 70%
+      );
+      pointer-events:none;
     }
 
     .eyebrow {
-      display: inline-block;
-
-      color: var(--green);
-
-      font-size: 12px;
-      font-weight: 800;
-
-      letter-spacing: 2px;
-
-      margin-bottom: 20px;
+      position:relative;
+      display:inline-block;
+      color:var(--green);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:2px;
+      margin-bottom:20px;
     }
 
     .hero h1 {
-      max-width: 850px;
-
-      margin:
-        0 auto
-        20px;
-
-      font-size:
-        clamp(42px, 7vw, 78px);
-
-      line-height: 1.02;
-
-      letter-spacing: -3px;
-
-      font-weight: 900;
+      position:relative;
+      max-width:850px;
+      margin:0 auto 20px;
+      font-size:clamp(42px,7vw,76px);
+      line-height:1.03;
+      letter-spacing:-3px;
     }
 
     .hero h1 span {
-      color: var(--green);
+      color:var(--green);
     }
 
     .hero p {
-      max-width: 690px;
-
-      margin: 0 auto;
-
-      color: var(--muted);
-
-      font-size:
-        clamp(16px, 2vw, 19px);
+      position:relative;
+      max-width:650px;
+      margin:0 auto;
+      color:var(--muted);
+      font-size:16px;
     }
 
     .hero-actions {
-      margin-top: 34px;
-
-      display: flex;
-
-      justify-content: center;
-
-      gap: 12px;
-
-      flex-wrap: wrap;
+      position:relative;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin-top:30px;
+      flex-wrap:wrap;
     }
 
     .btn {
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      min-height: 48px;
-
-      padding:
-        0 22px;
-
-      border-radius: 10px;
-
-      font-size: 14px;
-      font-weight: 800;
-
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 20px;
+      border-radius:10px;
+      font-size:13px;
+      font-weight:900;
+      transition:.2s ease;
     }
 
     .btn-primary {
-      background: var(--green);
-      color: #000;
+      background:var(--green);
+      color:#000;
+      border:1px solid var(--green);
+    }
 
-      border:
-        1px solid var(--green);
+    .btn-primary:hover {
+      background:#fff;
+      border-color:#fff;
     }
 
     .btn-secondary {
-      background: transparent;
-      color: #fff;
-
-      border:
-        1px solid #333;
+      background:transparent;
+      color:#fff;
+      border:1px solid #303030;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary:hover,
-    .btn-primary:focus-visible {
-      background: #24ff9a;
-    }
-
-    .btn-secondary:hover,
-    .btn-secondary:focus-visible {
-      border-color: var(--green);
-      color: var(--green);
-    }
-
-    :focus-visible {
-      outline:
-        2px solid var(--green);
-
-      outline-offset: 3px;
+    .btn-secondary:hover {
+      border-color:var(--green);
+      color:var(--green);
     }
 
     /* =========================
        TRUST BAR
-    ========================== */
+    ========================= */
 
     .trust-bar {
-      border-top:
-        1px solid var(--border);
-
-      border-bottom:
-        1px solid var(--border);
-
-      background: #080808;
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      background:#080808;
     }
 
     .trust-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(5, 1fr);
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
     }
 
     .trust-item {
-      padding:
-        18px 10px;
-
-      text-align: center;
-
-      color: #bcbcbc;
-
-      font-size: 12px;
-      font-weight: 700;
-
-      border-right:
-        1px solid var(--border);
+      padding:18px 10px;
+      text-align:center;
+      color:#bcbcbc;
+      font-size:12px;
+      font-weight:700;
+      border-right:1px solid var(--border);
     }
 
     .trust-item:last-child {
-      border-right: 0;
-    }
-
-    .trust-item strong {
-      display: block;
-
-      color: var(--green);
-
-      font-size: 14px;
-
-      margin-bottom: 2px;
+      border-right:0;
     }
 
     /* =========================
-       GENERAL SECTIONS
-    ========================== */
+       SECTIONS
+    ========================= */
 
     section {
-      scroll-margin-top: 90px;
+      padding:90px 0;
     }
 
-    .section {
-      padding:
-        95px 0;
-    }
-
-    .section-header {
-      margin-bottom: 38px;
+    .section-head {
+      margin-bottom:34px;
     }
 
     .section-number {
-      color: var(--green);
-
-      font-size: 11px;
-      font-weight: 800;
-
-      letter-spacing: 1.5px;
-
-      margin-bottom: 8px;
+      color:var(--green);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:2px;
+      margin-bottom:10px;
     }
 
-    .section-header h2 {
-      font-size:
-        clamp(30px, 5vw, 46px);
-
-      line-height: 1.1;
-
-      letter-spacing: -1.5px;
-
-      margin-bottom: 12px;
+    .section-head h2 {
+      font-size:clamp(30px,5vw,46px);
+      line-height:1.1;
+      margin-bottom:12px;
+      letter-spacing:-1.5px;
     }
 
-    .section-header p {
-      color: var(--muted);
-
-      max-width: 680px;
+    .section-head p {
+      color:var(--muted);
+      max-width:650px;
+      font-size:14px;
     }
 
     /* =========================
        PRODUCTS
-    ========================== */
+    ========================= */
 
-    .products-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 18px;
+    .product-grid {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
     }
 
     .product-card {
-      display: block;
+      position:relative;
+      min-height:210px;
+      padding:28px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:linear-gradient(145deg,#0d0d0d,#080808);
+      transition:.25s ease;
+      overflow:hidden;
+    }
 
-      background: var(--panel);
+    .product-card:hover {
+      transform:translateY(-3px);
+      border-color:#343434;
+    }
 
-      border:
-        1px solid var(--border);
-
-      border-radius: 18px;
-
-      padding: 28px;
-
-      min-height: 235px;
-
-      position: relative;
-
-      transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease;
+    .product-card.live:hover,
+    .product-card.live:focus-visible {
+      border-color:var(--green);
     }
 
     .product-card.live {
-      cursor: pointer;
-    }
-
-    .product-card.live:hover {
-      transform: translateY(-4px);
-
-      border-color:
-        rgba(0, 255, 136, 0.65);
-
-      background:
-        #0d0d0d;
+      cursor:pointer;
     }
 
     .product-status {
-      display: inline-flex;
-
-      align-items: center;
-
-      min-height: 27px;
-
-      padding:
-        0 10px;
-
-      border-radius: 999px;
-
-      font-size: 10px;
-      font-weight: 900;
-
-      letter-spacing: 1px;
-
-      margin-bottom: 25px;
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      color:var(--green);
+      font-size:10px;
+      font-weight:900;
+      letter-spacing:1.5px;
+      margin-bottom:18px;
     }
 
-    .live .product-status {
-      color: var(--green);
-
-      border:
-        1px solid
-        rgba(0, 255, 136, 0.4);
-
-      background:
-        rgba(0, 255, 136, 0.06);
+    .product-status::before {
+      content:"";
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--green);
+      box-shadow:0 0 10px rgba(0,255,136,.7);
     }
 
-    .coming .product-status {
-      color: #aaa;
+    .product-status.soon {
+      color:#777;
+    }
 
-      border:
-        1px solid #292929;
-
-      background: #111;
+    .product-status.soon::before {
+      background:#555;
+      box-shadow:none;
     }
 
     .product-card h3 {
-      font-size: 23px;
-
-      line-height: 1.2;
-
-      margin-bottom: 10px;
+      font-size:23px;
+      line-height:1.2;
+      margin-bottom:10px;
     }
 
     .product-card p {
-      color: var(--muted);
-
-      font-size: 14px;
-
-      max-width: 470px;
+      color:var(--muted);
+      font-size:14px;
+      max-width:470px;
     }
 
     .product-arrow {
-      position: absolute;
-
-      right: 26px;
-      bottom: 24px;
-
-      color: var(--green);
-
-      font-size: 22px;
-
-      opacity: 0;
-
-      transform:
-        translateX(-6px);
-
-      transition: 0.2s ease;
+      position:absolute;
+      right:26px;
+      bottom:24px;
+      color:var(--green);
+      font-size:22px;
+      opacity:0;
+      transform:translateX(-6px);
+      transition:.2s ease;
     }
 
     .product-card.live:hover .product-arrow,
     .product-card.live:focus-visible .product-arrow {
-      opacity: 1;
-
-      transform:
-        translateX(0);
+      opacity:1;
+      transform:translateX(0);
     }
 
-    .product-card.coming {
-      opacity: 0.78;
+    .product-card:focus-visible {
+      outline:2px solid var(--green);
+      outline-offset:3px;
     }
 
     /* =========================
-       ABOUT
-    ========================== */
+       ABOUT / VISION
+    ========================= */
 
     .about-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 18px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
     }
 
-    .about-card {
-      background: var(--panel);
-
-      border:
-        1px solid var(--border);
-
-      border-radius: 16px;
-
-      padding: 28px;
+    .info-box {
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:30px;
+      background:#090909;
     }
 
-    .about-icon {
-      width: 42px;
-      height: 42px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border:
-        1px solid
-        rgba(0, 255, 136, 0.35);
-
-      border-radius: 12px;
-
-      color: var(--green);
-
-      font-weight: 900;
-
-      margin-bottom: 20px;
+    .info-box h3 {
+      font-size:21px;
+      margin-bottom:12px;
     }
 
-    .about-card h3 {
-      font-size: 19px;
-
-      margin-bottom: 9px;
+    .info-box p {
+      color:var(--muted);
+      font-size:14px;
     }
 
-    .about-card p {
-      color: var(--muted);
+    .vision {
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:55px 35px;
+      background:linear-gradient(145deg,#0d0d0d,#070707);
+      text-align:center;
+    }
 
-      font-size: 14px;
+    .vision h2 {
+      font-size:clamp(34px,6vw,58px);
+      line-height:1.05;
+      margin-bottom:16px;
+      letter-spacing:-2px;
+    }
+
+    .vision h2 span {
+      color:var(--green);
+    }
+
+    .vision p {
+      color:var(--muted);
+      max-width:620px;
+      margin:auto;
+      font-size:14px;
     }
 
     /* =========================
        FAQ
-    ========================== */
+    ========================= */
 
     .faq-list {
-      max-width: 850px;
-
-      margin: 0 auto;
+      max-width:850px;
     }
 
     .faq-item {
-      border-bottom:
-        1px solid var(--border);
+      border-bottom:1px solid var(--border);
     }
 
     .faq-question {
-      width: 100%;
+      width:100%;
+      border:0;
+      background:transparent;
+      color:#fff;
+      padding:20px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      text-align:left;
+      cursor:pointer;
+      font-weight:800;
+    }
 
-      min-height: 68px;
-
-      border: 0;
-
-      background: transparent;
-
-      color: #fff;
-
-      text-align: left;
-
-      font: inherit;
-
-      font-size: 15px;
-      font-weight: 700;
-
-      padding:
-        18px 0;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 20px;
-
-      cursor: pointer;
+    .faq-question:hover {
+      color:var(--green);
     }
 
     .faq-plus {
-      color: var(--green);
-
-      font-size: 24px;
-
-      flex-shrink: 0;
-
-      transition:
-        transform 0.2s ease;
-    }
-
-    .faq-answer {
-      display: none;
-
-      padding:
-        0 45px
-        20px 0;
-
-      color: var(--muted);
-
-      font-size: 14px;
-    }
-
-    .faq-item.active .faq-answer {
-      display: block;
+      color:var(--green);
+      font-size:24px;
+      line-height:1;
+      transition:.2s ease;
+      flex:none;
     }
 
     .faq-item.active .faq-plus {
-      transform:
-        rotate(45deg);
+      transform:rotate(45deg);
     }
 
-    /* =========================
-       VISION
-    ========================== */
-
-    .vision {
-      border:
-        1px solid var(--border);
-
-      border-radius: 22px;
-
-      padding:
-        55px 35px;
-
-      background:
-        linear-gradient(
-          145deg,
-          #0d0d0d,
-          #070707
-        );
-
-      text-align: center;
+    .faq-answer {
+      display:none;
+      color:var(--muted);
+      font-size:14px;
+      padding:0 35px 20px 0;
     }
 
-    .vision h2 {
-      font-size:
-        clamp(34px, 6vw, 58px);
-
-      line-height: 1.05;
-
-      letter-spacing: -2px;
-
-      margin-bottom: 16px;
-    }
-
-    .vision h2 span {
-      color: var(--green);
-    }
-
-    .vision p {
-      color: var(--muted);
-
-      max-width: 650px;
-
-      margin: 0 auto;
+    .faq-item.active .faq-answer {
+      display:block;
     }
 
     /* =========================
        FOOTER
-    ========================== */
+    ========================= */
 
     footer {
-      border-top:
-        1px solid var(--border);
-
-      padding:
-        55px 0 30px;
+      border-top:1px solid var(--border);
+      padding:55px 0 30px;
     }
 
     .footer-grid {
-      display: grid;
-
-      grid-template-columns:
-        1.5fr
-        1fr
-        1fr;
-
-      gap: 40px;
-
-      padding-bottom: 40px;
+      display:grid;
+      grid-template-columns:1.5fr 1fr 1fr;
+      gap:40px;
+      padding-bottom:40px;
     }
 
     .footer-brand .logo {
-      display: inline-block;
-
-      margin-bottom: 12px;
+      display:inline-block;
+      margin-bottom:12px;
     }
 
     .footer-brand p {
-      color: var(--muted);
-
-      max-width: 360px;
-
-      font-size: 13px;
+      color:var(--muted);
+      max-width:360px;
+      font-size:13px;
     }
 
     .footer-column h4 {
-      color: #fff;
-
-      font-size: 13px;
-
-      margin-bottom: 14px;
+      color:#fff;
+      font-size:13px;
+      margin-bottom:14px;
     }
 
     .footer-column a {
-      display: block;
-
-      color: #999;
-
-      font-size: 13px;
-
-      margin-bottom: 9px;
-
-      transition: 0.2s ease;
+      display:block;
+      color:#999;
+      font-size:13px;
+      margin-bottom:9px;
+      transition:.2s ease;
     }
 
     .footer-column a:hover {
-      color: var(--green);
+      color:var(--green);
+    }
+
+    .legal-links {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:8px;
+      padding:20px 0 0;
+      color:#777;
+      font-size:12px;
+    }
+
+    .legal-links a {
+      color:#777;
+      transition:.2s ease;
+    }
+
+    .legal-links a:hover {
+      color:var(--green);
+    }
+
+    .legal-links span {
+      color:#444;
     }
 
     .copyright {
-      border-top:
-        1px solid var(--border);
-
-      padding-top: 25px;
-
-      color: #666;
-
-      font-size: 12px;
-
-      text-align: center;
+      border-top:1px solid var(--border);
+      padding-top:25px;
+      color:#666;
+      font-size:12px;
+      text-align:center;
+      margin-top:20px;
     }
 
     /* =========================
        MOBILE
-    ========================== */
+    ========================= */
 
-    @media (max-width: 850px) {
-
+    @media (max-width:900px) {
       .header-inner {
-        min-height: auto;
-
-        padding:
-          12px 0;
-
-        align-items: flex-start;
-
-        flex-direction: column;
-
-        gap: 10px;
+        align-items:flex-start;
+        padding:16px 0;
       }
 
-      .nav {
-        width: 100%;
-
-        justify-content: flex-start;
-
-        gap: 10px 14px;
+      nav {
+        gap:12px;
       }
 
-      .nav a {
-        font-size: 12px;
-      }
-
-      .hero {
-        padding:
-          75px 0
-          65px;
+      nav a {
+        font-size:12px;
       }
 
       .trust-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
+        grid-template-columns:repeat(3,1fr);
       }
 
-      .trust-item {
-        border-right: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
+      .trust-item:nth-child(3) {
+        border-right:0;
       }
 
-      .trust-item:nth-child(2n) {
-        border-right: 0;
-      }
-
-      .trust-item:last-child {
-        grid-column: 1 / -1;
-        border-right: 0;
-      }
-
-      .products-grid {
-        grid-template-columns: 1fr;
+      .trust-item:nth-child(4),
+      .trust-item:nth-child(5) {
+        border-top:1px solid var(--border);
       }
 
       .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-brand {
-        grid-column: 1 / -1;
+        grid-template-columns:1fr;
       }
     }
 
-    @media (max-width: 650px) {
-
+    @media (max-width:650px) {
       .container {
-        width:
-          min(
-            calc(100% - 28px),
-            var(--max)
-          );
+        width:min(91%, var(--max));
       }
 
       .header-inner {
-        padding:
-          9px 0;
-
-        gap: 7px;
+        display:block;
       }
 
       .logo {
-        font-size: 18px;
+        display:block;
+        margin-bottom:13px;
       }
 
-      .nav {
-        gap:
-          7px 11px;
+      nav {
+        justify-content:flex-start;
+        gap:9px 14px;
       }
 
-      .nav a {
-        font-size: 11px;
+      nav a {
+        font-size:11px;
       }
 
       .nav-cta {
-        padding:
-          7px 11px;
+        padding:8px 11px;
       }
 
       .hero {
-        padding:
-          65px 0
-          55px;
+        padding:75px 0 65px;
       }
 
       .hero h1 {
-        font-size:
-          clamp(38px, 12vw, 55px);
-
-        letter-spacing: -2px;
+        font-size:44px;
+        letter-spacing:-2px;
       }
 
       .hero p {
-        font-size: 15px;
+        font-size:14px;
       }
 
-      .hero-actions {
-        flex-direction: column;
-
-        align-items: stretch;
+      section {
+        padding:70px 0;
       }
 
-      .btn {
-        width: 100%;
-      }
-
-      .section {
-        padding:
-          70px 0;
-      }
-
-      .section-header {
-        margin-bottom: 28px;
-      }
-
-      .section-header h2 {
-        font-size: 32px;
+      .product-grid {
+        grid-template-columns:1fr;
       }
 
       .product-card {
-        min-height: 215px;
-
-        padding: 23px;
+        min-height:190px;
       }
 
-      .product-card h3 {
-        font-size: 21px;
+      .trust-grid {
+        grid-template-columns:repeat(2,1fr);
       }
 
-      .product-arrow {
-        right: 20px;
-        bottom: 19px;
+      .trust-item {
+        border-right:1px solid var(--border);
+        border-top:1px solid var(--border);
       }
 
-      .about-card {
-        padding: 23px;
+      .trust-item:nth-child(-n+2) {
+        border-top:0;
       }
 
-      .vision {
-        padding:
-          42px 22px;
+      .trust-item:nth-child(2n) {
+        border-right:0;
       }
 
-      .vision h2 {
-        font-size: 38px;
-      }
-
-      .faq-question {
-        font-size: 14px;
-      }
-
-      .faq-answer {
-        font-size: 13px;
+      .trust-item:last-child {
+        grid-column:1 / -1;
+        border-right:0;
       }
 
       .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
+        grid-template-columns:1fr;
+        gap:28px;
       }
 
       .footer-brand {
-        grid-column: auto;
+        grid-column:auto;
       }
 
-      .footer {
-        padding-bottom: 25px;
-      }
-    }
-
-    @media (max-width: 360px) {
-
-      .nav {
-        gap:
-          6px 9px;
-      }
-
-      .nav a {
-        font-size: 10px;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .product-card {
-        padding: 20px;
+      footer {
+        padding-bottom:25px;
       }
     }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
-      }
-    }
-
   </style>
 
   <!-- Organization Schema -->
-
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "KROC LABS",
-    "url": "https://kroclabsofficial-web.github.io/"
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"KROC LABS",
+    "url":"https://kroclabsofficial-web.github.io/",
+    "description":"KROC LABS builds simple, fast and useful digital tools for people worldwide."
   }
   </script>
 
   <!-- Website Schema -->
-
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "KROC LABS",
-    "url": "https://kroclabsofficial-web.github.io/"
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"KROC LABS",
+    "url":"https://kroclabsofficial-web.github.io/"
   }
   </script>
 
   <!-- FAQ Schema -->
-
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
       {
-        "@type": "Question",
-        "name": "Are KROC LABS calculators free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. The calculators currently available on KROC LABS can be used online without a signup."
+        "@type":"Question",
+        "name":"Are KROC LABS calculators free?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Yes. The calculators currently available on KROC LABS are free to use and do not require signup."
         }
       },
       {
-        "@type": "Question",
-        "name": "What calculators are available?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "KROC LABS currently provides Percentage, Loan EMI, Compound Interest and Savings calculators."
+        "@type":"Question",
+        "name":"Do I need an account to use the calculators?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. You can use the available calculators without creating an account."
         }
       },
       {
-        "@type": "Question",
-        "name": "Do I need to create an account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No account is required to use the current calculator tools."
+        "@type":"Question",
+        "name":"Are calculator results guaranteed to match a bank or lender?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"No. Calculator results are estimates for informational purposes. Actual terms, rates and results may vary."
         }
       },
       {
-        "@type": "Question",
-        "name": "Are calculator results guaranteed?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Calculator results are estimates based on the information entered and should be used for informational purposes."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will KROC LABS add more tools?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "KROC LABS plans to develop additional digital tools over time."
+        "@type":"Question",
+        "name":"What tools does KROC LABS provide?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"KROC LABS currently provides percentage, loan EMI, compound interest and savings calculators, with additional digital tools planned."
         }
       }
     ]
   }
   </script>
-
 </head>
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
-
+  <!-- HEADER -->
   <header>
-
     <div class="container header-inner">
 
-      <a
-        href="index.html"
-        class="logo"
-        aria-label="KROC LABS Home"
-      >
-        KROC LABS
+      <a href="index.html" class="logo" aria-label="KROC LABS Home">
+        KROC <span>LABS</span>
       </a>
 
-      <nav
-        class="nav"
-        aria-label="Main navigation"
-      >
-
-        <a href="#products">
-          Products
-        </a>
-
-        <a href="percentage-calculator.html">
-          Percentage
-        </a>
-
-        <a href="loan-emi-calculator.html">
-          EMI
-        </a>
-
-        <a href="compound-interest-calculator.html">
-          Compound
-        </a>
-
-        <a href="savings-calculator.html">
-          Savings
-        </a>
-
-        <a href="#faq">
-          FAQ
-        </a>
-
-        <a
-          href="#vision"
-          class="nav-cta"
-        >
-          Vision
-        </a>
-
+      <nav aria-label="Main navigation">
+        <a href="#products">Products</a>
+        <a href="percentage-calculator.html">Calculator</a>
+        <a href="loan-emi-calculator.html">EMI</a>
+        <a href="compound-interest-calculator.html">Compound</a>
+        <a href="savings-calculator.html">Savings</a>
+        <a href="#faq">FAQ</a>
+        <a href="#vision">Vision</a>
+        <a href="#products" class="nav-cta">Try a Tool</a>
       </nav>
 
     </div>
-
   </header>
 
-
+  <!-- HERO -->
   <main>
 
-    <!-- =========================
-         HERO
-    ========================== -->
-
     <section class="hero">
-
       <div class="container">
 
-        <div class="eyebrow">
-          GLOBAL DIGITAL PRODUCT LAB
-        </div>
+        <div class="eyebrow">GLOBAL DIGITAL PRODUCT LAB</div>
 
         <h1>
-          Useful technology.
+          Useful technology.<br>
           <span>Built differently.</span>
         </h1>
 
         <p>
-          KROC LABS builds simple, fast and useful
-          digital tools designed to make everyday
-          tasks easier for people worldwide.
+          KROC LABS builds fast, useful and intelligent digital tools
+          designed to make everyday tasks simpler for people worldwide.
         </p>
 
         <div class="hero-actions">
-
-          <a
-            href="#products"
-            class="btn btn-primary"
-          >
+          <a href="#products" class="btn btn-primary">
             Explore Products →
           </a>
 
-          <a
-            href="#vision"
-            class="btn btn-secondary"
-          >
+          <a href="#vision" class="btn btn-secondary">
             Our Vision
           </a>
-
         </div>
 
       </div>
-
     </section>
 
-
-    <!-- =========================
-         TRUST BAR
-    ========================== -->
-
+    <!-- TRUST BAR -->
     <div class="trust-bar">
-
       <div class="container trust-grid">
-
-        <div class="trust-item">
-          <strong>Fast</strong>
-          Quick to use
-        </div>
-
-        <div class="trust-item">
-          <strong>Simple</strong>
-          Easy to understand
-        </div>
-
-        <div class="trust-item">
-          <strong>Useful</strong>
-          Built for real needs
-        </div>
-
-        <div class="trust-item">
-          <strong>Global</strong>
-          Made for everyone
-        </div>
-
-        <div class="trust-item">
-          <strong>Growing</strong>
-          Built to scale
-        </div>
-
+        <div class="trust-item">Fast</div>
+        <div class="trust-item">Simple</div>
+        <div class="trust-item">Useful</div>
+        <div class="trust-item">Global</div>
+        <div class="trust-item">Built to Scale</div>
       </div>
-
     </div>
 
-
-    <!-- =========================
-         PRODUCTS
-    ========================== -->
-
-    <section
-      class="section"
-      id="products"
-    >
-
+    <!-- PRODUCTS -->
+    <section id="products">
       <div class="container">
 
-        <div class="section-header">
-
-          <div class="section-number">
-            01 — PRODUCTS
-          </div>
-
-          <h2>
-            Useful tools. Starting now.
-          </h2>
-
+        <div class="section-head">
+          <div class="section-number">01 — PRODUCTS</div>
+          <h2>Tools that solve real problems.</h2>
           <p>
-            Explore the first generation of KROC LABS
-            digital tools. More products will be added
-            as the platform grows.
+            Start with a useful tool today. More products and categories
+            are being developed as KROC LABS grows.
           </p>
-
         </div>
 
-
-        <div class="products-grid">
-
-          <!-- Percentage -->
+        <div class="product-grid">
 
           <a
             href="percentage-calculator.html"
             class="product-card live"
             aria-label="Open Percentage Calculator"
           >
-
-            <span class="product-status">
-              LIVE
-            </span>
-
-            <h3>
-              Percentage Calculator
-            </h3>
-
+            <div class="product-status">LIVE</div>
+            <h3>Percentage Calculator</h3>
             <p>
-              Calculate percentages quickly and
-              easily with a simple online tool.
+              Calculate percentages quickly and easily with a simple,
+              fast online tool.
             </p>
-
-            <span
-              class="product-arrow"
-              aria-hidden="true"
-            >
-              →
-            </span>
-
+            <div class="product-arrow">→</div>
           </a>
-
-
-          <!-- EMI -->
 
           <a
             href="loan-emi-calculator.html"
             class="product-card live"
             aria-label="Open Loan EMI Calculator"
           >
-
-            <span class="product-status">
-              LIVE
-            </span>
-
-            <h3>
-              Loan EMI Calculator
-            </h3>
-
+            <div class="product-status">LIVE</div>
+            <h3>Loan EMI Calculator</h3>
             <p>
-              Estimate monthly loan payments,
-              total interest and total payment.
+              Estimate monthly loan payments, total interest and total
+              payment from a few simple inputs.
             </p>
-
-            <span
-              class="product-arrow"
-              aria-hidden="true"
-            >
-              →
-            </span>
-
+            <div class="product-arrow">→</div>
           </a>
-
-
-          <!-- Compound -->
 
           <a
             href="compound-interest-calculator.html"
             class="product-card live"
             aria-label="Open Compound Interest Calculator"
           >
-
-            <span class="product-status">
-              LIVE
-            </span>
-
-            <h3>
-              Compound Interest
-            </h3>
-
+            <div class="product-status">LIVE</div>
+            <h3>Compound Interest Calculator</h3>
             <p>
-              Estimate how money can grow with
-              compound interest over time.
+              Estimate how money can grow over time using different
+              compounding frequencies.
             </p>
-
-            <span
-              class="product-arrow"
-              aria-hidden="true"
-            >
-              →
-            </span>
-
+            <div class="product-arrow">→</div>
           </a>
-
-
-          <!-- Savings -->
 
           <a
             href="savings-calculator.html"
             class="product-card live"
             aria-label="Open Savings Calculator"
           >
-
-            <span class="product-status">
-              LIVE
-            </span>
-
-            <h3>
-              Savings Calculator
-            </h3>
-
+            <div class="product-status">LIVE</div>
+            <h3>Savings Calculator</h3>
             <p>
-              Estimate future savings using a starting
-              amount, monthly contributions and rate.
+              Estimate future savings using a starting amount,
+              monthly contributions and an annual rate.
             </p>
-
-            <span
-              class="product-arrow"
-              aria-hidden="true"
-            >
-              →
-            </span>
-
+            <div class="product-arrow">→</div>
           </a>
 
-
-          <!-- Finance -->
-
-          <div class="product-card coming">
-
-            <span class="product-status">
-              COMING SOON
-            </span>
-
-            <h3>
-              Finance Tools
-            </h3>
-
+          <div class="product-card">
+            <div class="product-status soon">COMING SOON</div>
+            <h3>Finance Tools</h3>
             <p>
-              More practical financial tools are
-              planned for future releases.
+              More practical financial tools designed for everyday
+              planning and calculations.
             </p>
-
           </div>
 
-
-          <!-- AI -->
-
-          <div class="product-card coming">
-
-            <span class="product-status">
-              COMING SOON
-            </span>
-
-            <h3>
-              AI Tools
-            </h3>
-
+          <div class="product-card">
+            <div class="product-status soon">COMING SOON</div>
+            <h3>AI Tools</h3>
             <p>
-              Future intelligent tools focused on
-              useful everyday workflows.
+              Useful AI-powered tools designed to make work faster
+              and simpler.
             </p>
-
           </div>
 
-
-          <!-- Productivity -->
-
-          <div class="product-card coming">
-
-            <span class="product-status">
-              COMING SOON
-            </span>
-
-            <h3>
-              Productivity
-            </h3>
-
+          <div class="product-card">
+            <div class="product-status soon">COMING SOON</div>
+            <h3>Productivity</h3>
             <p>
-              Tools designed to help people organize
-              and complete everyday tasks.
+              Simple digital tools that help people organize,
+              calculate and get things done.
             </p>
-
           </div>
 
-
-          <!-- Business -->
-
-          <div class="product-card coming">
-
-            <span class="product-status">
-              COMING SOON
-            </span>
-
-            <h3>
-              Business Tools
-            </h3>
-
+          <div class="product-card">
+            <div class="product-status soon">COMING SOON</div>
+            <h3>Business Tools</h3>
             <p>
-              Future tools for creators, businesses
-              and growing digital workflows.
+              Practical tools for creators, entrepreneurs and
+              growing businesses.
             </p>
-
           </div>
 
         </div>
 
       </div>
-
     </section>
 
-
-    <!-- =========================
-         ABOUT
-    ========================== -->
-
-    <section
-      class="section"
-      id="about"
-    >
-
+    <!-- ABOUT -->
+    <section id="about">
       <div class="container">
 
-        <div class="section-header">
-
-          <div class="section-number">
-            02 — ABOUT KROC LABS
-          </div>
-
-          <h2>
-            Built with a simple idea.
-          </h2>
-
+        <div class="section-head">
+          <div class="section-number">02 — ABOUT</div>
+          <h2>Built for usefulness.</h2>
           <p>
-            Technology should solve problems without
-            adding unnecessary complexity.
+            KROC LABS focuses on digital products that are simple to
+            understand, fast to use and useful in real life.
           </p>
-
         </div>
-
 
         <div class="about-grid">
 
-          <div class="about-card">
-
-            <div class="about-icon">
-              01
-            </div>
-
-            <h3>
-              Simple by Design
-            </h3>
-
+          <div class="info-box">
+            <h3>Simple by design.</h3>
             <p>
-              Clear interfaces, straightforward
-              inputs and easy-to-understand results.
+              Good technology does not need unnecessary complexity.
+              Our tools are designed to help users get an answer or
+              complete a task quickly.
             </p>
-
           </div>
 
-
-          <div class="about-card">
-
-            <div class="about-icon">
-              02
-            </div>
-
-            <h3>
-              Useful First
-            </h3>
-
+          <div class="info-box">
+            <h3>Made for everyone.</h3>
             <p>
-              Products are focused on practical
-              problems and real everyday use cases.
+              KROC LABS is being built with a global audience in mind,
+              starting with accessible web-based tools.
             </p>
-
-          </div>
-
-
-          <div class="about-card">
-
-            <div class="about-icon">
-              03
-            </div>
-
-            <h3>
-              Growing Step by Step
-            </h3>
-
-            <p>
-              KROC LABS is being developed gradually,
-              starting with useful tools and expanding
-              over time.
-            </p>
-
           </div>
 
         </div>
 
       </div>
-
     </section>
 
-
-    <!-- =========================
-         FAQ
-    ========================== -->
-
-    <section
-      class="section"
-      id="faq"
-    >
-
+    <!-- FAQ -->
+    <section id="faq">
       <div class="container">
 
-        <div class="section-header">
-
-          <div class="section-number">
-            03 — FAQ
-          </div>
-
-          <h2>
-            Frequently asked questions.
-          </h2>
-
+        <div class="section-head">
+          <div class="section-number">03 — FAQ</div>
+          <h2>Frequently asked questions.</h2>
           <p>
-            A few simple answers about the current
-            KROC LABS tools.
+            A few quick answers about KROC LABS and its tools.
           </p>
-
         </div>
-
 
         <div class="faq-list">
 
-
           <div class="faq-item">
-
-            <button
-              type="button"
-              class="faq-question"
-              aria-expanded="false"
-            >
-
-              <span>
-                Are KROC LABS calculators free?
-              </span>
-
-              <span
-                class="faq-plus"
-                aria-hidden="true"
-              >
-                +
-              </span>
-
+            <button class="faq-question" type="button">
+              <span>Are KROC LABS calculators free?</span>
+              <span class="faq-plus">+</span>
             </button>
-
             <div class="faq-answer">
-
-              Yes. The calculators currently available
-              on KROC LABS can be used online without
-              a signup.
-
+              Yes. The calculators currently available on KROC LABS
+              are free to use and do not require signup.
             </div>
-
           </div>
 
-
           <div class="faq-item">
-
-            <button
-              type="button"
-              class="faq-question"
-              aria-expanded="false"
-            >
-
-              <span>
-                What calculators are available?
-              </span>
-
-              <span
-                class="faq-plus"
-                aria-hidden="true"
-              >
-                +
-              </span>
-
+            <button class="faq-question" type="button">
+              <span>Do I need an account to use the calculators?</span>
+              <span class="faq-plus">+</span>
             </button>
-
             <div class="faq-answer">
-
-              KROC LABS currently provides Percentage,
-              Loan EMI, Compound Interest and Savings
-              calculators.
-
+              No. You can use the available calculators without
+              creating an account.
             </div>
-
           </div>
 
-
           <div class="faq-item">
-
-            <button
-              type="button"
-              class="faq-question"
-              aria-expanded="false"
-            >
-
-              <span>
-                Do I need to create an account?
-              </span>
-
-              <span
-                class="faq-plus"
-                aria-hidden="true"
-              >
-                +
-              </span>
-
+            <button class="faq-question" type="button">
+              <span>Are calculator results guaranteed to match a bank or lender?</span>
+              <span class="faq-plus">+</span>
             </button>
-
             <div class="faq-answer">
-
-              No account is required to use the current
-              calculator tools.
-
+              No. Calculator results are estimates for informational
+              purposes. Actual terms, rates and results may vary.
             </div>
-
           </div>
 
-
           <div class="faq-item">
-
-            <button
-              type="button"
-              class="faq-question"
-              aria-expanded="false"
-            >
-
-              <span>
-                Are calculator results guaranteed?
-              </span>
-
-              <span
-                class="faq-plus"
-                aria-hidden="true"
-              >
-                +
-              </span>
-
+            <button class="faq-question" type="button">
+              <span>What tools does KROC LABS provide?</span>
+              <span class="faq-plus">+</span>
             </button>
-
             <div class="faq-answer">
-
-              No. Calculator results are estimates based
-              on the information entered and should be
-              used for informational purposes.
-
+              KROC LABS currently provides percentage, loan EMI,
+              compound interest and savings calculators, with
+              additional digital tools planned.
             </div>
-
           </div>
-
-
-          <div class="faq-item">
-
-            <button
-              type="button"
-              class="faq-question"
-              aria-expanded="false"
-            >
-
-              <span>
-                Will KROC LABS add more tools?
-              </span>
-
-              <span
-                class="faq-plus"
-                aria-hidden="true"
-              >
-                +
-              </span>
-
-            </button>
-
-            <div class="faq-answer">
-
-              KROC LABS plans to develop additional
-              digital tools over time.
-
-            </div>
-
-          </div>
-
 
         </div>
 
       </div>
-
     </section>
 
-
-    <!-- =========================
-         VISION
-    ========================== -->
-
-    <section
-      class="section"
-      id="vision"
-    >
-
+    <!-- VISION -->
+    <section id="vision">
       <div class="container">
 
         <div class="vision">
-
-          <div class="section-number">
-            04 — OUR VISION
-          </div>
+          <div class="section-number">04 — VISION</div>
 
           <h2>
-            Build useful things.
+            Build useful things.<br>
             <span>For everyone.</span>
           </h2>
 
           <p>
-            KROC LABS is starting with simple digital
-            tools and aims to grow into a broader
-            technology platform by continuously
-            building useful products.
+            KROC LABS is being built as a global digital product
+            company focused on creating useful, accessible and
+            scalable technology products.
           </p>
-
         </div>
 
       </div>
-
     </section>
 
   </main>
 
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
+  <!-- FOOTER -->
   <footer>
-
     <div class="container">
 
       <div class="footer-grid">
 
-
         <div class="footer-brand">
-
-          <a
-            href="index.html"
-            class="logo"
-          >
-            KROC LABS
+          <a href="index.html" class="logo">
+            KROC <span>LABS</span>
           </a>
 
           <p>
-            Building simple, fast and useful digital
-            tools for people worldwide.
+            Building simple, fast and useful digital tools
+            for people worldwide.
           </p>
-
         </div>
-
 
         <div class="footer-column">
-
-          <h4>
-            Tools
-          </h4>
-
-          <a href="percentage-calculator.html">
-            Percentage Calculator
-          </a>
-
-          <a href="loan-emi-calculator.html">
-            Loan EMI Calculator
-          </a>
-
-          <a href="compound-interest-calculator.html">
-            Compound Interest
-          </a>
-
-          <a href="savings-calculator.html">
-            Savings Calculator
-          </a>
-
+          <h4>Products</h4>
+          <a href="percentage-calculator.html">Percentage Calculator</a>
+          <a href="loan-emi-calculator.html">Loan EMI Calculator</a>
+          <a href="compound-interest-calculator.html">Compound Interest</a>
+          <a href="savings-calculator.html">Savings Calculator</a>
         </div>
-
 
         <div class="footer-column">
-
-          <h4>
-            KROC LABS
-          </h4>
-
-          <a href="#products">
-            Products
-          </a>
-
-          <a href="#about">
-            About
-          </a>
-
-          <a href="#faq">
-            FAQ
-          </a>
-
-          <a href="#vision">
-            Vision
-          </a>
-
+          <h4>Company</h4>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+          <a href="#vision">Vision</a>
         </div>
-
 
       </div>
 
+      <!-- LEGAL LINKS -->
+      <div class="legal-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span>·</span>
+        <a href="terms-of-use.html">Terms of Use</a>
+        <span>·</span>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
 
       <div class="copyright">
-
         © 2026 KROC LABS. All rights reserved.
-
       </div>
 
     </div>
-
   </footer>
 
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================== -->
-
   <script>
+    /* =========================
+       FAQ ACCORDION
+    ========================= */
 
-    const faqItems =
-      document.querySelectorAll(".faq-item");
+    document.querySelectorAll(".faq-question").forEach(function(button) {
+      button.addEventListener("click", function() {
 
-    faqItems.forEach(function(item) {
+        const currentItem = button.closest(".faq-item");
 
-      const button =
-        item.querySelector(".faq-question");
-
-      button.addEventListener(
-        "click",
-        function() {
-
-          const isActive =
-            item.classList.contains("active");
-
-          faqItems.forEach(function(otherItem) {
-
-            otherItem.classList.remove("active");
-
-            const otherButton =
-              otherItem.querySelector(
-                ".faq-question"
-              );
-
-            otherButton.setAttribute(
-              "aria-expanded",
-              "false"
-            );
-
-          });
-
-          if (!isActive) {
-
-            item.classList.add("active");
-
-            button.setAttribute(
-              "aria-expanded",
-              "true"
-            );
-
+        document.querySelectorAll(".faq-item").forEach(function(item) {
+          if (item !== currentItem) {
+            item.classList.remove("active");
           }
+        });
 
-        }
-      );
-
+        currentItem.classList.toggle("active");
+      });
     });
-
   </script>
 
 </body>
