@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kroclabsofficial-web.github.io/sitemap.xml
